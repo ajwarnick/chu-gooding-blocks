@@ -27,6 +27,26 @@ export const settings = {
             type: 'string',
             default: 'http://placehold.it/500'
         },
+        distribution: {
+            type: 'string',
+            default: 'option6'
+        },
+		toggle: {
+			type: 'boolean',
+			default: true
+		},
+		favoriteAnimal: {
+			type: 'string',
+			default: 'dogs'
+		},
+		favoriteColor: {
+			type: 'string',
+			default: '#DDDDDD'
+		},
+		activateLasers: {
+			type: 'boolean',
+			default: false
+		}
     },
     edit: Edit,
     save,
