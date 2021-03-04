@@ -3,7 +3,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import * as otherList from './otherList';
 
 const blocks = [
-    otherList,
+    otherList
 ];
 
 function registerBlock( block ) {

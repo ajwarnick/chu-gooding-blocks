@@ -50,15 +50,6 @@ function chu_gooding_blocks_init() {
 	);
 
 	register_block_type(
-		'chu-gooding/todo-list',
-		array(
-			'editor_script' => 'chugooding-block-editor',
-			'editor_style'  => 'chugooding-block-editor',
-			'style'         => 'chugooding-block',
-		)
-	);
-
-	register_block_type(
 		'chu-gooding/other-list',
 		array(
 			'editor_script' => 'chugooding-block-editor',

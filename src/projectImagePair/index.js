@@ -1,18 +1,4 @@
 /**
- * Registers a new block provided a unique name and an object defining its behavior.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
- */
-import { registerBlockType } from '@wordpress/blocks';
-
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
-
-/**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * All files containing `style` keyword are bundled together. The code used
  * gets applied both to the front of your site and to the editor.
@@ -28,13 +14,13 @@ import Edit from './edit';
 import save from './save';
 
 
-export const name = 'chu-gooding/other-list';
+export const name = 'chu-gooding/project-image-pair';
 
 export const settings = {
-    title: __( 'Other List', 'other-list' ),
+    title: __( 'C , G: Project Image Pair', 'project-image-pair' ),
     description: __(
 		'Example block written with ESNext standard and JSX support – build step required.',
-		'other-list'
+		'project-image-pair'
 	),
     category: 'widgets',
     icon: 'smiley',

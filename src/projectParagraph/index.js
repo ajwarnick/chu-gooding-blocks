@@ -14,13 +14,13 @@ import Edit from './edit';
 import save from './save';
 
 
-export const name = 'chu-gooding/other-list';
+export const name = 'chu-gooding/project-paragraph';
 
 export const settings = {
-    title: __( 'Other List', 'other-list' ),
+    title: __( 'C , G: Project Paragraph', 'project-paragraph' ),
     description: __(
 		'Example block written with ESNext standard and JSX support – build step required.',
-		'other-list'
+		'project-paragraph'
 	),
     category: 'widgets',
     icon: 'smiley',
