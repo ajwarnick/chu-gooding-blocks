@@ -18,6 +18,18 @@ export const settings = {
 		// Removes support for an HTML mode.
 		html: false,
 	},
+    attributes: {
+        title: {
+            type: 'string',
+            selector: 'js-book-details-title',
+            default: 'Hello World'
+        },
+        toggle: {
+            type: 'boolean',
+            selector: 'js-book-details-boolean',
+            default: true
+        }
+    },
     edit: Edit,
     save,
 };

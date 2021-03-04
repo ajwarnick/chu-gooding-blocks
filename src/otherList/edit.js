@@ -29,10 +29,17 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit({ attributes, isSelected, setAttributes, }) {
+	const { title, toggle } = attributes;
+	const toggleSetting = () => setAttributes( { toggle: ! toggle } );
+
 	return (
 		<p { ...useBlockProps() }>
-			{ __( 'Todo List – hello from the editor!', 'todo-list' ) }
+			{ title }
+			{ toggle &&
+                <button onClick={ toggleSetting }>Toggle setting</button>
+            }
+			{ !toggle && <h1>Messages: Hello</h1>}
 		</p>
 	);
 }
