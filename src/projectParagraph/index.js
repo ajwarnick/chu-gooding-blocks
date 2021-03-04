@@ -5,7 +5,6 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 
-
 export const name = 'chu-gooding/project-paragraph';
 
 export const settings = {
@@ -13,10 +12,17 @@ export const settings = {
     description: 'Example block written with ESNext standard and JSX support – build step required.',
     category: 'text',
     icon: 'smiley',
-	supports: {
-		// Removes support for an HTML mode.
-		html: false,
-	},
+    attributes: {
+        content: {
+            type: 'string',
+            source: 'html',
+            selector: 'p',
+        },
+        direction: {
+            type: 'string',
+            default: null
+        }
+    },
     edit: Edit,
     save,
 };

@@ -1,17 +1,10 @@
 /**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
-
-/**
  * React hook that is used to mark the block wrapper element.
  * It provides all the necessary props like the class name.
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,11 +22,24 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit({ attributes, setAttributes } ) {
+	const blockProps = useBlockProps();
+	if( !attributes.direction ){
+		attributes.direction = Math.floor(Math.random() * 2) == 0 ? 'up': 'down';
+	}
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Todo List – hello from the editor!', 'todo-list' ) }
-		</p>
+		<div className="project__paragraph">
+			<RichText
+				{ ...blockProps }
+				className={attributes.direction}
+				tagName="p" // The tag here is the element output and editable in the admin
+				value={ attributes.content } // Any existing content, either from the database or an attribute default
+				allowedFormats={ [ 'core/bold', 'core/italic' ] } // Allow the content to be made bold or italic, but do not allow other formatting options
+				onChange={ ( content ) => setAttributes( { content } ) } // Store updated content as a block attribute
+				placeholder={ 'Heading...' } // Display this text before any content has been added by the user
+			/>		
+		</div>
+		
 	);
 }
 
