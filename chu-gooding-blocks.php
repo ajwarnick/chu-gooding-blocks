@@ -58,6 +58,24 @@ function chu_gooding_blocks_init() {
 		)
 	);
 
+	register_block_type(
+		'chu-gooding/project-image-pair',
+		array(
+			'editor_script' => 'chugooding-block-editor',
+			'editor_style'  => 'chugooding-block-editor',
+			'style'         => 'chugooding-block',
+		)
+	);
+
+	register_block_type(
+		'chu-gooding/project-paragraph',
+		array(
+			'editor_script' => 'chugooding-block-editor',
+			'editor_style'  => 'chugooding-block-editor',
+			'style'         => 'chugooding-block',
+		)
+	);
+
 	
 }
 add_action( 'init', 'chu_gooding_blocks_init' );

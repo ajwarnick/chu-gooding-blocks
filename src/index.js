@@ -1,9 +1,14 @@
 import { registerBlockType } from '@wordpress/blocks';
 
 import * as otherList from './otherList';
+import * as projectImagePair from './projectImagePair';
+import * as projectParagraph from './projectParagraph';
+
 
 const blocks = [
-    otherList
+    otherList,
+    projectImagePair,
+    projectParagraph
 ];
 
 function registerBlock( block ) {
