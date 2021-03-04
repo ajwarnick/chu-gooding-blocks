@@ -18,6 +18,16 @@ export const settings = {
 		// Removes support for an HTML mode.
 		html: false,
 	},
+    attributes: {
+        imageLeft: {
+            type: 'string',
+            default: 'http://placehold.it/500'
+        },
+        imageRight: {
+            type: 'string',
+            default: 'http://placehold.it/500'
+        },
+    },
     edit: Edit,
     save,
 };

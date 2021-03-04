@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, MediaUpload } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,10 +29,39 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit( { attributes, setAttributes } ) {
+	function selectImageLeft(value) {
+		setAttributes({ imageLeft: value.sizes.full.url })
+	}
+
+	function selectImageRight(value) {
+		setAttributes({ imageRight: value.sizes.full.url })
+	}
+	
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Todo List – hello from the editor!', 'todo-list' ) }
-		</p>
+		<div { ...useBlockProps() } className="project__imagePair">
+			<div className="project__pairLeft">
+				<MediaUpload 
+					onSelect={selectImageLeft}
+					render={ ({open}) => {
+						return <img 
+							src={attributes.imageLeft}
+							onClick={open}
+							/>;
+					}}
+				/>
+			</div>
+            <div className="project__pairRight">
+				<MediaUpload 
+					onSelect={selectImageRight}
+					render={ ({open}) => {
+						return <img 
+							src={attributes.imageRight}
+							onClick={open}
+							/>;
+					}}
+				/>
+			</div>
+        </div>
 	);
 }
