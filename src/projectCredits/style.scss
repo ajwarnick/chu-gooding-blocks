@@ -1,0 +1,77 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+:root {
+	--cgRed: #cd4b34;
+	--cgGreen: #8fb8b7;
+	--cgGray: #ada9a7;
+	--cgBlack: #1f1f1f;
+	--cgTan: #af9070;
+	--cgWhite: #ffffff;
+
+	--cg12Gutter: 32px;
+	--cg12Margin: 40px;
+}
+
+.project__credits-collaborators {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 32px;
+	margin: 40px;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.project__credits {
+	grid-column-start: 1;
+	grid-column-end: 6;
+}
+
+.project__collaborators {
+	grid-column-start: 6;
+	grid-column-end: 12;
+}
+
+.project__credits,
+.project__collaborators {
+	border-left: 1px solid var(--cgBlack);
+	/* border: 1px solid black; */
+}
+
+.project__credits-collaborators dl {
+	display: inline;
+	margin: 0;
+}
+
+.project__credits-collaborators dt {
+	display: inline;
+	margin-right: 10px;
+}
+
+.project__credits-collaborators dd {
+	display: inline;
+	margin: 0;
+}
+
+.project__credits-collaborators dd:after {
+	content: "\A";
+	white-space: pre;
+}
+
+.content__left {
+	padding: 0px 40px;
+	float: left; /* [1] */
+}
+.content__middle {
+	overflow: auto; /* [2] */
+}

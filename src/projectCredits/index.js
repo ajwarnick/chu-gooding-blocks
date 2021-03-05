@@ -5,23 +5,23 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 
-export const name = 'chu-gooding/project-paragraph';
+export const name = 'chu-gooding/project-credits';
 
 export const settings = {
-    title: 'C , G: Project Paragraph',
+    title: 'C , G: Project Credits',
     description: 'Example block written with ESNext standard and JSX support – build step required.',
     category: 'text',
     icon: 'smiley',
     attributes: {
-        content: {
-            type: 'string',
-            source: 'html',
-            selector: 'p',
-        },
-        direction: {
-            type: 'string',
-            default: null
-        }
+        credits: {
+			type: 'array',
+			default: [{title:'', names:'' }],
+		},
+        collaborators: {
+			type: 'array',
+			// default: [{title:'t1', names:'n1' },{title:'t2', names:'n2' },{title:'t3', names:'n3' }],
+            default: [{title:'', names:'' }],
+		},
     },
     getEditWrapperProps() {
         return {

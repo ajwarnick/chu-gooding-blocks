@@ -32,6 +32,11 @@ export const settings = {
             default: '6'
         }
     },
+    getEditWrapperProps() {
+        return {
+            'data-align': 'full',
+        };
+    },
     edit: Edit,
     save,
 };
