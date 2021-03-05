@@ -1,10 +1,15 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, MediaUpload } from '@wordpress/block-editor';
-import { ToggleControl, PanelBody, PanelRow, CheckboxControl, SelectControl, ColorPicker } from '@wordpress/components';
+import { useBlockProps, MediaUpload, InspectorControls } from '@wordpress/block-editor';
+import { __experimentalRadio as Radio, __experimentalRadioGroup as RadioGroup, PanelBody, PanelRow} from '@wordpress/components';
+import { useState } from '@wordpress/element';
+ 
+
+
 
 import './editor.scss';
 
 export default function Edit( { attributes, setAttributes } ) {
+
 	function selectImageLeft(value) {
 		setAttributes({ imageLeft: value.sizes.full.url })
 	}
@@ -12,47 +17,26 @@ export default function Edit( { attributes, setAttributes } ) {
 	function selectImageRight(value) {
 		setAttributes({ imageRight: value.sizes.full.url })
 	}
+
+	function setDistribution(value){
+		setAttributes({ distribution: value })
+	}
+
+
 	
 	return (
-		<div { ...useBlockProps() } className="project__imagePair">
+		<div { ...useBlockProps() } className={"project__imagePair " + ("option"+attributes.distribution)}>
 			<InspectorControls>
-				<PanelBody
-					title="Most awesome settings ever"
-					initialOpen={true}
-				>
-					{/* <PanelRow>
-						<ToggleControl
-							label="Toggle me"
-							checked={attributes.toggle}
-							onChange={(newval) => setAttributes({ toggle: newval })}
-						/>
-					</PanelRow>
+				<PanelBody title={ 'Column Ratio' } >
 					<PanelRow>
-						<SelectControl
-							label="What's your favorite animal?"
-							value={attributes.favoriteAnimal}
-							options={[
-								{label: "Dogs", value: 'dogs'},
-								{label: "Cats", value: 'cats'},
-								{label: "Something else", value: 'weird_one'},
-							]}
-							onChange={(newval) => setAttributes({ favoriteAnimal: newval })}
-						/>
+						<RadioGroup label="Distribution" checked={attributes.distribution} onChange={setDistribution}>
+							<Radio value="3">1/3</Radio>
+							<Radio value="4">1/2</Radio>
+							<Radio value="6">1/1</Radio>
+							<Radio value="8">2/1</Radio>
+							<Radio value="9">3/1</Radio>
+						</RadioGroup>
 					</PanelRow>
-					<PanelRow>
-						<ColorPicker
-							color={attributes.favoriteColor}
-							onChangeComplete={(newval) => setAttributes({ favoriteColor: newval.hex })}
-							disableAlpha
-						/>
-					</PanelRow>
-					<PanelRow>
-						<CheckboxControl
-							label="Activate lasers?"
-							checked={attributes.activateLasers}
-							onChange={(newval) => setAttributes({ activateLasers: newval })}
-						/>
-					</PanelRow> */}
 				</PanelBody>
 			</InspectorControls>
 			<div className="project__pairLeft" >

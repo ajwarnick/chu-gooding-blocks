@@ -29,24 +29,8 @@ export const settings = {
         },
         distribution: {
             type: 'string',
-            default: 'option6'
-        },
-		toggle: {
-			type: 'boolean',
-			default: true
-		},
-		favoriteAnimal: {
-			type: 'string',
-			default: 'dogs'
-		},
-		favoriteColor: {
-			type: 'string',
-			default: '#DDDDDD'
-		},
-		activateLasers: {
-			type: 'boolean',
-			default: false
-		}
+            default: '6'
+        }
     },
     edit: Edit,
     save,
