@@ -1,0 +1,65 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+:root {
+	--cgRed: #cd4b34;
+	--cgGreen: #8fb8b7;
+	--cgGray: #ada9a7;
+	--cgBlack: #1f1f1f;
+	--cgTan: #af9070;
+	--cgWhite: #ffffff;
+
+	--cg12Gutter: 32px;
+	--cg12Margin: 40px;
+}
+
+.chugooding__related {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: var(--cg12Gutter);
+	margin: 64px var(--cg12Margin) 96px var(--cg12Margin);
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.chugooding__related a {
+	text-decoration: none;
+}
+
+.chugooding__related .related__projects {
+	grid-column-start: 3;
+	grid-column-end: 6;
+	border-left: 3px double var(--cgBlack);
+}
+
+.chugooding__related .related__ets {
+	grid-column-start: 6;
+	grid-column-end: 11;
+	border-left: 1px solid var(--cgBlack);
+}
+
+.related__projects .related__projects-label,
+.related__ets .related__ets-label {
+	padding: 0px var(--cg12Margin);
+	float: left;
+}
+.related__projects .related__projects-projects,
+.related__ets .related__ets-ets {
+	overflow: auto;
+}
+
+.related__projects-projects > ul,
+.related__ets-ets > ul {
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.related__ets-ets .et-number {
+	padding-right: calc(var(--cg12Margin) / 2);
+}

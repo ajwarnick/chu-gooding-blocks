@@ -1,0 +1,14 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.related__PanelBox {
+	max-height: 40vh;
+	overflow: scroll;
+}
+
+.related__PanelBox .components-base-control {
+	margin-bottom: 0;
+}
