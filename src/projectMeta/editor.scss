@@ -1,0 +1,40 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+:root {
+	--cgRed: #cd4b34;
+	--cgGreen: #8fb8b7;
+	--cgGray: #ada9a7;
+	--cgBlack: #1f1f1f;
+	--cgTan: #af9070;
+	--cgWhite: #ffffff;
+
+	--cg12Gutter: 32px;
+	--cg12Margin: 40px;
+
+	--cgBaseFont: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+		Helvetica, sans-serif;
+}
+
+.project__paragraph p {
+	font-family: var(--cgBaseFont);
+}
+
+.project__credits-collaborators .components-button {
+	// background-color: var(--cgBlack);
+	height: 25px;
+	min-width: 24px;
+	padding: 0 !important;
+}
+
+.project__credits-button,
+.project__collaborators-button {
+	margin-top: 16px;
+}
+
+.project__credits-button + .project__credits-button {
+	margin-left: 16px;
+}
