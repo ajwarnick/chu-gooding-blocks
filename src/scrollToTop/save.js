@@ -1,31 +1,22 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
 import { useBlockProps } from '@wordpress/block-editor';
 
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
- *
- * @return {WPElement} Element to render.
- */
 export default function save() {
 	return (
-		<p { ...useBlockProps.save() }>
-			{ __( 'Todo List – hello from the saved content!', 'todo-list' ) }
-		</p>
+		<div { ...useBlockProps.save() } className="toTop">
+			<svg
+				width="30"
+				height="23"
+				viewBox="0 0 30 23"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M1 22L12.6132 1L17.3868 1L29 22"
+					stroke="#1F1F1F"
+					stroke-width="1.5"
+					stroke-miterlimit="10"
+				/>
+			</svg>
+		</div>
 	);
 }

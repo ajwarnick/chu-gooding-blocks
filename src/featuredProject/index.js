@@ -7,10 +7,10 @@ import Edit from './edit';
 import save from './save';
 
 
-export const name = 'chu-gooding/other-list';
+export const name = 'chu-gooding/featured-project';
 
 export const settings = {
-    title: 'Other List',
+    title: 'C , G: Featured Project',
 	description: 'Example block written with ESNext standard and JSX support – build step required.',
     category: 'widgets',
     icon: 'smiley',
@@ -21,14 +21,42 @@ export const settings = {
     attributes: {
         title: {
             type: 'string',
-            selector: 'js-book-details-title',
-            default: 'Hello World'
+            default: ''
         },
-        toggle: {
-            type: 'boolean',
-            selector: 'js-book-details-boolean',
-            default: true
+        link: {
+            type: 'string',
+            default: '#'
+        },
+        featured_media: {
+            type: 'integer'
+        },
+        source_url: {
+            type: 'string',
+            default: ''
+        },
+        height:{
+            type: 'integer'
+        },
+        width:{
+            type: 'integer'
+        },
+        id: {
+            type: 'integer',
+            default: 0
+        },
+        color: {
+            type: 'string',
+            default: '#cd4b34'
+        },
+        colorName: {
+            type: 'string',
+            default: 'red'
         }
+    },
+    getEditWrapperProps() {
+        return {
+            'data-align': 'full',
+        };
     },
     edit: Edit,
     save,

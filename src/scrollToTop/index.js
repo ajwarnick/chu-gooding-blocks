@@ -7,29 +7,17 @@ import Edit from './edit';
 import save from './save';
 
 
-export const name = 'chu-gooding/other-list';
+export const name = 'chu-gooding/to-top';
 
 export const settings = {
-    title: 'Other List',
-	description: 'Example block written with ESNext standard and JSX support – build step required.',
+    title: 'C , G: Scroll to Top',
     category: 'widgets',
-    icon: 'smiley',
+    icon: 'arrow-up-alt',
 	supports: {
 		// Removes support for an HTML mode.
 		html: false,
 	},
-    attributes: {
-        title: {
-            type: 'string',
-            selector: 'js-book-details-title',
-            default: 'Hello World'
-        },
-        toggle: {
-            type: 'boolean',
-            selector: 'js-book-details-boolean',
-            default: true
-        }
-    },
+    
     edit: Edit,
     save,
 };

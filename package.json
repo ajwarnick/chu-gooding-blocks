@@ -16,7 +16,8 @@
 	"dependencies": {
 		"@wordpress/block-editor": "^5.2.9",
 		"@wordpress/blocks": "^7.0.5",
-		"@wordpress/i18n": "^3.18.0"
+		"@wordpress/i18n": "^3.18.0",
+		"swiper": "^6.5.0"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^13.0.3"

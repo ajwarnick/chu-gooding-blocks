@@ -1,45 +1,23 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
 import { useBlockProps } from '@wordpress/block-editor';
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 import './editor.scss';
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
-export default function Edit({ attributes, isSelected, setAttributes, }) {
-	const { title, toggle } = attributes;
-	const toggleSetting = () => setAttributes( { toggle: ! toggle } );
-
+export default function Edit() {
 	return (
-		<p { ...useBlockProps() }>
-			{ title }
-			{ toggle &&
-                <button onClick={ toggleSetting }>Toggle setting</button>
-            }
-			{ !toggle && <h1>Messages: Hello</h1>}
-		</p>
+		<div { ...useBlockProps} className="toTop">
+			<svg
+				width="30"
+				height="23"
+				viewBox="0 0 30 23"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+				d="M1 22L12.6132 1L17.3868 1L29 22"
+				stroke="#1F1F1F"
+				stroke-width="1.5"
+				stroke-miterlimit="10"
+				/>
+			</svg>
+		</div>
 	);
 }
