@@ -15,6 +15,12 @@ export default function Edit( { attributes, setAttributes } ) {
         postType,
         'meta'
     );
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yy = today.getFullYear();
+
+    var dayPlaceholder = mm + '.' + dd + '.' + yy.toString().substring(2);
     // const metaFieldValue = meta['chugooding_meta_block_field_etEventData'];
 
     function updateDate( d ) {
@@ -35,7 +41,7 @@ export default function Edit( { attributes, setAttributes } ) {
                     value={attributes.date}
                     className={"et__header-event-date"}
                     onChange={(date) => updateDate(date)}
-                    placeholder={"DATE (Formated like this: 01.27.83"}
+                    placeholder={"DATE (Formated like this: " + dayPlaceholder}
                 />
             </p>
             <p className={"et__header-event"}>
@@ -45,7 +51,7 @@ export default function Edit( { attributes, setAttributes } ) {
                     className={"et__header-event-time"}
                     allowedFormats={["core/italic"],["core/bold"]}
                     onChange={(time) => updateTime(time)}
-                    placeholder={"Year with a background line..."}
+                    placeholder={"TIME (Formated like this: 1 pm PST"}
                 />
             </p>
         </div>		
