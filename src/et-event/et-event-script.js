@@ -7,6 +7,12 @@
 
     var dayPlaceholder = mm + '.' + dd + '.' + yy.toString().substring(2);
 
+    let pad = (n, width, z) => {
+        z = z || '0';
+        n = n + '';
+        return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+      }
+
 	blocks.registerBlockType( 'chugooding/et-event', {
 		title: 'C , G: Et Event', // The title of block in editor.
 		icon: 'admin-comments', // The icon of block in editor.
