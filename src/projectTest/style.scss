@@ -36,11 +36,21 @@
 .project__header-meta dt {
 	display: inline;
 	margin-right: 10px;
+
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
 }
 
 .project__header-meta dd {
 	display: inline;
 	margin: 0;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
 }
 
 .project__header-meta dd:after {

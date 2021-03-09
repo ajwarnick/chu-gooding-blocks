@@ -1,0 +1,20 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ :root {
+	--cgRed: #cd4b34;
+	--cgGreen: #8fb8b7;
+	--cgGray: #ada9a7;
+	--cgBlack: #1f1f1f;
+	--cgTan: #af9070;
+	--cgWhite: #ffffff;
+
+	--cg12Gutter: 32px;
+	--cg12Margin: 40px;
+
+	--cgBaseFont: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+		Helvetica, sans-serif;
+}

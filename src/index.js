@@ -8,16 +8,18 @@ import * as projectMeta from './projectMeta';
 import * as relatedEtProject from './relatedEtProject';
 import * as scrollToTop from './scrollToTop';
 import * as featuredProject from './featuredProject';
+import * as projectTest from './projectTest';
 
 const blocks = [
-    otherList,
-    projectCredits,
-    projectImagePair,
-    projectParagraph,
-    projectMeta,
-    relatedEtProject,
-    scrollToTop,
-    featuredProject
+    // otherList,
+    projectTest,
+    // projectCredits,
+    // projectImagePair,
+    // projectParagraph,
+    // projectMeta,
+    // relatedEtProject,
+    // scrollToTop,
+    // featuredProject
 ];
 
 function registerBlock( block ) {
