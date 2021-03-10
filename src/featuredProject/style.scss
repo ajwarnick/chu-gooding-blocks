@@ -28,9 +28,8 @@
 }
 
 .chu_gooding__featured-project + .chu_gooding__featured-project {
-	margin-top: -40px;
+	margin-top: calc(-1 * var(--cg12Margin));
 	mix-blend-mode: multiply;
-	/* margin-top: cal(-1 * var(--cg12Margin)); */
 }
 
 .chu_gooding__featured-project.red {

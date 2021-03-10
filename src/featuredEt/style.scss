@@ -5,8 +5,111 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-todo-list {
-	background-color: var(--wp-admin-theme-color);
-	color: #fff;
-	padding: 2px;
+:root {
+	--cgRed: #cd4b34;
+	--cgGreen: #8fb8b7;
+	--cgGray: #ada9a7;
+	--cgBlack: #1f1f1f;
+	--cgTan: #af9070;
+	--cgWhite: #ffffff;
+
+	--cg12Gutter: 32px;
+	--cg12Margin: 40px;
+}
+
+.chu_gooding__featured-et {
+	padding: 0 var(--cg12Margin);
+	background-color: var(--cgGreen);
+
+	min-height: 545px;
+	display: grid;
+}
+.chu_gooding__featured-et > div {
+	display: block;
+	margin: 212px auto 212px auto;
+
+	max-height: 556px;
+	max-width: 78vw;
+}
+
+
+.chu_gooding__featured-et a.chu_gooding__featured-link{
+	color: var(--cgBlack);
+	text-decoration: none;
+
+	display: block;
+	max-height: 556px;
+	max-width: 78vw;
+}
+
+.chu_gooding__featured-et a.chu_gooding__featured-link:hover{
+	color: var(--cgWhite);
+	text-decoration: none;
+}
+
+.chu_gooding__featured-et + .chu_gooding__featured-project {
+	margin-top: calc(-1 * var(--cg12Margin));
+	mix-blend-mode: multiply;
+}
+
+.chu_gooding__featured-project + .chu_gooding__featured-et{
+	margin-top: calc(-1 * var(--cg12Margin));
+	mix-blend-mode: multiply;
+}
+
+.chu_gooding__featured-et + .chu_gooding__featured-et{
+	margin-top: calc(-1 * var(--cg12Margin));
+	mix-blend-mode: multiply;
+}
+
+
+.chu_gooding__featured-et img {
+	max-height: 556px;
+	display: block;
+	margin: auto;
+}
+
+.chu_gooding__featured-et .chu_gooding__featured-et-meta{
+	position: absolute;
+	top: calc(var(--cg12Margin) + var(--cg12Gutter));
+	right: var(--cg12Margin);
+	
+	width: 153px;
+	padding-left: var(--cg12Gutter);
+
+	border-left: 3px double var(--cgBlack);
+}
+
+.chu_gooding__featured-et-meta .chu_gooding__featured-et-meta-label{
+	font-style: italic;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 40px;
+}
+
+.chu_gooding__featured-et-meta .chu_gooding__featured-et-meta-number{
+	text-align: right;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 40px;
+}
+
+
+// is event type ???
+
+
+// just title 
+
+.chu_gooding__featured-et h1.chu_gooding__featured-et-title{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 99.4286px;
+	line-height: 116px;
+
+	text-align: center;
+}
+
+.hidden{
+	display: none;
 }
