@@ -51,7 +51,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         className={"project__header-meta-location"}
                         // allowedFormats={["core/italic"]}
                         onChange={(location) => updateLocation(location)}
-                        placeholder={"Heading with a background line..."}
+                        placeholder={"project location... "}
                     />
                 </dd>
                 <dt>Year</dt>
@@ -62,7 +62,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         className={"project__header-meta-year"}
                         // allowedFormats={["core/italic"]}
                         onChange={(year) => updateYear(year)}
-                        placeholder={"Year with a background line..."}
+                        placeholder={"project year..."}
                     />
                 </dd>
                 <dt>Type</dt>
@@ -73,7 +73,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         className={"project__header-meta-type"}
                         // allowedFormats={["core/italic"]}
                         onChange={(type) => updateType(type)}
-                        placeholder={"Type with a background line..."}
+                        placeholder={"project type..."}
                     />
                 </dd>
                 <dt>Area</dt>
@@ -84,7 +84,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         className={"project__header-meta-area"}
                         // allowedFormats={["core/italic"]}
                         onChange={(area) => updateArea(area)}
-                        placeholder={"5000 sq-ft"}
+                        placeholder={"project area..."}
                     />
                 </dd>
                 <dt>Status</dt>
@@ -95,7 +95,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         className={"project__header-meta-status"}
                         // allowedFormats={["core/italic"]}
                         onChange={(status) => updateStatus(status)}
-                        placeholder={"Status with a background line..."}
+                        placeholder={"project status..."}
                     /> 
                 </dd>
             </dl>

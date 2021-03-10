@@ -22,12 +22,19 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
+export default function save({ attributes }) {
 	return (
-		<div { ...useBlockProps({className: 'chu_gooding__featured-project ' + attributes.colorName}).save() }>
-			<a className={"chu_gooding__featured-link"} href={ attributes.link }>
-				{ attributes.featured_media === 0 ? <h1 className={"chu_gooding__featured-title"}>{ attributes.title }</h1> : <img src={ attributes.source_url } alt={ attributes.title } /> }
-			</a>		
+		<div 
+			{ ...useBlockProps.save({className: 'chu_gooding__featured-project ' + attributes.colorName}) } 
+			data-colorName={attributes.colorName}
+			data-color={attributes.color}
+			data-title={attributes.title}
+			data-project-id={attributes.id}
+		>
+			<a className="chu_gooding__featured-link" href={ attributes.link } rel="noopener noreferrer">
+				{ attributes.featured_media === 0 ? <h1 className={"chu_gooding__featured-title"}>{ attributes.title }</h1> : <img data-featured-media={attributes.featured_media} src={ attributes.source_url } alt={ attributes.title } /> }
+			</a>
+					
 		</div>
 	);
 }

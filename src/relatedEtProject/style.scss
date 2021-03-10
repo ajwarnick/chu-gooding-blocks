@@ -32,7 +32,7 @@
 }
 
 .chugooding__related .related__projects {
-	grid-column-start: 3;
+	grid-column-start: 2;
 	grid-column-end: 6;
 	border-left: 3px double var(--cgBlack);
 }
@@ -62,4 +62,9 @@
 
 .related__ets-ets .et-number {
 	padding-right: calc(var(--cg12Margin) / 2);
+}
+
+.related__ets-label svg{
+	display: inline;
+	padding-left: 8px; 
 }

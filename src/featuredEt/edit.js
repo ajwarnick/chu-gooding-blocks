@@ -77,7 +77,8 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 						<div className={"chu_gooding__featured-et-meta-number"}>{ attributes.et_number }</div>
 						<div className={"hidden"}>
 							<div className={"chu_gooding__featured-et-meta-id"}>{ attributes.id }</div>
-
+							<div className={"chu_gooding__featured-et-meta-title"}>{ attributes.title }</div>
+							<div className={"chu_gooding__featured-et-meta-featured_media"}>{ attributes.featured_media }</div>
 						</div>
 					</div>
 					<a className={"chu_gooding__featured-link"} href={ attributes.link }>

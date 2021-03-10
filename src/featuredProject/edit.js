@@ -54,7 +54,14 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 
 
 	return (
-		<div { ...useBlockProps({className: 'chu_gooding__featured-project ' + attributes.colorName}) }>
+		<div 
+			className={'chu_gooding__featured-project ' + attributes.colorName} 
+			{ ...useBlockProps({className: 'chu_gooding__featured-project ' + attributes.colorName}) }
+			data-colorName={attributes.colorName}
+			data-color={attributes.color}
+			data-title={attributes.title}
+			data-project-id={attributes.id}
+		>
 			<InspectorControls>
 				<PanelBody title={ 'Background Color' } >
 					<PanelRow>
@@ -80,8 +87,8 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 			{ attributes.id === 0 ?
 				<Placeholder instructions="Use block settings to select post to feature and background color"  label="Featured Project" />
 			:
-				<a className={"chu_gooding__featured-link"} href={ "#" }>
-					{ attributes.featured_media === 0 ? <h1 className={"chu_gooding__featured-title"}>{ attributes.title }</h1> : <img src={ attributes.source_url } alt={ attributes.title } /> }
+				<a className="chu_gooding__featured-link" >
+					{ attributes.featured_media === 0 ? <h1 className={"chu_gooding__featured-title"}>{ attributes.title }</h1> : <img data-featured-media={attributes.featured_media} src={ attributes.source_url } alt={ attributes.title } /> }
 				</a>
 			}
 		</div>

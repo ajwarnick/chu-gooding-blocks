@@ -7,7 +7,7 @@ import Edit from './edit';
 import save from './save';
 
 
-export const name = 'chu-gooding/featured-project';
+export const name = 'chu-gooding/featured-et';
 
 export const settings = {
     title: 'C , G: Featured Et',
@@ -16,11 +16,12 @@ export const settings = {
     icon: 'smiley',
 	supports: {
 		// Removes support for an HTML mode.
-		html: false,
+		// html: false,
 	},
     attributes: {
         title: {
             type: 'string',
+            source: 'html',
             selector: '.chu_gooding__featured-et-title',
             default: ''
         },
@@ -41,10 +42,16 @@ export const settings = {
             default: ''
         },
         featured_media: {
-            type: 'integer'
+            type: 'integer',
+            source: 'html',
+            selector: '.chu_gooding__featured-et-meta-featured_media',
+            default: 0
         },
         source_url: {
             type: 'string',
+            ource: 'attribute',
+            selector: 'img',
+            attribute: 'src',
             default: ''
         },
         height:{

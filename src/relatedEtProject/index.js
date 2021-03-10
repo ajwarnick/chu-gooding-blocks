@@ -21,11 +21,31 @@ export const settings = {
     attributes: {
         relatedProjects: {
 			type: 'array',
-			default: [33,22],
+            // source: 'children',
+			// selector: '.projectData',
+            // query: {
+            //     val: {
+            //         type: 'integer',
+            //         selector: 'li',
+            //         source: 'attribute',
+            //         attribute: 'data-id',
+            //     }
+            // },
+            // default: []
 		},
         relatedEt: {
 			type: 'array',
-            default: [11,44],
+            // source: 'query',
+			// selector: '.etData',
+            // query: {
+            //     val: {
+            //         type: 'integer',
+            //         selector: '.etData li',
+            //         source: 'attribute',
+            //         attribute: 'data-id',
+            //     }
+            // },
+            // default: []
 		}
     },
     getEditWrapperProps() {
