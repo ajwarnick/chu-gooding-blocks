@@ -10,6 +10,8 @@ import * as scrollToTop from './scrollToTop';
 import * as featuredProject from './featuredProject';
 import * as featuredEt from './featuredEt';
 import * as projectTest from './projectTest';
+import * as etEventDateAndTime from './etEventDataAndTime';
+import * as etMeta from './etMeta';
 
 const blocks = [
     // otherList,
@@ -21,7 +23,8 @@ const blocks = [
     // relatedEtProject,
     // scrollToTop,
     // featuredProject,
-    // featuredEt
+    // featuredEt,
+    // etEventDateAndTime,
 ];
 
 function registerBlock( block ) {

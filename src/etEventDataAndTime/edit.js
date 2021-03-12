@@ -13,6 +13,7 @@ export default function Edit( { attributes, setAttributes } ) {
     const [ meta, setMeta ] = useEntityProp(
         'postType',
         postType,
+        // 'post',
         'meta'
     );
     var today = new Date();
@@ -21,11 +22,12 @@ export default function Edit( { attributes, setAttributes } ) {
     var yy = today.getFullYear();
 
     var dayPlaceholder = mm + '.' + dd + '.' + yy.toString().substring(2);
-    // const metaFieldValue = meta['chugooding_meta_block_field_etEventData'];
+    const metaFieldValue = meta['chugooding_meta_block_field_etEventData'];
 
     function updateDate( d ) {
         setAttributes( {date: d} );
         setMeta( { ...meta, 'chugooding_meta_block_field_etEventData': d } );
+        console.log(meta);
     }
     function updateTime( t ) {
         setAttributes( {time: t} );
@@ -41,7 +43,7 @@ export default function Edit( { attributes, setAttributes } ) {
                     value={attributes.date}
                     className={"et__header-event-date"}
                     onChange={(date) => updateDate(date)}
-                    placeholder={"DATE (Formated like this: " + dayPlaceholder}
+                    placeholder={"DATE (Formated like this: " + dayPlaceholder + ")"}
                 />
             </p>
             <p className={"et__header-event"}>
@@ -51,7 +53,7 @@ export default function Edit( { attributes, setAttributes } ) {
                     className={"et__header-event-time"}
                     allowedFormats={["core/italic"],["core/bold"]}
                     onChange={(time) => updateTime(time)}
-                    placeholder={"TIME (Formated like this: 1 pm PST"}
+                    placeholder={"TIME (Formated like this: 1 pm PST)"}
                 />
             </p>
         </div>		

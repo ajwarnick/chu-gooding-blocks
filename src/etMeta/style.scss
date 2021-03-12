@@ -1,0 +1,11 @@
+.warning input.components-text-control__input {
+	border-bottom-color: var(--cgRed);
+	border-top-color: var(--cgRed);
+	border-left-color: var(--cgRed);
+	border-right-color: var(--cgRed);
+}
+
+.warning .components-base-control__help {
+	color: var(--cgRed);
+}
+// :root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-border-width-focus:2px}
