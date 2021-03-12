@@ -26,6 +26,7 @@ export const settings = {
                     source: 'attribute',
                     attribute: 'alt',
                 },
+            },
 			default: [{title:'', names:'' }],
 		},
         collaborators: {

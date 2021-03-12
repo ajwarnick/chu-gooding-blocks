@@ -1,19 +1,14 @@
 import { registerPlugin } from '@wordpress/plugins';
 import { PluginDocumentSettingPanel } from '@wordpress/edit-post';
-import { withState, useSelect } from '@wordpress/compose';
-import { TextControl, ToggleControl, Panel, PanelBody, PanelRow } from '@wordpress/components';
-import { useEntityProp } from '@wordpress/core-data';
+import { withSelect, withDispatch, dispatch, subscribe, select } from '@wordpress/data';
+import { TextControl } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
-import apiFetch from '@wordpress/api-fetch';
+
 
 import './style.scss';
 
-let etArray = Array.from(Array(0));
+// const Icon = () => ( <svg height="18" widths="15"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15"><path class="st0" d="M3.4,6.3h11.5l0.5,8.7h2.3V0H3.4V6.3z" fill="#1F1F1F"/>å</svg>  )
 
-
-
-
-const Icon = () => ( <svg height="18" widths="15"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 15"><path class="st0" d="M3.4,6.3h11.5l0.5,8.7h2.3V0H3.4V6.3z" fill="#1F1F1F"/>å</svg>  )
 const pad = (n, width, z) => {
     z = z || '0';
     n = n + '';
@@ -21,73 +16,106 @@ const pad = (n, width, z) => {
     length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
-let testSet = true;
-let num = '004'
-// const [meta, setMeta] = useEntityProp('postType', 'et', 'meta');
+let ets;
+let help = 'Change with caution!';
+let classes = '';
+let originalEtNum;
 
-const setNumber = (c) => {
-    console.log(c);
-    num = c;
-    // setMeta( { ...meta, 'chugooding_meta_block_field_etNumber': c } );
-}
+select( 'core' ).getEntityRecords( 'postType', 'et' )
 
-const EtControl = withState( {
-    etNumber: '',
-    className: '',
-    help: 'Change with caution!'
-} )( ( { etNumber, setState, className, help } ) => {
-    if(testSet){
-        apiFetch( { path: '/wp/v2/ets' } ).then( posts => {
-            etArray = posts;
-            setNumber(pad(etArray.length + 1,3));
-            setState( { etNumber: pad(etArray.length + 1,3) } );
-            testSet = false;
-        } );
+const unsubscribe = subscribe( () => {
+    const { isResolving } = select( 'core/data' );
+    const args = [ 'postType', 'et' ];
+
+    if ( isResolving( 'core', 'getEntityRecords', args ) ) {
+        // console.log( 'still resolving' );
+    } else {
+        const data = select( 'core' ).getEntityRecords( 'postType', 'et' );
+        ets = data;
+
+        if (!select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber']) {
+            dispatch('core/editor').editPost({ meta: { chugooding_meta_block_field_etNumber: pad(ets.length, 3) } });
+        }
+
+        unsubscribe();
     }
+} );
 
-    // setState( { etNumber: num } );
-    
-    return ( 
+let TextController = props => (
     <TextControl
-        label="Current Et Number"
-        value={ etNumber }
-        className={ className }
-        onChange={ ( etNumber ) => {
-            // console.log( etNumber );
-            // console.log( Number(etNumber));
-            let dups = etArray.filter(et => et.meta.chugooding_meta_block_field_etNumber == etNumber);
-            if( dups.length !== 0){
-                setNumber(pad(etArray.length + 1,3));
-            }
-            let c = ( dups.length === 0 ? '' : 'warning' );
-            let h = ( dups.length === 0 ? 'Duplicate Et Number' : 'Change with caution!' );
-
-            setState( { etNumber: etNumber, className: c, help: h } );
-        } }
-        help={help}
+        value={props.text_metafield}
+        label={'Current Et Number'}
+        onChange={(value) => props.onMetaFieldChange(value)}
+        help={props.text_help}
+        className={props.class_name}
     />
-)} );
+);
+
+TextController = withSelect(
+    (select) => {
+        return {
+            text_metafield: select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber'],
+            text_help: help,
+            class_name: classes
+        }
+    }
+)(TextController);
+
+TextController = withDispatch(
+    (dispatch) => {
+        return {
+            onMetaFieldChange: (value) => {
+                if(ets){
+                    if(value.length > 3){
+                        help = 'Et Number is too long!';
+                        classes = 'warning';
+                        dispatch('core/editor').editPost({ meta: { chugooding_meta_block_field_etNumber: value } });
+                    }
+
+                    else if(value === originalEtNum){
+                        help = 'Change with caution!';
+                        classes = '';
+                        dispatch('core/editor').editPost({ meta: { chugooding_meta_block_field_etNumber: value } });
+                    }
+                    
+                    else if(ets.filter(et => et.meta.chugooding_meta_block_field_etNumber == value ).length > 0){
+                        help = 'Et Number is taken!';
+                        classes = 'warning';
+                        dispatch('core/editor').editPost({ meta: { chugooding_meta_block_field_etNumber: value } });
+                    }
+                    
+                    else {
+                        help = 'Change with caution!';
+                        classes = '';
+                        dispatch('core/editor').editPost({ meta: { chugooding_meta_block_field_etNumber: value } });
+                    }
+                }
+            }
+        }
+    }
+)(TextController);
 
 const PluginDocumentSettingPanelDemo = () => {
-    const type = wp.data.select('core/editor').getCurrentPostType();
-    const isEt = ((type == 'et') ? true : false);
-   
-    return ( 
+    originalEtNum = select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber'];
+    let etNumber;
+
+    if (wp.data.select( 'core/editor' ).getCurrentPostType() == 'et') {
+        etNumber = (
+                <PluginDocumentSettingPanel name="et-number" title="Et Number" className="chu-gooding-et-number" opened={false}>
+                <TextController />
+            </PluginDocumentSettingPanel>
+        )
+    } else {
+        etNumber = (
+            <span></span>
+        )
+    }
+    return (
         <Fragment>
-            {isEt ? (
-                <PluginDocumentSettingPanel
-                    name="et-number"
-                    title="Et Number"
-                    className="et-number"
-                >
-                    <br/><br/>
-                    <EtControl />
-                </PluginDocumentSettingPanel>
-            ) : (
-                <br/>
-            )}
+            {etNumber}
         </Fragment>
-)};
+    )
+};
  
 registerPlugin( 'plugin-document-setting-panel-demo', {
     render: PluginDocumentSettingPanelDemo,
