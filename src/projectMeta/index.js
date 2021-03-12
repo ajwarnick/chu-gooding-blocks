@@ -5,7 +5,7 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 
-export const name = 'chu-gooding/project-test';
+export const name = 'chu-gooding/project-meta';
 
 export const settings = {
     title: 'C , G: Project Meta',

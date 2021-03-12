@@ -4,22 +4,20 @@ import * as otherList from './otherList';
 import * as projectImagePair from './projectImagePair';
 import * as projectParagraph from './projectParagraph';
 import * as projectCredits from './projectCredits';
-// import * as projectMeta from './projectMeta';
 import * as relatedEtProject from './relatedEtProject';
 import * as scrollToTop from './scrollToTop';
 import * as featuredProject from './featuredProject';
 import * as featuredEt from './featuredEt';
-import * as projectTest from './projectTest';
+import * as projectMeta from './projectMeta';
 import * as etEventDateAndTime from './etEventDataAndTime';
 import * as etMeta from './etMeta';
 
 const blocks = [
     // otherList,
-    // projectTest,
+    projectMeta,
     projectCredits,
     // projectImagePair,
     // projectParagraph,
-    // projectMeta,
     // relatedEtProject,
     // scrollToTop,
     // featuredProject,
