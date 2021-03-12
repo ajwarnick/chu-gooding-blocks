@@ -11,11 +11,16 @@ export default function Edit( { attributes, setAttributes } ) {
 	const blockProps = useBlockProps();
 
 	const updateText = (value, index, field, group) => {
-		const array = JSON.parse(attributes[group]);
-		console.log(array)
-		setAttributes({ 
-			credits: JSON.stringify(newVals), 
-		});
+		let n = attributes[group][index];
+		n[field] = value;
+
+		const newVals = [
+			...attributes[group].slice(0, index),
+			{...attributes[group][index], n},
+			...attributes[group].slice ( index + 1 )
+		];
+
+		setAttributes({ credits: newVals });
 	}
 	
 	const updateFoo = (val, index, obj) => {
@@ -48,7 +53,6 @@ export default function Edit( { attributes, setAttributes } ) {
 									className="project__credits-title"
 									value={ value.title }
 									allowedFormats={ [ 'core/italic' ] } 
-									// onChange={ ( value ) => updateFoo(value, index, 'title') }
 									onChange={ ( content ) => updateText(content, index, 'title', 'credits') }
 									placeholder={ 'Title(s)...' }
 								/>	
