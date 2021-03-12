@@ -32,9 +32,10 @@ const unsubscribe = subscribe( () => {
     } else {
         const data = select( 'core' ).getEntityRecords( 'postType', 'et' );
         ets = data;
-
-        if (!select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber']) {
-            dispatch('core/editor').editPost({ meta: { chugooding_meta_block_field_etNumber: pad(ets.length, 3) } });
+        if (wp.data.select( 'core/editor' ).getCurrentPostType() == 'et') {
+            if (!select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber']) {
+                dispatch('core/editor').editPost({ meta: { chugooding_meta_block_field_etNumber: pad(ets.length, 3) } });
+            }
         }
 
         unsubscribe();
@@ -96,10 +97,10 @@ TextController = withDispatch(
 )(TextController);
 
 const PluginDocumentSettingPanelDemo = () => {
-    originalEtNum = select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber'];
     let etNumber;
 
     if (wp.data.select( 'core/editor' ).getCurrentPostType() == 'et') {
+        originalEtNum = select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber'];
         etNumber = (
                 <PluginDocumentSettingPanel name="et-number" title="Et Number" className="chu-gooding-et-number" opened={false}>
                 <TextController />
