@@ -1,24 +1,55 @@
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
+
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
- *
- * @return {WPElement} Element to render.
- */
 export default function save( { attributes } ) {
 	return (
-		<div {...blockProps} className="project__credits-collaborators">
-			hi
+		<div { ...useBlockProps.save() } className="project__credits-collaborators">
+			<div class="project__credits">
+				<div class="content__left">
+					Credits
+				</div>
+				<div class="content__middle">
+					{attributes.credits.map((value,index) => {
+						return (
+							<div>
+								{ value.title != '' ?
+									<RichText.Content className="project__credits-title" tagName="span" value={ value.title } />
+								:
+									<span className="project__credits-title empty"></span>
+								}
+								{ value.names != '' ?
+									<RichText.Content className="project__credits-names" tagName="span" value={ value.names } />
+								:
+									<span className="project__credits-names empty"></span>
+								}
+							</div>
+						)
+					})}	
+				</div>
+			</div>
+			<div class="project__collaborators">
+				<div class="content__left">
+					Collaborators
+				</div>
+				<div class="content__middle">
+					{attributes.collaborators.map((value,index) => {
+						return (
+							<div>
+								{ value.title != '' ?
+									<RichText.Content className="project__collaborators-title" tagName="span" value={ value.title } />
+								:
+									<span className="project__collaborators-title empty"></span>
+								}
+								{ value.names != '' ?
+									<RichText.Content className="project__collaborators-names" tagName="span" value={ value.names } />								
+								:
+									<span className="project__collaborators-names empty"></span>
+								}
+							</div>
+						)
+					})}	
+				</div>
+			</div>
 		</div>
 		
 	);

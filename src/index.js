@@ -16,7 +16,7 @@ import * as etMeta from './etMeta';
 const blocks = [
     // otherList,
     // projectTest,
-    // projectCredits,
+    projectCredits,
     // projectImagePair,
     // projectParagraph,
     // projectMeta,

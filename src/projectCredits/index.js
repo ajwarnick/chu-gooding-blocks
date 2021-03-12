@@ -15,24 +15,24 @@ export const settings = {
     attributes: {
         credits: {
 			type: 'array',
-            query: {
-                url: {
-                    type: 'string',
-                    source: 'attribute',
-                    attribute: 'src',
-                },
-                alt: {
-                    type: 'string',
-                    source: 'attribute',
-                    attribute: 'alt',
-                },
-            },
-			default: [{title:'', names:'' }],
+            // query: {
+            //     title: {
+            //         type: 'string',
+            //         source: 'html',
+            //         selctor: 'src',
+            //     },
+            //     names: {
+            //         type: 'string',
+            //         source: 'html',
+            //         attribute: 'alt',
+            //     },
+            // },
+			default: [{title:'Professor', names:'Anthony Warnick' }],
 		},
         collaborators: {
 			type: 'array',
 			// default: [{title:'t1', names:'n1' },{title:'t2', names:'n2' },{title:'t3', names:'n3' }],
-            default: [{title:'', names:'' }],
+            default: [{title:'Lover', names:'Danni' }],
 		},
     },
     getEditWrapperProps() {

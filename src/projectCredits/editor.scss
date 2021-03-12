@@ -25,16 +25,67 @@
 
 .project__credits-collaborators .components-button {
 	// background-color: var(--cgBlack);
-	height: 25px;
-	min-width: 24px;
-	padding: 0 !important;
+    border-radius: 2px;
+    padding: 0;
+    width: 24px;
+    height: 24px;
 }
+
+.project__credits-title,
+.project__credits-names,
+.project__collaborators-title,
+.project__collaborators-names{
+	display: inline-block;
+	min-width: 80px;
+}
+
+.project__credits-collaborators .components-button.has-icon .dashicon {
+	margin-right: 2px;
+}
+
+.project__credits-button .button:focus,
+.project__collaborators-button .button:focus {
+	outline: none;
+  }
+
 
 .project__credits-button,
 .project__collaborators-button {
 	margin-top: 16px;
 }
 
-.project__credits-button + .project__credits-button {
+.project__credits-button + .project__credits-button,
+.project__collaborators-button + .project__collaborators-button {
 	margin-left: 16px;
 }
+
+.project__credits-button.is-tertiary:hover:not(:disabled),
+.project__collaborators-button.is-tertiary:hover:not(:disabled),
+.project__credits-button.is-secondary:hover:not(:disabled),
+.project__collaborators-button.is-secondary:hover:not(:disabled) {
+    color: white;
+    // color: var(--wp-admin-theme-color-darker-10);
+	background-color: #006ba1;
+	background-color: var(--wp-admin-theme-color-darker-10);
+    box-shadow: inset 0 0 0 1px #006ba1;
+    box-shadow: inset 0 0 0 1px var(--wp-admin-theme-color-darker-10);
+}
+
+
+.project__credits-button.is-destructive,
+.project__collaborators-button.is-destructive {
+	color: #cc1818;
+    color: var(--cgRed);
+	box-shadow: inset 0 0 0 1px #cc1818;
+    box-shadow: inset 0 0 0 1px var(--cgRed);
+}
+
+.project__credits-button.is-destructive:hover:not(:disabled),
+.project__collaborators-button.is-destructive:hover:not(:disabled){
+	color: white;
+	background-color: #cc1818;
+	background-color: var(--cgRed);
+    box-shadow: inset 0 0 0 1px #cc1818;
+	box-shadow: inset 0 0 0 1px var(--cgRed);
+}
+
