@@ -31,9 +31,12 @@ export default function save({ attributes }) {
 			data-title={attributes.title}
 			data-project-id={attributes.id}
 		>
-			<a className="chu_gooding__featured-link" href={ attributes.link } rel="noopener noreferrer">
-				{ attributes.featured_media === 0 ? <h1 className={"chu_gooding__featured-title"}>{ attributes.title }</h1> : <img data-featured-media={attributes.featured_media} src={ attributes.source_url } alt={ attributes.title } /> }
-			</a>
+			<figure>
+				<a className="chu_gooding__featured-link" href={ attributes.link } rel="noopener noreferrer">
+					{ attributes.featured_media === 0 ? <h1 className={"chu_gooding__featured-title"}>{ attributes.title }</h1> : <img data-featured-media={attributes.featured_media} src={ attributes.source_url } alt={ attributes.title } /> }
+				</a>
+			</figure>
+			
 					
 		</div>
 	);

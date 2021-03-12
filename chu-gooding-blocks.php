@@ -150,4 +150,5 @@ function chu_gooding_blocks_init() {
 	);
 	
 }
+
 add_action( 'init', 'chu_gooding_blocks_init' );

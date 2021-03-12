@@ -87,10 +87,13 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 			{ attributes.id === 0 ?
 				<Placeholder instructions="Use block settings to select post to feature and background color"  label="Featured Project" />
 			:
-				<a className="chu_gooding__featured-link" >
-					{ attributes.featured_media === 0 ? <h1 className={"chu_gooding__featured-title"}>{ attributes.title }</h1> : <img data-featured-media={attributes.featured_media} src={ attributes.source_url } alt={ attributes.title } /> }
-				</a>
+				<figure>
+					<a className="chu_gooding__featured-link" >
+						{ attributes.featured_media === 0 ? <h1 className={"chu_gooding__featured-title"}>{ attributes.title }</h1> : <img data-featured-media={attributes.featured_media} src={ attributes.source_url } alt={ attributes.title } /> }
+					</a>
+				</figure>
 			}
 		</div>
 	);
 }
+

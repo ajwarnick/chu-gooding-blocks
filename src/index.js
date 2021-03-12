@@ -14,11 +14,11 @@ import * as projectTest from './projectTest';
 const blocks = [
     // otherList,
     // projectTest,
-    // projectCredits,
+    projectCredits,
     // projectImagePair,
     // projectParagraph,
     // projectMeta,
-    relatedEtProject,
+    // relatedEtProject,
     // scrollToTop,
     // featuredProject,
     // featuredEt

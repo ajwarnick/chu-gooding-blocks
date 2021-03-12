@@ -3,45 +3,21 @@ import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { CheckboxControl, PanelBody, PanelRow, Placeholder } from '@wordpress/components';
 import { Fragment }  from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
-
+import {decodeEntities} from './decodeEntities.js';
 import './editor.scss';
 
 
-
-
-let projectArray = Array.from(Array(0));
-apiFetch( { path: '/wp/v2/projects' } ).then( posts => {
-	projectArray = posts;
-} );
-
-let etArray = Array.from(Array(0));
-apiFetch( { path: '/wp/v2/ets' } ).then( posts => {
-	etArray = posts;
-} );
-
-const decodeEntities = (function() {
-	// this prevents any overhead from creating the object each time
-	var element = document.createElement('div');
-  
-	function decodeHTMLEntities (str) {
-	  if(str && typeof str === 'string') {
-		// strip script/html tags
-		str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
-		str = str.replace(/<\/?\w(?:[^"'>]|"[^"]*"|'[^']*')*>/gmi, '');
-		element.innerHTML = str;
-		str = element.textContent;
-		element.textContent = '';
-	  }
-  
-	  return str;
-	}
-  
-	return decodeHTMLEntities;
-})();
-
-
-
 export default function Edit({ attributes, isSelected, setAttributes, }) {
+	let projectArray = Array.from(Array(0));
+	apiFetch( { path: '/wp/v2/projects' } ).then( posts => {
+		projectArray = posts;
+	} );
+
+	let etArray = Array.from(Array(0));
+	apiFetch( { path: '/wp/v2/ets' } ).then( posts => {
+		etArray = posts;
+	} );
+
 	const EtList = () => {
 		if( attributes.relatedEt.length > 0 ){
 			return (
@@ -107,7 +83,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 			<div className="chugooding__related">
 				<div className="related__projects">
 					<div className="related__projects-label">
-					Related Work
+						Related Work
 					</div>
 					<div className="related__projects-projects">
 						<ul>
@@ -117,7 +93,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 				</div>
 				<div className="related__ets">
 					<div className="related__ets-label">
-						Related <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 5.07097H8.86622L9.23411 12H11V0H0V5.07097Z" fill="#1F1F1F"/></svg>
+						Related <span className="test"></span>
 					</div>
 					<div className="related__ets-ets">
 					<ul>

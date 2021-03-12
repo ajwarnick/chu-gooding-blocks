@@ -15,6 +15,17 @@ export const settings = {
     attributes: {
         credits: {
 			type: 'array',
+            query: {
+                url: {
+                    type: 'string',
+                    source: 'attribute',
+                    attribute: 'src',
+                },
+                alt: {
+                    type: 'string',
+                    source: 'attribute',
+                    attribute: 'alt',
+                },
 			default: [{title:'', names:'' }],
 		},
         collaborators: {
