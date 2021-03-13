@@ -19,6 +19,12 @@
 
 .chu_gooding__featured-project {
 	padding: 0 var(--cg12Margin);
+	min-height: 40vh;
+	display: grid;
+}
+
+.chu_gooding__featured-project .components-placeholder{
+	margin: auto;
 }
 
 .chu_gooding__featured-project img {

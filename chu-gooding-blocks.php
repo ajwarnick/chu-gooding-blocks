@@ -126,8 +126,29 @@ function chu_gooding_blocks_init() {
 			'editor_script' => 'chugooding-block-editor',
 			'editor_style'  => 'chugooding-block-editor',
 			'style'         => 'chugooding-block',
+			'render_callback' => 'render_featured_project'
 		)
 	);
+
+	function render_featured_project ($attributes){
+		$featured_img_url = get_the_post_thumbnail_url($attributes['id'],'full'); 
+		$title = get_the_title($attributes['id']);
+		$color_name = $attributes['colorName'];
+		$permalink = get_permalink( $attributes['id'] ); 
+
+		ob_start();
+		echo	'<div class="chu_gooding__featured-project '.$color_name.'" >';
+		echo		'<a class="chu_gooding__featured-link" href="'.$permalink.'">';
+						if (has_post_thumbnail( $attributes['id'] ) ){
+							echo '<img  src='.$featured_img_url.' alt='.$title.' /> ';
+						}else{
+							echo '<h1 class="chu_gooding__featured-title">'.$title.'</h1>';
+						}
+		echo 		'</a>';
+		echo 	'</div>';
+		return ob_get_clean();
+	}
+
 
 	// chu-gooding/featured-et
 	register_block_type(

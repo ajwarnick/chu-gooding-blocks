@@ -14,13 +14,13 @@ import * as etMeta from './etMeta';
 
 const blocks = [
     // otherList,
-    projectMeta,
-    projectCredits,
+    // projectMeta,
+    // projectCredits,
     // projectImagePair,
     // projectParagraph,
     // relatedEtProject,
     // scrollToTop,
-    // featuredProject,
+    featuredProject,
     // featuredEt,
     // etEventDateAndTime,
 ];
