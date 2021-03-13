@@ -41,8 +41,8 @@ export default function Edit( { attributes, setAttributes } ) {
 
 
 	return (
-		<div {...blockProps}>
-            <dl className={ "project__header-meta"}>
+		<div {...blockProps} className={ "project__header-meta-editor"}>
+            <dl>
                 <dt>Location</dt>
                 <dd>
                     <RichText

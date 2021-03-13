@@ -47,6 +47,11 @@ export const settings = {
     supports: {
         html: true,
     },
+    getEditWrapperProps() {
+        return {
+            'data-align': 'full',
+        };
+    },
     edit: Edit,
     save,
 };
