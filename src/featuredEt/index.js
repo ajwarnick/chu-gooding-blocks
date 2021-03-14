@@ -19,60 +19,23 @@ export const settings = {
 		// html: false,
 	},
     attributes: {
-        title: {
-            type: 'string',
-            source: 'html',
-            selector: '.chu_gooding__featured-et-title',
-            default: ''
+        title:{
+            type:'string',
         },
-        link: {
-            type: 'string',
-            selector: '.chu_gooding__featured-link',
-            attribute: 'href',
-            default: '#'
+        ets:{
+            type: 'object'
         },
-        et_number: {
-            type: 'integer',
-            source: 'html',
-            selector: '.chu_gooding__featured-et-meta-number',
-            default: '014'
+        url:{    
+            type:'string',
         },
         type: {
             type: 'string',
-            default: ''
         },
-        featured_media: {
-            type: 'integer',
-            source: 'html',
-            selector: '.chu_gooding__featured-et-meta-featured_media',
-            default: 0
-        },
-        source_url: {
+        num: {
             type: 'string',
-            ource: 'attribute',
-            selector: 'img',
-            attribute: 'src',
-            default: ''
-        },
-        height:{
-            type: 'integer',
-            source: 'attribute',
-            selector: 'img',
-            attribute: 'height',
-            default: 0
-        },
-        width:{
-            type: 'integer',
-            source: 'attribute',
-            selector: 'img',
-            attribute: 'width',
-            default: 0
         },
         id: {
-            type: 'integer',
-            source: 'html',
-            selector: '.chu_gooding__featured-et-meta-id',
-            default: 0
+            type: 'string',
         },
     },
     getEditWrapperProps() {
