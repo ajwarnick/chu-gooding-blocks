@@ -10,7 +10,9 @@ import * as featuredProject from './featuredProject';
 import * as featuredEt from './featuredEt';
 import * as projectMeta from './projectMeta';
 import * as etEventDateAndTime from './etEventDataAndTime';
+import * as etAuthor from './etAuthor';
 import * as etMeta from './etMeta';
+
 
 const blocks = [
     // otherList,
@@ -20,8 +22,8 @@ const blocks = [
     // projectParagraph,
     // relatedEtProject,
     // scrollToTop,
-    featuredProject,
-    // featuredEt,
+    // featuredProject,
+    featuredEt,
     // etEventDateAndTime,
 ];
 

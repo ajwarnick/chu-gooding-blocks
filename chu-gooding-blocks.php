@@ -99,6 +99,36 @@ function chu_gooding_blocks_init() {
 		)
 	);
 
+	function render_frelated($attributes){
+		// 	<div className="chugooding__related">
+		// 		<div className="related__projects">
+		// 			<div className="related__projects-label">
+		// 			Related Work
+		// 			</div>
+		// 			<div className="related__projects-projects" >
+		// 				<ul className="projectData">
+		// 					{projectArray.filter(value => attributes.relatedProjects.includes(value.id)).map((value,index)=>{
+		// 						return <li data-id={value.id}><a href={value.link}>{value.title.rendered}</a></li>
+		// 					})}
+		// 				</ul>
+		// 			</div>
+		// 		</div>
+		// 		<div className="related__ets">
+		// 			<div className="related__ets-label">
+		// 				Related <span className="test"></span>
+		// 			</div>
+		// 			<div className="related__ets-ets" >
+		// 				<ul className="etData">
+		// 					{etArray.filter(value => attributes.relatedEt.includes(value.id)).map((value,index)=>{
+		// 						return <li data-id={value.id}><a href={value.link}><span className="et-number">014</span><span className="et-title">{ decodeEntities(value.title.rendered) }</span></a></li>
+		// 					})}
+		// 				</ul>
+		// 			</div>
+		// 		</div>
+		// 	</div>
+
+	}
+
 	// chu-gooding/project-test
 	register_block_type(
 		'chu-gooding/project-test',
@@ -126,7 +156,7 @@ function chu_gooding_blocks_init() {
 			'editor_script' => 'chugooding-block-editor',
 			'editor_style'  => 'chugooding-block-editor',
 			'style'         => 'chugooding-block',
-			'render_callback' => 'render_featured_project'
+			'render_callback' => 'render_featured_project',
 		)
 	);
 
@@ -157,8 +187,30 @@ function chu_gooding_blocks_init() {
 			'editor_script' => 'chugooding-block-editor',
 			'editor_style'  => 'chugooding-block-editor',
 			'style'         => 'chugooding-block',
+			'render_callback' => 'render_featured_et',
 		)
 	);
+
+
+	function render_featured_et($attributes){
+		$featured_img_url = get_the_post_thumbnail_url($attributes['id'],'full'); 
+		$title = get_the_title($attributes['id']);
+		$permalink = get_permalink( $attributes['id'] ); 
+		// <div>
+		// 	<div className={"chu_gooding__featured-et-meta"}>
+		// 		<div className={"chu_gooding__featured-et-meta-label"}>Et</div>
+		// 		<div className={"chu_gooding__featured-et-meta-number"}>{ attributes.et_number }</div>
+		// 		<div className={"hidden"}>
+		// 			<div className={"chu_gooding__featured-et-meta-id"}>{ attributes.id }</div>
+		// 			<div className={"chu_gooding__featured-et-meta-title"}>{ attributes.title }</div>
+		// 			<div className={"chu_gooding__featured-et-meta-featured_media"}>{ attributes.featured_media }</div>
+		// 		</div>
+		// 	</div>
+		// 	<a className={"chu_gooding__featured-link"} href={ attributes.link }>
+		// 		{ attributes.featured_media === 0 ? <h1 className={"chu_gooding__featured-et-title"}>{ attributes.title }</h1> : <img src={ attributes.source_url } width={attributes.width} height={attributes.height} alt={ attributes.title } /> }
+		// 	</a>
+		// </div>
+	}
 
 	// chu-gooding/et-event-date-and-time
 	register_block_type(

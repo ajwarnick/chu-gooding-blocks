@@ -1,8 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { ColorPalette, PanelBody, PanelRow, Placeholder, SelectControl } from '@wordpress/components';
-import { withState } from '@wordpress/compose';
-import { Fragment } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
 
 import './editor.scss';
@@ -34,7 +32,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 				result = attributes.projects.find(obj => obj.id == attributes.id);
 
 				setAttributes({title: result.title.rendered})
-				getFeaturerMedia(r.featured_media);
+				getFeaturerMedia(result.featured_media);
 			}
 
 		} );
@@ -97,7 +95,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 								onChange={ changeFeaturedProject  }
 							/>
 						:	
-							<span>Projects Bottom...</span>
+							<span>Projects Loading...</span>
 						}
 					</PanelRow>
 				</PanelBody>

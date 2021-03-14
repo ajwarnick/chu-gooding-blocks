@@ -15,30 +15,21 @@ export const settings = {
     category: 'widgets',
     icon: 'smiley',
 	supports: {
-		// Removes support for an HTML mode.
 		html: false,
 	},
     attributes: {
         relatedProjects: {
 			type: 'array',
-            selector: '.projectData li',
-            query: {
-                type: 'number',
-                source: 'attribute',
-                attribute: 'data-id',
-            },
-            default: []
 		},
         relatedEt: {
 			type: 'array',
-            selector: '.etData li',
-            query: {
-                type: 'number',
-                source: 'attribute',
-                attribute: 'data-id',
-            },
-            default: []
-		}
+		},
+        projects:{
+            type: 'object',
+        },
+        ets: {
+            type: 'object',
+        }
     },
     getEditWrapperProps() {
         return {

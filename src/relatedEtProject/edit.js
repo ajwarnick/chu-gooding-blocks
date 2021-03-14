@@ -8,23 +8,37 @@ import './editor.scss';
 
 
 export default function Edit({ attributes, isSelected, setAttributes, }) {
-	let projectArray = Array.from(Array(0));
-	apiFetch( { path: '/wp/v2/projects' } ).then( posts => {
-		projectArray = posts;
-	} );
 
-	let etArray = Array.from(Array(0));
-	apiFetch( { path: '/wp/v2/ets' } ).then( posts => {
-		etArray = posts;
-	} );
+
+	if(!attributes.projects){
+		apiFetch( { path: '/wp/v2/projects' } ).then( posts => {
+			console.log(posts);
+			setAttributes({projects: posts})
+		} );
+	}
+
+	if(!attributes.ets){
+		apiFetch( { path: '/wp/v2/ets' } ).then( posts => {
+			setAttributes({ets: posts})
+		} );
+	}
+
+	if(!attributes.relatedEt){
+		setAttributes({relatedEt: []})
+	}
+
+	if(!attributes.relatedProjects){
+		setAttributes({relatedProjects: []})
+	}
+	
 
 	const EtList = () => {
-		if( attributes.relatedEt.length > 0 ){
+		if( attributes.relatedEt && attributes.relatedEt.length > 0 && attributes.ets ){
 			return (
 				<Fragment>
-					{etArray.filter(value => attributes.relatedEt.includes(value.id)).map((value,index)=>{
-						console.log(value);
-						return <li data-id={value.id}><a href={value.link}><span className="et-number">014</span><span className="et-title">{ decodeEntities(value.title.rendered) }</span></a></li>
+					{attributes.ets.filter(value => attributes.relatedEt.includes(value.id)).map((value,index)=>{
+						console.log(value.meta);
+						return <li data-id={value.id}><a href="#"><span className="et-number">{'value.meta'}</span><span className="et-title">{ decodeEntities(value.title.rendered) }</span></a></li>
 					})}
 				</Fragment>
 			 )
@@ -34,11 +48,11 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 	}
 
 	const ProjectList = () => {
-		if( attributes.relatedProjects.length > 0 ){
+		if( attributes.relatedProjects && attributes.relatedProjects.length > 0 && attributes.projects){
 			return (
 				<Fragment>
-					{projectArray.filter(value => attributes.relatedProjects.includes(value.id)).map((value,index)=>{
-						return <li data-id={value.id}><a href={value.link}>{value.title.rendered}</a></li>
+					{attributes.projects.filter(value => attributes.relatedProjects.includes(value.id)).map((value,index)=>{
+						return <li data-id={value.id}><a href="#">{value.title.rendered}</a></li>
 					})}
 				</Fragment>
 			 )
@@ -64,20 +78,28 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 			<InspectorControls>
 				<PanelBody title={ __( 'Select Related Projects', 'jsforwpblocks' ) } initialOpen={ false } >
 					<PanelRow>This is the instructions</PanelRow>
-						<div className="related__PanelBox">
-							{projectArray.map((value,index) => {
-								// checked={ attributes.relatedProjects.includes(value) }
-								return <CheckboxControl label={ value.title.rendered } onChange={ () => projectChange(value.id) } checked={ attributes.relatedProjects.includes(value.id) } />
-							})}
-						</div>
+						{ attributes.projects ?
+							<div className="related__PanelBox">
+								{attributes.projects.map((value,index) => {
+									return <CheckboxControl label={ value.title.rendered } onChange={ () => projectChange(value.id) } checked={ attributes.relatedProjects.includes(value.id) } />
+								})}
+							</div>
+						:
+							<span>Projects Loading...</span>	
+						}
 				</PanelBody>
 				<PanelBody title={ __( 'Select Related Ets', 'jsforwpblocks' ) } initialOpen={ false } >	
 					<PanelRow>This is the instructions</PanelRow>
-					<div className="related__PanelBox">
-						{etArray.map((value,index) => {
-							return <CheckboxControl label={ value.title.rendered } onChange={ () => etChange(value.id) } checked={ attributes.relatedEt.includes(value.id) } />
-						})}
-					</div>
+					{ attributes.ets ?
+						<div className="related__PanelBox">
+							{attributes.ets.map((value,index) => {
+								return <CheckboxControl label={ value.title.rendered } onChange={ () => etChange(value.id) } checked={ attributes.relatedEt.includes(value.id) } />
+							})}
+						</div>
+					:
+						<span>Ets Loading...</span>
+					}
+					
 				</PanelBody>
 			</InspectorControls>
 			<div className="chugooding__related">

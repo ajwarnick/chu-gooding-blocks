@@ -99,10 +99,11 @@ TextController = withDispatch(
 const PluginDocumentSettingPanelDemo = () => {
     let etNumber;
 
+
     if (wp.data.select( 'core/editor' ).getCurrentPostType() == 'et') {
         originalEtNum = select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber'];
         etNumber = (
-                <PluginDocumentSettingPanel name="et-number" title="Et Number" className="chu-gooding-et-number" opened={false}>
+            <PluginDocumentSettingPanel name="et-number" title="Et Number" className="chu-gooding-et-number" opened={false}>
                 <TextController />
             </PluginDocumentSettingPanel>
         )
