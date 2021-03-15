@@ -36,6 +36,7 @@ const unsubscribe = subscribe( () => {
         // console.log( 'finished resolving' );
         const data = select( 'core' ).getEntityRecords( 'postType', 'et' );
         ets = data;
+        
         if (wp.data.select( 'core/editor' ).getCurrentPostType() == 'et') {
             // console.log('Is Et');
 
