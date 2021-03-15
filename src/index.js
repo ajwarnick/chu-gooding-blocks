@@ -16,15 +16,15 @@ import * as etMeta from './etMeta';
 
 const blocks = [
     // otherList,
-    // projectMeta,
-    // projectCredits,
-    // projectImagePair,
-    // projectParagraph,
-    // relatedEtProject,
-    // scrollToTop,
-    // featuredProject,
+    projectMeta,
+    projectCredits,
+    projectImagePair,
+    projectParagraph,
+    relatedEtProject,
+    scrollToTop,
+    featuredProject,
     featuredEt,
-    // etEventDateAndTime,
+    etEventDateAndTime,
 ];
 
 function registerBlock( block ) {

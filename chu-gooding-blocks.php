@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: 	Chu , Gooding Blocks
- * Plugin URI:		https://example.com/plugins/the-basics/
- * Description: 	add custom Gutenberg blocks for Chu , Gooding
- * Version: 		1.2.0
+ * Plugin URI:		https://github.com/ajwarnick/chu-gooding-blocks
+ * Description: 	add custom Gutenberg blocks for Chu , Gooding Theme
+ * Version: 		0.7.0
  * 
  * Author:			Anthony Warnick
  * Author URI:		https://anthonywarnick.com/
@@ -99,7 +99,7 @@ function chu_gooding_blocks_init() {
 		)
 	);
 
-	function render_frelated($attributes){
+	function render_related($attributes){
 		// 	<div className="chugooding__related">
 		// 		<div className="related__projects">
 		// 			<div className="related__projects-label">
@@ -194,22 +194,28 @@ function chu_gooding_blocks_init() {
 
 	function render_featured_et($attributes){
 		$featured_img_url = get_the_post_thumbnail_url($attributes['id'],'full'); 
+		$et_number =  get_post_meta( $attributes['id'], 'chugooding_meta_block_field_etNumber', true );
 		$title = get_the_title($attributes['id']);
 		$permalink = get_permalink( $attributes['id'] ); 
-		// <div>
-		// 	<div className={"chu_gooding__featured-et-meta"}>
-		// 		<div className={"chu_gooding__featured-et-meta-label"}>Et</div>
-		// 		<div className={"chu_gooding__featured-et-meta-number"}>{ attributes.et_number }</div>
-		// 		<div className={"hidden"}>
-		// 			<div className={"chu_gooding__featured-et-meta-id"}>{ attributes.id }</div>
-		// 			<div className={"chu_gooding__featured-et-meta-title"}>{ attributes.title }</div>
-		// 			<div className={"chu_gooding__featured-et-meta-featured_media"}>{ attributes.featured_media }</div>
-		// 		</div>
-		// 	</div>
-		// 	<a className={"chu_gooding__featured-link"} href={ attributes.link }>
-		// 		{ attributes.featured_media === 0 ? <h1 className={"chu_gooding__featured-et-title"}>{ attributes.title }</h1> : <img src={ attributes.source_url } width={attributes.width} height={attributes.height} alt={ attributes.title } /> }
-		// 	</a>
-		// </div>
+		
+
+		ob_start();
+		echo '<div class="chu_gooding__featured-et">';
+			echo '<div class="chu_gooding__featured-et-meta">';
+				echo '<div class="chu_gooding__featured-et-meta-label">Et</div>';
+				if(!empty($et_number)){
+					echo '<div class="chu_gooding__featured-et-meta-number">'.$et_number.'</div>';
+				}
+			echo '</div>';
+			echo '<a class="chu_gooding__featured-link" href="'.$permalink.'">';
+					if (has_post_thumbnail( $attributes['id'] ) ){
+						echo '<img  src='.$featured_img_url.' alt='.$title.' /> ';
+					}else{
+						echo '<h1 class="chu_gooding__featured-et-title">'.$title.'</h1>';
+					}
+			echo '</a>';
+		echo '</div>';
+		return ob_get_clean();
 	}
 
 	// chu-gooding/et-event-date-and-time
