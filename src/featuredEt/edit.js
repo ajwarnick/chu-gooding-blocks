@@ -41,7 +41,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 		result = attributes.ets.find(obj => {
 			return obj.id == id
 		});
-
+		console.log(result);
 		getFeaturerMedia( result.featured_media );
 
 		setAttributes( { id: id, title: result.title.rendered, num: result.meta.chugooding_meta_block_field_etNumber } );
@@ -51,7 +51,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 	return (
 		<div { ...useBlockProps({className: 'chu_gooding__featured-et ' + attributes.colorName}) }>
 			<InspectorControls>
-				<PanelBody title={ 'Featured Project' } >
+				<PanelBody title={ 'Featured Ets' } >
 					<PanelRow>
 					{ attributes.ets ?
 						<SelectControl
@@ -73,7 +73,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 			</InspectorControls>
 
 			{ !attributes.title ?
-				<Placeholder instructions="Use block settings to select post to feature and background color"  label="Featured Project" />
+				<Placeholder instructions="Use block settings to select post to feature and background color"  label="Featured Et" />
 			:
 				<div>
 					<div className={"chu_gooding__featured-et-meta"}>
