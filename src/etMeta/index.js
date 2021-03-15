@@ -32,10 +32,18 @@ const unsubscribe = subscribe( () => {
     } else {
         const data = select( 'core' ).getEntityRecords( 'postType', 'et' );
         ets = data;
+        
         if (wp.data.select( 'core/editor' ).getCurrentPostType() == 'et') {
-            if (!select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber']) {
-                dispatch('core/editor').editPost({ meta: { chugooding_meta_block_field_etNumber: pad(ets.length, 3) } });
-            }
+            console.log("is ets");
+            let etNumber = select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber'];
+            
+        }
+        
+
+        if (etNumber === undefined
+        // || !select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber'] 
+            ) {
+            dispatch('core/editor').editPost({ meta: { chugooding_meta_block_field_etNumber: pad(ets.length, 3) } });
         }
 
         unsubscribe();
