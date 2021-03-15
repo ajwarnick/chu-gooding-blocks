@@ -4,8 +4,6 @@ import { Fragment } from '@wordpress/element';
 
 import './editor.scss';
 
-
-
 export default function Edit( { attributes, setAttributes } ) {
 
 	const blockProps = useBlockProps();
@@ -19,23 +17,38 @@ export default function Edit( { attributes, setAttributes } ) {
 			{...attributes[group][index], n},
 			...attributes[group].slice ( index + 1 )
 		];
+		if(group === 'credits'){
+			setAttributes({ credits: newVals });
+		}
 
-		setAttributes({ credits: newVals });
+		if(group === 'collaborators'){
+			setAttributes({ collaborators: newVals });
+		}
 	}
 	
-	const updateFoo = (val, index, obj) => {
-		//   const { attributes.credits: { myJsonArray } } = this.props;
-		  const foos = JSON.parse(attributes.credits);
-		  const newVals = [
-			...foos.slice(0, index),
-			{...foos[index], title: val},
-			...foos2.slice ( index + 1 )
-		  ];
+	const creditPair = (value) => {
 
-
-		  setAttributes({ 
-			credits: JSON.stringify(newVals), 
-		  });
+		return (
+			<Fragment>	
+				<RichText
+					tagName="span" 
+					className="project__credits-title"
+					value={ value.title }
+					allowedFormats={ [ 'core/italic' ] } 
+					onChange={ ( content ) => updateText(content, index, 'title', 'credits') }
+					placeholder={ 'Title(s)...' }
+				/>	
+				<RichText
+					tagName="span"
+					className="project__credits-names"
+					value={ value.names }
+					allowedFormats={ [ 'core/italic' ] } 
+					onChange={ ( content ) => updateText(content, index, 'names', 'credits') } 
+					placeholder={ 'Name(s)...' } 
+				/>
+			</Fragment>
+				
+		)
 	}
 
 	return (
@@ -44,12 +57,13 @@ export default function Edit( { attributes, setAttributes } ) {
 				<div class="content__left">
 					Credits
 				</div>
-				<div class="content__middle">
+				<div class="content__middle content__credits">
 					{attributes.credits.map((value,index) => {
 						return (
-							<div>
+							<div className="project__credits-row">
 								<RichText
 									tagName="span" 
+									multiline={false}
 									className="project__credits-title"
 									value={ value.title }
 									allowedFormats={ [ 'core/italic' ] } 
@@ -58,6 +72,7 @@ export default function Edit( { attributes, setAttributes } ) {
 								/>	
 								<RichText
 									tagName="span"
+									multiline={false}
 									className="project__credits-names"
 									value={ value.names }
 									allowedFormats={ [ 'core/italic' ] } 
@@ -83,17 +98,18 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 				</div>
 			</div>
-			<div class="project__collaborators">
+			<div className="project__collaborators">
 				<div class="content__left">
 					Collaborators
 				</div>
-				<div class="content__middle">
+				<div className="content__middle">
 					<dl>
 					{attributes.collaborators.map((value,index) => {
 						return (
-							<div>
+							<div className="project__collaborators-row">
 								<RichText
 									tagName="span"
+									multiline={false}
 									className="project__collaborators-title"
 									value={ value.title } 
 									allowedFormats={ [ 'core/italic' ] } 
@@ -102,6 +118,7 @@ export default function Edit( { attributes, setAttributes } ) {
 								/>	
 								<RichText
 									tagName="span"
+									multiline={false}
 									className="project__collaborators-names"
 									value={ value.names }
 									allowedFormats={ [ 'core/italic' ] }
@@ -117,16 +134,16 @@ export default function Edit( { attributes, setAttributes } ) {
 						icon="plus-alt2"
 						className="project__collaborators-button"
 						isSecondary
-						onClick={() => attributes.collaborators.push({title:'', names:'' })}
+						onClick={() => setAttributes( { collaborators: [...attributes.collaborators, {title:'', names:'' }] } )}
 					/>
 					<Button
 						label="Remove Collaborator"
 						icon="minus"
 						className="project__collaborators-button"
 						isDestructive
-						onClick={() => setAttributes( { credits: attributes.collaborators.slice(0, (attributes.collaborators.length - 1)) } )}					
+						onClick={() => setAttributes( { collaborators: attributes.collaborators.slice(0, (attributes.collaborators.length - 1)) } )}					
 					/>
-				</div>
+				</div> 
 			</div>
 		</div>		
 	);

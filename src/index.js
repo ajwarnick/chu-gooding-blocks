@@ -11,6 +11,7 @@ import * as featuredEt from './featuredEt';
 import * as projectMeta from './projectMeta';
 import * as etEventDateAndTime from './etEventDataAndTime';
 import * as etAuthor from './etAuthor';
+import * as etTitle from './etTitle';
 import * as etMeta from './etMeta';
 
 

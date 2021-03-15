@@ -15,24 +15,39 @@ export const settings = {
     attributes: {
         credits: {
 			type: 'array',
-            // query: {
-            //     title: {
-            //         type: 'string',
-            //         source: 'html',
-            //         selctor: 'src',
-            //     },
-            //     names: {
-            //         type: 'string',
-            //         source: 'html',
-            //         attribute: 'alt',
-            //     },
-            // },
-			default: [{title:'Professor', names:'Anthony Warnick' }],
+            source: 'query',
+            selector: '.project__credits-row',
+            query: {
+                title: {
+                  type: 'string',
+                  selector: '.project__credits-title',
+                  source: 'html',
+                },
+                names: {
+                    type: 'string',
+                    selector: '.project__credits-names',
+                    source: 'html',
+                }
+            },
+			default: [{title:'', names:'' }],
 		},
         collaborators: {
 			type: 'array',
-			// default: [{title:'t1', names:'n1' },{title:'t2', names:'n2' },{title:'t3', names:'n3' }],
-            default: [{title:'Lover', names:'Danni' }],
+            ssource: 'query',
+            selector: '.project__collaborators-row',
+            query: {
+                title: {
+                  type: 'string',
+                  selector: '.project__collaborators-title',
+                  source: 'html',
+                },
+                names: {
+                    type: 'string',
+                    selector: '.project__collaborators-names',
+                    source: 'html',
+                }
+            },
+            default: [{title:'', names:'' }],
 		},
     },
     getEditWrapperProps() {
