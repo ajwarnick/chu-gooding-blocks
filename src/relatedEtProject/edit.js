@@ -38,7 +38,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 				<Fragment>
 					{attributes.ets.filter(value => attributes.relatedEt.includes(value.id)).map((value,index)=>{
 						console.log(value.meta);
-						return <li data-id={value.id}><a href="#"><span className="et-number">{'value.meta'}</span><span className="et-title">{ decodeEntities(value.title.rendered) }</span></a></li>
+						return <li data-id={value.id}><a href="#"><span className="et-number">{value.meta.chugooding_meta_block_field_etNumber}</span><span className="et-title">{value.title.rendered /*decodeEntities(value.title.rendered)*/}</span></a></li>
 					})}
 				</Fragment>
 			 )

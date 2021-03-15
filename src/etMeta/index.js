@@ -24,26 +24,27 @@ let originalEtNum;
 select( 'core' ).getEntityRecords( 'postType', 'et' )
 
 const unsubscribe = subscribe( () => {
-    const { isResolving } = select( 'core/data' );
+
+    const { isResolving, hasFinishedResolution } = select( 'core/data' );
     const args = [ 'postType', 'et' ];
 
     if ( isResolving( 'core', 'getEntityRecords', args ) ) {
         // console.log( 'still resolving' );
-    } else {
+    } 
+    
+    if( hasFinishedResolution( 'core', 'getEntityRecords', args ) ) {
+        // console.log( 'finished resolving' );
         const data = select( 'core' ).getEntityRecords( 'postType', 'et' );
         ets = data;
         
         if (wp.data.select( 'core/editor' ).getCurrentPostType() == 'et') {
-            console.log("is ets");
-            let etNumber = select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber'];
-            
-        }
-        
+            // console.log('Is Et');
 
-        if (etNumber === undefined
-        // || !select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber'] 
-            ) {
-            dispatch('core/editor').editPost({ meta: { chugooding_meta_block_field_etNumber: pad(ets.length, 3) } });
+            if (!select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber'] ||
+            select('core/editor').getEditedPostAttribute('meta')['chugooding_meta_block_field_etNumber'] === "") {
+                // console.log("Meta not set");
+                dispatch('core/editor').editPost({ meta: { chugooding_meta_block_field_etNumber: pad(ets.length+1, 3) } });
+            }
         }
 
         unsubscribe();
