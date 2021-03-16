@@ -1,45 +1,27 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
 import { __ } from '@wordpress/i18n';
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { useBlockProps } from '@wordpress/block-editor';
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 import './editor.scss';
+import 'swiper/swiper.scss';
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
 export default function Edit({ attributes, isSelected, setAttributes, }) {
 	const { title, toggle } = attributes;
 	const toggleSetting = () => setAttributes( { toggle: ! toggle } );
 
 	return (
 		<p { ...useBlockProps() }>
-			{ title }
-			{ toggle &&
-                <button onClick={ toggleSetting }>Toggle setting</button>
-            }
-			{ !toggle && <h1>Messages: Hello</h1>}
+			<Swiper
+				spaceBetween={50}
+				slidesPerView={3}
+				onSlideChange={() => console.log('slide change')}
+				onSwiper={(swiper) => console.log(swiper)}
+				>
+				<SwiperSlide>Slide 1</SwiperSlide>
+				<SwiperSlide>Slide 2</SwiperSlide>
+				<SwiperSlide>Slide 3</SwiperSlide>
+				<SwiperSlide>Slide 4</SwiperSlide>
+			</Swiper>
 		</p>
 	);
 }

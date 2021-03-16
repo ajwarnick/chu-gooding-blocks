@@ -7,10 +7,10 @@ import Edit from './edit';
 import save from './save';
 
 
-export const name = 'chu-gooding/other-list';
+export const name = 'chu-gooding/slider';
 
 export const settings = {
-    title: 'Other List',
+    title: 'Chu , Gooding: Slider',
 	description: 'Example block written with ESNext standard and JSX support – build step required.',
     category: 'widgets',
     icon: 'smiley',
