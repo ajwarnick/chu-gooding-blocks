@@ -28,7 +28,17 @@ export const settings = {
             type: 'boolean',
             selector: 'js-book-details-boolean',
             default: true
-        }
+        },
+        slidesPerView: {
+            type: 'string',
+        },
+        slideCount: {
+            type: 'string',
+        },
+        slides:{
+            type: 'array',
+            default: ['a','a','a','a']
+        },
     },
     edit: Edit,
     save,
