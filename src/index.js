@@ -14,6 +14,7 @@ import * as slider from './slider';
 import * as etAuthor from './etAuthor';
 import * as etTitle from './etTitle';
 import * as etMeta from './etMeta';
+import * as etQuote from './etQuote';
 
 
 const blocks = [

@@ -18,3 +18,43 @@
 .warning .components-base-control__label {
 	color: var(--cgRed);
 }
+
+
+
+
+.single-etsingle-et{
+
+
+	.wp-block-image figcaption {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 20px;
+		/* or 125% */
+
+		text-align: center;
+
+		max-width: min(62vw, 896px);
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: var(--cg12Margin);
+		padding-right: var(--cg12Margin);
+		color: var(--cgBlack);
+	  }
+
+	  
+}
+
+.editor-styles-wrapper p {
+		max-width: min(62vw, 896px);
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: var(--cg12Margin);
+		padding-right: var(--cg12Margin);
+	  
+		//   font-family: Marr Sans;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 30px;
+	  }
