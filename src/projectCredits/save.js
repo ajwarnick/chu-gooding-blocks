@@ -11,7 +11,7 @@ export default function save( { attributes } ) {
 				<div class="content__middle">
 					{attributes.credits.map((value,index) => {
 						return (
-							<div>
+							<div className="project__credits-row">
 								{ value.title != '' ?
 									<RichText.Content className="project__credits-title" tagName="span" value={ value.title } />
 								:
@@ -27,14 +27,14 @@ export default function save( { attributes } ) {
 					})}	
 				</div>
 			</div>
-			<div class="project__collaborators">
+			<div className="project__collaborators">
 				<div class="content__left">
 					Collaborators
 				</div>
-				<div class="content__middle">
+				<div className="content__middle">
 					{attributes.collaborators.map((value,index) => {
 						return (
-							<div>
+							<div className="project__collaborators-row">
 								{ value.title != '' ?
 									<RichText.Content className="project__collaborators-title" tagName="span" value={ value.title } />
 								:

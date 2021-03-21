@@ -11,8 +11,11 @@ import * as featuredEt from './featuredEt';
 import * as projectMeta from './projectMeta';
 import * as etEventDateAndTime from './etEventDataAndTime';
 import * as youtube from './youtube';
+import * as slider from './slider';
 import * as etAuthor from './etAuthor';
+import * as etTitle from './etTitle';
 import * as etMeta from './etMeta';
+import * as etQuote from './etQuote';
 
 
 const blocks = [
@@ -27,6 +30,7 @@ const blocks = [
     featuredEt,
     etEventDateAndTime,
     youtube,
+    slider
 ];
 
 function registerBlock( block ) {

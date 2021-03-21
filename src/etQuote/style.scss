@@ -1,0 +1,20 @@
+
+
+.wp-block-quote{
+    
+    border: none;
+    &.is-style-large p{
+        font-style: italic;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 52px;
+    }
+
+    .wp-block-quote__citation{
+        font-weight: normal;
+        font-style: normal;
+        font-size: 48px;
+        line-height: 52px;
+        text-align: right;
+    }
+}

@@ -28,8 +28,10 @@
 	grid-template-columns: repeat(12, 1fr);
 	grid-gap: 32px;
 	margin: 40px;
-	font-size: 12px;
-	line-height: 16px;
+	font-size: 16px;
+	line-height: 20px;
+    font-style: normal;
+    font-stretch: normal;
 }
 
 .project__credits {
@@ -74,4 +76,23 @@
 }
 .content__middle {
 	overflow: auto; /* [2] */
+}
+
+.project__credits-title,
+.project__credits-names,
+.project__collaborators-title,
+.project__collaborators-names{
+	margin-right: 10px;
+}
+
+
+.project__collaborators-row .project__collaborators-title{
+
+}
+.project__credits .content__left,
+.project__collaborators .content__left,
+.project__collaborators-title,
+.project__credits-title{
+	font-weight: 600;
+
 }

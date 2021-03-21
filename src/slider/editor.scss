@@ -4,6 +4,48 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-todo-list {
-	border: 1px dotted #f00;
+:root{
+	// --admin-light-gray:  #f0f0f0;
+	// --wp-admin-theme-color: #007cba;
+	// --wp-admin-theme-color-darker-10: #006ba1;
+	// --wp-admin-theme-color-darker-20: #005a87;
+	// --wp-admin-border-width-focus: 2px;
+	--admin-light-gray:  #f0f0f0;
+	--swiper-theme-color: #007aff;
+	--admin-border-color: rgb(224, 224, 224);
+}
+
+.chugooding__slider{
+	border: 1px solid var(--admin-border-color);
+}
+
+.chugooding__slider .swiper-button-prev,
+.chugooding__slider .swiper-button-next{
+	position: absolute;
+	top: calc(50% - 19px);
+	height: 38px;
+	width: 29px;
+	background-color: red;
+}
+
+.chugooding__slider .swiper-button-prev{
+	left:-15px;
+}
+
+.chugooding__slider .swiper-button-next{
+	right: -15px;
+}
+
+.chugooding__slider .swiper-container{
+	background-color: var(--admin-light-gray);
+	position: relative;
+	min-height: 500px;
+}
+
+.swiper-slide{
+	background-color: var(--swiper-theme-color);
+}
+
+.swiper-container .swiper-slide:last-of-type{
+
 }
