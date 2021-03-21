@@ -10,16 +10,20 @@ import './editor.scss';
 export default function Edit({ attributes, isSelected, setAttributes, }) {
     let message = 'Please input the URL of a YouTube';
 
+    let idExtractor = (url) => {
+        let regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+        let match = url.match(regExp);
+        return (match&&match[1].length==11)? match[1] : false;
+    }
+    
     let updateURL = (url) =>{
         let extracted = url.match(/^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/.+/);
 
         if(extracted){
-            console.log(extracted[0]);
-            setAttributes({url: extracted[0]});
+            setAttributes({url: idExtractor(extracted[0])});
         }else{
             setAttributes({url: ''});
         }
-        
         setAttributes({s: url});
     }
 
@@ -27,33 +31,14 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
         /* options */
         ratio: '16:9'
     });
+
 	return (
 		<div { ...useBlockProps() } >
-			<InspectorControls>
-				<PanelBody title={ 'Background Color' } >
-					<PanelRow>
-						{/* <ColorPalette
-							colors={ colors }
-							value={ attributes.color }
-							onChange={ changeBackgroundColor }
-						/> */}
-					</PanelRow>
-				</PanelBody>
-			</InspectorControls>
-            { isSelected ?
-                <TextControl
-                    label="YouTube URL Input:"
-                    value={ attributes.s }
-                    onChange={ updateURL }
-                />
-            :
-                <TextControl
-                    label="YouTube URL Input:"
-                    value={ attributes.s }
-                    // onChange={ updateURL }
-                />
-            }          
-                
+            <TextControl
+                label="YouTube URL Input:"
+                value={ attributes.s }
+                onChange={ updateURL }
+            />
 
 			{  !attributes.url  ?
                 <div>
@@ -66,13 +51,13 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 				<div className="chugooding-youtube">
 					<div className="plyr__video-embed" id="player">
                         <iframe
-                            src="https://www.youtube.com/embed/bTqVqk7FSmY"
+                            src={ "https://www.youtube.com/embed/" + attributes.url + "&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"}
                             allowfullscreen
                             allowtransparency
-                            allow="autoplay"
                         ></iframe>
                     </div>
 				</div>
+                
 			}
 		</div>
 	);
