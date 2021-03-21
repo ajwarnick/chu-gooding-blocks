@@ -2,6 +2,13 @@
     --plyr-color-main:#cd4b34;
 }
 
+// max width 1109.07 or 77
+.chugooding-youtube{
+    max-width: min(77vw, 1109px); 
+    margin: auto;
+}
+ 
+
 .plyr--playing .plyr__controls{
     display: flex;
 }
