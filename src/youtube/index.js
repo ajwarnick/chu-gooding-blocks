@@ -20,6 +20,7 @@ export const settings = {
     attributes: {
         url: {
 			type: 'string',
+            default: ''
 		},
         s: {
             type: 'string',

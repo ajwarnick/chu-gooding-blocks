@@ -22,13 +22,13 @@
   *
   * @return {WPElement} Element to render.
   */
- export default function save() {
+ export default function save({attributes}) {
      return (
          <div { ...useBlockProps.save() }>
              <div className="chugooding-youtube">
 					<div className="plyr__video-embed" id="player">
                         <iframe
-                            src="https://www.youtube.com/embed/bTqVqk7FSmY"
+                            src={ "https://www.youtube.com/embed/" + attributes.url + "&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"}
                             allowfullscreen
                             allowtransparency
                             allow="autoplay"
