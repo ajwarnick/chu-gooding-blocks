@@ -37,12 +37,28 @@ export default function Edit( { attributes, setAttributes } ) {
         setAttributes( {status: s} );
         setMeta( { ...meta, 'chugooding_meta_block_field_status': s } );
     }
+    function updateClient( c ){
+        setAttributes( {client: c} );
+        setMeta( { ...meta, 'chugooding_meta_block_field_client': c  } );
+        
+    }
 
 
 
 	return (
 		<div {...blockProps} className={ "project__header-meta-editor"}>
             <dl>
+                <dt>Client</dt>
+                <dd>
+                    <RichText
+                        tagName="span"
+                        value={attributes.client}
+                        className={"project__header-meta-client"}
+                        // allowedFormats={["core/italic"]}
+                        onChange={(client) => updateClient(client)}
+                        placeholder={"project location... "}
+                    />
+                </dd>
                 <dt>Location</dt>
                 <dd>
                     <RichText
