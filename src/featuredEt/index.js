@@ -12,7 +12,7 @@ export const name = 'chu-gooding/featured-et';
 export const settings = {
     title: 'C , G: Featured Et',
 	// description: 'Example block written with ESNext standard and JSX support – build step required.',
-    category: 'widgets',
+    category: 'chu-gooding-blocks',
     icon: 'smiley',
 	supports: {
 		// Removes support for an HTML mode.

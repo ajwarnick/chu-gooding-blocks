@@ -12,12 +12,19 @@ export const name = 'chu-gooding/project-image-pair';
 export const settings = {
     title: 'C , G: Project Image Pair',
     description: 'Example block written with ESNext standard and JSX support – build step required.',
-    category: 'media',
-    icon: 'smiley',
+    category: 'chu-gooding-blocks',
+    icon: 'format-image',
 	supports: {
 		// Removes support for an HTML mode.
 		html: false,
 	},
+    example: {
+        attributes: {
+            imageLeft: 'https://picsum.photos/200/300',
+            imageRight: 'https://picsum.photos/300/200',
+            distribution: '6'
+        },
+    },
     attributes: {
         imageLeft: {
             type: 'string',

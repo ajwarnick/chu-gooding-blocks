@@ -231,3 +231,18 @@ function chu_gooding_blocks_init() {
 }
 
 add_action( 'init', 'chu_gooding_blocks_init' );
+
+
+
+function chu_gooding_block_category( $categories, $post ) {
+	return array_merge(
+		array(
+			array(
+				'slug' => 'chu-gooding-blocks',
+				'title' => __( 'Chu , Gooding: Blocks', 'chu-gooding-blocks' ),
+			),
+		),
+		$categories
+	);
+}
+add_filter( 'block_categories', 'chu_gooding_block_category', 10, 2);

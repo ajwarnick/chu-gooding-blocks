@@ -10,9 +10,24 @@ export const name = 'chu-gooding/project-meta';
 export const settings = {
     title: 'C , G: Project Meta',
     description: 'Basic Metadata on a Chu , Gooding Project',
-    category: 'text',
+    category: 'chu-gooding-blocks',
     icon: 'smiley',
+    example: {
+        attributes: {
+            location: 'Lorem Ipsum',
+            year: '2021',
+            type: 'Residential',
+            area: '2000 ft2',
+            status: 'Completed',
+        },
+    },
     attributes: {
+        client:{
+            type: 'string',
+            source: "html",
+            selector: ".project__header-meta-client",
+            default: ''
+        },
         location: {
             type: 'string',
             source: "html",

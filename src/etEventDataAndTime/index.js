@@ -10,8 +10,14 @@ export const name = 'chu-gooding/et-event-date-and-time';
 export const settings = {
     title: 'C , G: Et - Date & Time',
     description: 'Basic Metadata on a Chu , Gooding Et Event',
-    category: 'text',
+    category: 'chu-gooding-blocks',
     icon: 'smiley',
+    example: {
+        attributes: {
+            date: '01.27.1983',
+            time: '1 pm PST',
+        },
+    },
     attributes: {
         date: {
             type: 'string',

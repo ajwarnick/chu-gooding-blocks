@@ -4,6 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { withState } from '@wordpress/compose';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { ColorPalette, PanelBody, PanelRow, RangeControl, Placeholder, SelectControl } from '@wordpress/components';
+import { InnerBlocks } from '@wordpress/editor'; 
+
+
+const ALLOWED_BLOCKS = [ 'chu-gooding/slider-item' ];
+
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 // const SliderRangeControl = withState( {
@@ -46,14 +51,17 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 				</PanelBody>
 			</InspectorControls>
 			<Swiper
-				spaceBetween={50}
+				spaceBetween={10}
 				slidesPerView={ 2 }
 				navigation
 				onSlideChange={() => console.log('slide change')}
 				onSwiper={(swiper) => console.log(swiper)}
 				>
 				{attributes.slides.map((item,index) => (
-                	<SwiperSlide>Slide {index}</SwiperSlide>
+                	<SwiperSlide>
+						hi
+						<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
+					</SwiperSlide>
               	))}
 			</Swiper>
 		</div>

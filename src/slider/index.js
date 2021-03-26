@@ -12,7 +12,7 @@ export const name = 'chu-gooding/slider';
 export const settings = {
     title: 'Chu , Gooding: Slider',
 	description: 'Example block written with ESNext standard and JSX support – build step required.',
-    category: 'widgets',
+    category: 'chu-gooding-blocks',
     icon: 'smiley',
 	supports: {
 		// Removes support for an HTML mode.

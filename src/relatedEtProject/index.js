@@ -12,7 +12,7 @@ export const name = 'chu-gooding/related';
 export const settings = {
     title: 'C , G: Related Items',
 	description: 'Example block written with ESNext standard and JSX support – build step required.',
-    category: 'widgets',
+    category: 'chu-gooding-blocks',
     icon: 'smiley',
 	supports: {
 		html: false,

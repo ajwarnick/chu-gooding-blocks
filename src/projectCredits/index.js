@@ -10,8 +10,14 @@ export const name = 'chu-gooding/project-credits';
 export const settings = {
     title: 'C , G: Project Credits',
     description: 'Example block written with ESNext standard and JSX support – build step required.',
-    category: 'text',
+    category: 'chu-gooding-blocks',
     icon: 'smiley',
+    example: {
+        attributes: {
+            credits: [{title:'Job', names:'Name' }],
+            collaborators: [{title:'Job', names:'Name' }],
+        },
+    },
     attributes: {
         credits: {
 			type: 'array',

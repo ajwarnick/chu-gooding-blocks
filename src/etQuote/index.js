@@ -9,6 +9,7 @@ wp.blocks.registerBlockVariation(
     {
       name: 'et-quote',
       title: 'Et Quote',
+      category: 'chu-gooding-blocks',
       isDefault: true,
     },
 );

@@ -5,6 +5,15 @@ export default function save({ attributes } ) {
 	return (
 		<div {...blockProps}>
 			<dl className={ "project__header-meta"}>
+				<dt>Client</dt>
+
+                <dd>
+				<RichText.Content
+					tagName="span"
+					className={"project__header-meta-client"}
+					value={attributes.client}
+				/>
+                </dd>
 				<dt>Location</dt>
 				<dd>
 				<RichText.Content

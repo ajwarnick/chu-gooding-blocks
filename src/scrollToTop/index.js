@@ -11,8 +11,10 @@ export const name = 'chu-gooding/to-top';
 
 export const settings = {
     title: 'C , G: Scroll to Top',
-    category: 'widgets',
+    category: 'chu-gooding-blocks',
     icon: 'arrow-up-alt',
+    example: {
+    },
 	supports: {
 		// Removes support for an HTML mode.
 		html: false,
