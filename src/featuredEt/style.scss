@@ -23,6 +23,7 @@
 
 	min-height: 545px;
 	display: grid;
+	position: relative;
 }
 .chu_gooding__featured-et > div {
 	display: block;
@@ -37,7 +38,8 @@
 	color: var(--cgBlack);
 	text-decoration: none;
 
-	display: block;
+	display: grid;
+	margin: auto;
 	max-height: 556px;
 	max-width: 78vw;
 }
@@ -71,6 +73,7 @@
 
 .chu_gooding__featured-et .chu_gooding__featured-et-meta{
 	position: absolute;
+	margin: 0;
 	top: calc(var(--cg12Margin) + var(--cg12Gutter));
 	right: var(--cg12Margin);
 	
@@ -96,6 +99,26 @@
 }
 
 
+.editor-styles-wrapper p.et__header-event{
+    padding: 0;
+	margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    /* or 125% */
+
+    text-align: center;
+}
+
+.editor-styles-wrapper p.et__header-event:empty{
+	display: none;
+}
+
+h3.et__header-event__title{
+	text-align: center;
+}
+
 // is event type ???
 
 
@@ -108,8 +131,28 @@
 	line-height: 116px;
 
 	text-align: center;
+	margin: auto;
 }
 
 .hidden{
 	display: none;
 }
+
+
+.tns-item >.chu_gooding__featured-et{
+	min-width: calc(100% - 80px);
+	min-height: 100%;
+	background-color: var(--cgGray);
+}
+
+
+.tns-outer + .chu_gooding__featured-et {
+	margin-top: calc(-1 * var(--cg12Margin));
+	mix-blend-mode: multiply;
+}
+
+.chu_gooding__featured-et + .tns-outer{
+	margin-top: calc(-1 * var(--cg12Margin));
+	mix-blend-mode: multiply;
+}
+

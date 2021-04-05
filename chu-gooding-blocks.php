@@ -195,6 +195,8 @@ function chu_gooding_blocks_init() {
 	function render_featured_et($attributes){
 		$featured_img_url = get_the_post_thumbnail_url($attributes['id'],'full'); 
 		$et_number =  get_post_meta( $attributes['id'], 'chugooding_meta_block_field_etNumber', true );
+		$et_eventDate =  get_post_meta( $attributes['id'], 'chugooding_meta_block_field_etEventData', true );
+		$et_eventTime =  get_post_meta( $attributes['id'], 'chugooding_meta_block_field_etEventTime', true );
 		$title = get_the_title($attributes['id']);
 		$permalink = get_permalink( $attributes['id'] ); 
 		
@@ -208,11 +210,18 @@ function chu_gooding_blocks_init() {
 				}
 			echo '</div>';
 			echo '<a class="chu_gooding__featured-link" href="'.$permalink.'">';
-					if (has_post_thumbnail( $attributes['id'] ) ){
-						echo '<img  src='.$featured_img_url.' alt='.$title.' /> ';
+					if(true){
+						echo '<p class="et__header-event">'.$et_eventDate.'</p>';
+						echo '<p class="et__header-event">'.$et_eventTime.'</p>';
+						echo '<h1 class="et__header-event__title">'.$title.'</h1>';
 					}else{
-						echo '<h1 class="chu_gooding__featured-et-title">'.$title.'</h1>';
+						if (has_post_thumbnail( $attributes['id'] ) ){
+							echo '<img  src='.$featured_img_url.' alt='.$title.' /> ';
+						}else{
+							echo '<h1 class="chu_gooding__featured-et-title">'.$title.'</h1>';
+						}
 					}
+					
 			echo '</a>';
 		echo '</div>';
 		return ob_get_clean();

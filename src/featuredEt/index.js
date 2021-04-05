@@ -37,6 +37,16 @@ export const settings = {
         id: {
             type: 'string',
         },
+        event: {
+            type: 'boolean',
+            default: false
+        },
+        eventDate:{
+            type: 'string',
+        },
+        eventTime: {
+            type: 'string',
+        },
     },
     getEditWrapperProps() {
         return {
