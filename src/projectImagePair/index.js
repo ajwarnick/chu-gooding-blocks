@@ -1,11 +1,7 @@
 import './style.scss';
 
-/**
- * Internal dependencies
- */
 import Edit from './edit';
 import save from './save';
-
 
 export const name = 'chu-gooding/project-image-pair';
 

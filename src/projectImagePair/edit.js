@@ -1,11 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, MediaUpload, InspectorControls } from '@wordpress/block-editor';
 import { __experimentalRadio as Radio, __experimentalRadioGroup as RadioGroup, PanelBody, PanelRow} from '@wordpress/components';
-import { useState } from '@wordpress/element';
  
-
-
-
 import './editor.scss';
 
 export default function Edit( { attributes, setAttributes } ) {
@@ -22,8 +18,6 @@ export default function Edit( { attributes, setAttributes } ) {
 		setAttributes({ distribution: value })
 	}
 
-
-	
 	return (
 		<div { ...useBlockProps() } className={"project__imagePair " + ("option"+attributes.distribution)}>
 			<InspectorControls>
