@@ -100,33 +100,31 @@ function chu_gooding_blocks_init() {
 	);
 
 	function render_related($attributes){
-		// 	<div className="chugooding__related">
-		// 		<div className="related__projects">
-		// 			<div className="related__projects-label">
-		// 			Related Work
-		// 			</div>
-		// 			<div className="related__projects-projects" >
-		// 				<ul className="projectData">
+
+		ob_start();
+		echo 	'<div className="chugooding__related">';
+		echo 		'<div className="related__projects">';
+		echo 			'<div className="related__projects-label"> Related Work </div>';
+		echo 			'<div className="related__projects-projects" >';
+		echo 				'<ul className="projectData">';
 		// 					{projectArray.filter(value => attributes.relatedProjects.includes(value.id)).map((value,index)=>{
 		// 						return <li data-id={value.id}><a href={value.link}>{value.title.rendered}</a></li>
 		// 					})}
-		// 				</ul>
-		// 			</div>
-		// 		</div>
-		// 		<div className="related__ets">
-		// 			<div className="related__ets-label">
-		// 				Related <span className="test"></span>
-		// 			</div>
-		// 			<div className="related__ets-ets" >
-		// 				<ul className="etData">
+		echo 				'</ul>';
+		echo 			'</div>';
+		echo 		'</div>';
+		echo 		'<div className="related__ets">';
+		echo 			'<div className="related__ets-label"> Related <span className="test"></span> </div>';
+		echo 			'<div className="related__ets-ets" >';
+		echo 				'<ul className="etData">';
 		// 					{etArray.filter(value => attributes.relatedEt.includes(value.id)).map((value,index)=>{
 		// 						return <li data-id={value.id}><a href={value.link}><span className="et-number">014</span><span className="et-title">{ decodeEntities(value.title.rendered) }</span></a></li>
 		// 					})}
-		// 				</ul>
-		// 			</div>
-		// 		</div>
-		// 	</div>
-
+		echo 				'</ul>';
+		echo 			'</div>';
+		echo 		'</div>';
+		echo 	'</div>';
+		return ob_get_clean();
 	}
 
 	// chu-gooding/project-test
