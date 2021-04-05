@@ -5,7 +5,19 @@ import apiFetch from '@wordpress/api-fetch';
 
 import './editor.scss';
 
-
+const htmlEncode = (str) => {
+	if(str && typeof str === 'string') {
+		var element = document.createElement('div');
+		// strip script/html tags
+		str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
+		str = str.replace(/<\/?\w(?:[^"'>]|"[^"]*"|'[^']*')*>/gmi, '');
+		element.innerHTML = str;
+		str = element.textContent;
+		element.textContent = '';
+	  }
+  
+	  return str;
+}
 
 export default function Edit({ attributes, isSelected, setAttributes, }) {
 
@@ -31,7 +43,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 			if( !attributes.id ){
 				result = attributes.projects.find(obj => obj.id == attributes.id);
 
-				setAttributes({title: result.title.rendered})
+				setAttributes({title: htmlEncode(result.title.rendered)})
 				getFeaturerMedia(result.featured_media);
 			}
 
@@ -62,7 +74,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 
 		getFeaturerMedia( result.featured_media );
 
-		setAttributes( { id: id, title: result.title.rendered } );
+		setAttributes( { id: id, title: htmlEncode(result.title.rendered) } );
 	}
 
 	return (
