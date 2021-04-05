@@ -27,11 +27,6 @@ Phagarph style
 Image style for et and project
 
 
-Et featured 
-	base things on its type
-
-	toggle show featured image
-
 
 Array attribute for credits 
 
@@ -40,13 +35,11 @@ Array attribute for credits
 
 
 
-
+- render related ets and projects
 - slider full width
-- event featured et
+
 - lightroom
 - plry activate 
-
-
 - cookie order storage
 	- get url 
 	- get title
@@ -59,3 +52,4 @@ DONE
 - slide margin top overlap
 - feautred et background in slider
 - remove up arrow from theme
+- event featured et

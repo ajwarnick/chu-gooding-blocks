@@ -3,9 +3,21 @@ import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { CheckboxControl, PanelBody, PanelRow, Placeholder } from '@wordpress/components';
 import { Fragment }  from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
-import {decodeEntities} from './decodeEntities.js';
 import './editor.scss';
 
+const htmlEncode = (str) => {
+	if(str && typeof str === 'string') {
+		var element = document.createElement('div');
+		// strip script/html tags
+		str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
+		str = str.replace(/<\/?\w(?:[^"'>]|"[^"]*"|'[^']*')*>/gmi, '');
+		element.innerHTML = str;
+		str = element.textContent;
+		element.textContent = '';
+	  }
+  
+	  return str;
+}
 
 export default function Edit({ attributes, isSelected, setAttributes, }) {
 
@@ -38,7 +50,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 				<Fragment>
 					{attributes.ets.filter(value => attributes.relatedEt.includes(value.id)).map((value,index)=>{
 						console.log(value.meta);
-						return <li data-id={value.id}><a href="#"><span className="et-number">{value.meta.chugooding_meta_block_field_etNumber}</span><span className="et-title">{value.title.rendered /*decodeEntities(value.title.rendered)*/}</span></a></li>
+						return <li data-id={value.id}><a href="#"><span className="et-number">{value.meta.chugooding_meta_block_field_etNumber}</span><span className="et-title">{ htmlEncode(value.title.rendered) }</span></a></li>
 					})}
 				</Fragment>
 			 )
@@ -52,7 +64,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 			return (
 				<Fragment>
 					{attributes.projects.filter(value => attributes.relatedProjects.includes(value.id)).map((value,index)=>{
-						return <li data-id={value.id}><a href="#">{value.title.rendered}</a></li>
+						return <li data-id={value.id}><a href="#">{htmlEncode(value.title.rendered)}</a></li>
 					})}
 				</Fragment>
 			 )
@@ -81,7 +93,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 						{ attributes.projects ?
 							<div className="related__PanelBox">
 								{attributes.projects.map((value,index) => {
-									return <CheckboxControl label={ value.title.rendered } onChange={ () => projectChange(value.id) } checked={ attributes.relatedProjects.includes(value.id) } />
+									return <CheckboxControl label={ htmlEncode(value.title.rendered) } onChange={ () => projectChange(value.id) } checked={ attributes.relatedProjects.includes(value.id) } />
 								})}
 							</div>
 						:
@@ -93,7 +105,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 					{ attributes.ets ?
 						<div className="related__PanelBox">
 							{attributes.ets.map((value,index) => {
-								return <CheckboxControl label={ value.title.rendered } onChange={ () => etChange(value.id) } checked={ attributes.relatedEt.includes(value.id) } />
+								return <CheckboxControl label={ htmlEncode(value.title.rendered) } onChange={ () => etChange(value.id) } checked={ attributes.relatedEt.includes(value.id) } />
 							})}
 						</div>
 					:
