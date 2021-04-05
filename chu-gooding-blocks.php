@@ -96,30 +96,31 @@ function chu_gooding_blocks_init() {
 			'editor_script' => 'chugooding-block-editor',
 			'editor_style'  => 'chugooding-block-editor',
 			'style'         => 'chugooding-block',
+			'render_callback' => 'render_related',
 		)
 	);
 
 	function render_related($attributes){
-
+		
 		ob_start();
-		echo 	'<div className="chugooding__related">';
-		echo 		'<div className="related__projects">';
-		echo 			'<div className="related__projects-label"> Related Work </div>';
-		echo 			'<div className="related__projects-projects" >';
-		echo 				'<ul className="projectData">';
-		// 					{projectArray.filter(value => attributes.relatedProjects.includes(value.id)).map((value,index)=>{
-		// 						return <li data-id={value.id}><a href={value.link}>{value.title.rendered}</a></li>
-		// 					})}
+		echo 	'<div class="chugooding__related">';
+		echo 		'<div class="related__projects">';
+		echo 			'<div class="related__projects-label"> Related Work </div>';
+		echo 			'<div class="related__projects-projects" >';
+		echo 				'<ul class="projectData">';
+								foreach ($attributes['relatedProjects'] as &$projectID) {
+									echo '<li data-id="'.$projectID.'"><a href="'.get_permalink($projectID).'">'.get_the_title($projectID).'</a></li>';
+								}
 		echo 				'</ul>';
 		echo 			'</div>';
 		echo 		'</div>';
-		echo 		'<div className="related__ets">';
-		echo 			'<div className="related__ets-label"> Related <span className="test"></span> </div>';
-		echo 			'<div className="related__ets-ets" >';
-		echo 				'<ul className="etData">';
-		// 					{etArray.filter(value => attributes.relatedEt.includes(value.id)).map((value,index)=>{
-		// 						return <li data-id={value.id}><a href={value.link}><span className="et-number">014</span><span className="et-title">{ decodeEntities(value.title.rendered) }</span></a></li>
-		// 					})}
+		echo 		'<div class="related__ets">';
+		echo 			'<div class="related__ets-label"> Related <span class="test"></span> </div>';
+		echo 			'<div class="related__ets-ets" >';
+		echo 				'<ul class="etData">';
+								foreach ($attributes['relatedEt'] as &$etID) {
+									echo '<li data-id="'.$etID.'"><a href="'.get_permalink($etID).'"><span class="et-number">'.get_post_meta( $etID, 'chugooding_meta_block_field_etNumber', true ).'</span><span class="et-title">'.get_the_title($etID).'</span></a></li>';
+								}
 		echo 				'</ul>';
 		echo 			'</div>';
 		echo 		'</div>';
