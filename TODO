@@ -27,13 +27,11 @@ Phagarph style
 Image style for et and project
 
 
-
 Array attribute for credits 
 
-
+- featured project remove min-height
 - slider full width
 - lightroom
-- plry activate 
 - cookie order storage
 	- get url 
 	- get title
@@ -48,3 +46,6 @@ DONE
 - remove up arrow from theme
 - event featured et
 - render related ets and projects
+- add et number to title on ets
+- plry activate 
+
