@@ -20,6 +20,8 @@
 .chu_gooding__featured-project {
 	padding: 0 var(--cg12Margin);
 	min-height: 40vh;
+	max-height: 95vh;
+	overflow: hidden;
 	display: grid;
 }
 
@@ -68,7 +70,7 @@
 
 	display: grid;
 	margin: auto;
-	max-height: 556px;
+	// max-height: 556px;
 	max-width: 78vw;
 }
 

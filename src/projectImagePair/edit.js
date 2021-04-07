@@ -37,10 +37,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				<MediaUpload 
 					onSelect={selectImageLeft}
 					render={ ({open}) => {
-						return <img 
-							src={attributes.imageLeft}
-							onClick={open}
-							/>;
+						return <img src={attributes.imageLeft} onClick={open} />;
 					}}
 				/>
 			</div>
@@ -48,10 +45,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				<MediaUpload 
 					onSelect={selectImageRight}
 					render={ ({open}) => {
-						return <img 
-							src={attributes.imageRight}
-							onClick={open}
-							/>;
+						return <img src={attributes.imageRight} onClick={open}/>;
 					}}
 				/>
 			</div>
