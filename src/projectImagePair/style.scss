@@ -5,32 +5,74 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.project__imagePair {
-	display: grid;
-	margin-bottom: 100px;
-	grid-template-columns: 1fr 1fr;
-} 
-
-.project__imagePair.option3 {
-	grid-template-columns: 3fr 9fr;
+.project__pairRight{
+	margin-top: -50px;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: var(--cg12Margin);
+	padding-right: var(--cg12Margin);
 }
 
-.project__imagePair.option4 {
-	grid-template-columns: 4fr 8fr;
+.project__pairLeft{
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: var(--cg12Margin);
+	padding-right: var(--cg12Margin);
 }
 
-.project__imagePair.option6 {
-	grid-template-columns: 6fr 6fr;
-}
+@media screen and (min-width: 700px) {
 
-.project__imagePair.option8 {
-	grid-template-columns: 8fr 4fr;
-}
+	.project__pairRight{
 
-.project__imagePair.option9 {
-	grid-template-columns: 9fr 3fr;
-}
+	}
 
+	.project__imagePair {
+		display: grid;
+		margin-bottom: 100px;
+		grid-template-columns: 1fr 1fr;
+	} 
+
+	.project__imagePair.option3 {
+		grid-template-columns: 3fr 9fr;
+	}
+
+	.project__imagePair.option4 {
+		grid-template-columns: 4fr 8fr;
+	}
+
+	.project__imagePair.option6 {
+		grid-template-columns: 6fr 6fr;
+	}
+
+	.project__imagePair.option8 {
+		grid-template-columns: 8fr 4fr;
+	}
+
+	.project__imagePair.option9 {
+		grid-template-columns: 9fr 3fr;
+	}
+
+	.project__imagePair .project__pairLeft {
+		margin-right: calc(var(--cg12Gutter) * -0.5);
+	}
+	
+	.project__imagePair .project__pairRight {
+		margin-left: calc(var(--cg12Gutter) * -0.5);
+	}
+	
+	.project__imagePair img {
+		margin: auto;
+	}
+	
+	.project__pairLeft img{
+		margin-right: 0;
+	}
+	
+	.project__pairRight img{
+		margin-left: 0;
+	}
+
+}
 // .project__imagePair + .project__imagePair,
 // .block + .project__imagePair,
 // .project__imagePair + .block {
@@ -45,22 +87,5 @@
 	mix-blend-mode: multiply;
 }
 
-.project__imagePair .project__pairLeft {
-	margin-right: calc(var(--cg12Gutter) * -0.5);
-}
 
-.project__imagePair .project__pairRight {
-	margin-left: calc(var(--cg12Gutter) * -0.5);
-}
 
-.project__imagePair img {
-	margin: auto;
-}
-
-.project__pairLeft img{
-	margin-right: 0;
-}
-
-.project__pairRight img{
-	margin-left: 0;
-}

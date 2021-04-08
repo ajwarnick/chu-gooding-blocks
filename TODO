@@ -29,7 +29,7 @@ Image style for et and project
 
 Array attribute for credits 
 
-- featured project remove min-height
+
 - slider full width
 - lightroom
 - cookie order storage
@@ -48,4 +48,4 @@ DONE
 - render related ets and projects
 - add et number to title on ets
 - plry activate 
-
+- featured project remove min-height
