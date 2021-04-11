@@ -23,14 +23,27 @@
 @media screen and (min-width: 700px) {
 
 	.project__pairRight{
+		padding: unset;
+		margin: unset;
+	}
 
+	.project__pairLeft{
+		padding: unset;
+		margin: unset;
 	}
 
 	.project__imagePair {
 		display: grid;
 		margin-bottom: 100px;
 		grid-template-columns: 1fr 1fr;
+		
 	} 
+
+	.single-project .project__imagePair,
+	.single-et .project__imagePair {
+		padding-left: var(--cg12Margin);
+		padding-right: var(--cg12Margin);
+	}
 
 	.project__imagePair.option3 {
 		grid-template-columns: 3fr 9fr;
