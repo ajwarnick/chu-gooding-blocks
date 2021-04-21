@@ -3,12 +3,12 @@
  * Plugin Name: 	Chu , Gooding Blocks
  * Plugin URI:		https://github.com/ajwarnick/chu-gooding-blocks
  * Description: 	add custom Gutenberg blocks for Chu , Gooding Theme
- * Version: 		0.7.0
+ * Version: 		0.8.0
  *
  * Author:			Anthony Warnick
  * Author URI:		https://anthonywarnick.com/
  *
- * GitHub Plugin URI: https://github.com/ajwarnick/chu-gooding-blocks 
+ * GitHub Plugin URI: https://github.com/ajwarnick/chu-gooding-blocks
  *
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html

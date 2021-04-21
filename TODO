@@ -22,24 +22,24 @@ https://github.com/feimosi/baguetteBox.js/
 
 
 
-Phagarph style
+Phargarph style
 
 Image style for et and project
 
 
-Array attribute for credits 
+Array attribute for credits
 
 
 - slider full width
 - lightroom
 - cookie order storage
-	- get url 
+	- get url
 	- get title
 
 
 DONE
 - project page background colors in slider images
-- featured project title 
+- featured project title
 - slider controls pass through
 - slide margin top overlap
 - feautred et background in slider
@@ -47,5 +47,5 @@ DONE
 - event featured et
 - render related ets and projects
 - add et number to title on ets
-- plry activate 
+- plry activate
 - featured project remove min-height
