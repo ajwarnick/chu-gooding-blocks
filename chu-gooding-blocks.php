@@ -4,10 +4,12 @@
  * Plugin URI:		https://github.com/ajwarnick/chu-gooding-blocks
  * Description: 	add custom Gutenberg blocks for Chu , Gooding Theme
  * Version: 		0.7.0
- * 
+ *
  * Author:			Anthony Warnick
  * Author URI:		https://anthonywarnick.com/
- * 
+ *
+ * GitHub Plugin URI: https://github.com/ajwarnick/chu-gooding-blocks 
+ *
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     blocks
@@ -101,7 +103,7 @@ function chu_gooding_blocks_init() {
 	);
 
 	function render_related($attributes){
-		
+
 		ob_start();
 		echo 	'<div class="chugooding__related">';
 		echo 		'<div class="related__projects">';
@@ -115,7 +117,7 @@ function chu_gooding_blocks_init() {
 		echo 			'</div>';
 		echo 		'</div>';
 		echo 		'<div class="related__ets">';
-		echo 			'<div class="related__ets-label"> Related <span class="test"></span> </div>';
+		echo 			'<div class="related__ets-label"> Related <span class="etSVG"></span> </div>';
 		echo 			'<div class="related__ets-ets" >';
 		echo 				'<ul class="etData">';
 								foreach ($attributes['relatedEt'] as &$etID) {
@@ -160,10 +162,10 @@ function chu_gooding_blocks_init() {
 	);
 
 	function render_featured_project ($attributes){
-		$featured_img_url = get_the_post_thumbnail_url($attributes['id'],'full'); 
+		$featured_img_url = get_the_post_thumbnail_url($attributes['id'],'full');
 		$title = get_the_title($attributes['id']);
 		$color_name = $attributes['colorName'];
-		$permalink = get_permalink( $attributes['id'] ); 
+		$permalink = get_permalink( $attributes['id'] );
 
 		ob_start();
 		echo	'<div class="chu_gooding__featured-project '.$color_name.'" >';
@@ -192,13 +194,13 @@ function chu_gooding_blocks_init() {
 
 
 	function render_featured_et($attributes){
-		$featured_img_url = get_the_post_thumbnail_url($attributes['id'],'full'); 
+		$featured_img_url = get_the_post_thumbnail_url($attributes['id'],'full');
 		$et_number =  get_post_meta( $attributes['id'], 'chugooding_meta_block_field_etNumber', true );
 		$et_eventDate =  get_post_meta( $attributes['id'], 'chugooding_meta_block_field_etEventData', true );
 		$et_eventTime =  get_post_meta( $attributes['id'], 'chugooding_meta_block_field_etEventTime', true );
 		$title = get_the_title($attributes['id']);
-		$permalink = get_permalink( $attributes['id'] ); 
-		
+		$permalink = get_permalink( $attributes['id'] );
+
 
 		ob_start();
 		echo '<div class="chu_gooding__featured-et">';
@@ -220,7 +222,7 @@ function chu_gooding_blocks_init() {
 							echo '<h1 class="chu_gooding__featured-et-title">'.$title.'</h1>';
 						}
 					}
-					
+
 			echo '</a>';
 		echo '</div>';
 		return ob_get_clean();
@@ -235,7 +237,7 @@ function chu_gooding_blocks_init() {
 			'style'         => 'chugooding-block',
 		)
 	);
-	
+
 }
 
 add_action( 'init', 'chu_gooding_blocks_init' );

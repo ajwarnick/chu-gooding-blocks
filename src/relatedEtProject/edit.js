@@ -127,7 +127,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 				</div>
 				<div className="related__ets">
 					<div className="related__ets-label">
-						Related <span className="test"></span>
+						Related <span className="etSVG"></span>
 					</div>
 					<div className="related__ets-ets">
 					<ul>
