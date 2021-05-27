@@ -6,7 +6,6 @@ export default function save({ attributes } ) {
 		<div {...blockProps}>
 			<dl className={ "project__header-meta"}>
 				<dt>Client</dt>
-
                 <dd>
 				<RichText.Content
 					tagName="span"

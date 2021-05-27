@@ -15,31 +15,31 @@ export default function Edit( { attributes, setAttributes } ) {
         postType,
         'meta'
     );
-    // const metaFieldValue = meta['chugooding_meta_block_field_location'];
 
     function updateLocation( l ) {
-        setAttributes( {location: l} );
         setMeta( { ...meta, 'chugooding_meta_block_field_location': l } );
+        setAttributes( {location: l} );
     }
     function updateYear( y ) {
-        setAttributes( {year: y} );
         setMeta( { ...meta, 'chugooding_meta_block_field_year': y } );
+        setAttributes( {year: y} );
     }
     function updateType( t ) {
-        setAttributes( {type: t} );
         setMeta( { ...meta, 'chugooding_meta_block_field_type': t } );
+        setAttributes( {type: t} );
+        
     }
     function updateArea( a ) {
-        setAttributes( {location: a} );
         setMeta( { ...meta, 'chugooding_meta_block_field_area': a } );
+        setAttributes( {area: a} );  
     }
     function updateStatus( s ) {
-        setAttributes( {status: s} );
         setMeta( { ...meta, 'chugooding_meta_block_field_status': s } );
+        setAttributes( {status: s} );
     }
     function updateClient( c ){
-        setAttributes( {client: c} );
         setMeta( { ...meta, 'chugooding_meta_block_field_client': c  } );
+        setAttributes( {client: c} );
         
     }
 
@@ -87,7 +87,6 @@ export default function Edit( { attributes, setAttributes } ) {
                         tagName="span"
                         value={attributes.type}
                         className={"project__header-meta-type"}
-                        // allowedFormats={["core/italic"]}
                         onChange={(type) => updateType(type)}
                         placeholder={"project type..."}
                     />
@@ -98,7 +97,6 @@ export default function Edit( { attributes, setAttributes } ) {
                         tagName="span"
                         value={attributes.area}
                         className={"project__header-meta-area"}
-                        // allowedFormats={["core/italic"]}
                         onChange={(area) => updateArea(area)}
                         placeholder={"project area..."}
                     />

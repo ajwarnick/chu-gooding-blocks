@@ -57,7 +57,7 @@ export const settings = {
             source: "html",
             selector: ".project__header-meta-status",
             default: ''
-        },
+        }
     },
     supports: {
         html: true,
