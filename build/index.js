@@ -15192,7 +15192,7 @@ function save(_ref) {
       className: "project__credits-names empty"
     }));
   }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
-    className: "project__collaborators"
+    className: attributes.collaborators.length === 0 ? "project__collaborators" : "project__collaborators  hidden"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     class: "content__left"
   }, "Collaborators"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {

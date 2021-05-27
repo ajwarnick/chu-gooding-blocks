@@ -27,7 +27,7 @@ export default function save( { attributes } ) {
 					})}	
 				</div>
 			</div>
-			<div className="project__collaborators">
+			<div className={attributes.collaborators.length === 0 ? "project__collaborators" : "project__collaborators  hidden"}>
 				<div class="content__left">
 					Collaborators
 				</div>
