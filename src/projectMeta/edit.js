@@ -101,7 +101,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         placeholder={"project area..."}
                     />
                 </dd>
-                <dt>Status</dt>
+                {/* <dt>Status</dt>
                 <dd>
                 <RichText
                         tagName="span"
@@ -111,7 +111,7 @@ export default function Edit( { attributes, setAttributes } ) {
                         onChange={(status) => updateStatus(status)}
                         placeholder={"project status..."}
                     /> 
-                </dd>
+                </dd> */}
             </dl>
         </div>		
 	);
