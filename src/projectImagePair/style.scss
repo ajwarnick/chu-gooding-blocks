@@ -5,6 +5,10 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+ :root{
+	 --cgOverlap: 48px;
+ }
+
 .project__pairRight{
 	margin-top: -50px;
 	margin-left: 0;
@@ -66,11 +70,11 @@
 	}
 
 	.project__imagePair .project__pairLeft {
-		margin-right: calc(var(--cg12Gutter) * -0.5);
+		margin-right: calc(var(--cgOverlap) * -0.5);
 	}
 	
 	.project__imagePair .project__pairRight {
-		margin-left: calc(var(--cg12Gutter) * -0.5);
+		margin-left: calc(var(--cgOverlap) * -0.5);
 	}
 	
 	.project__imagePair img {
