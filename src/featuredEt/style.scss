@@ -80,7 +80,19 @@
 	width: 153px;
 	padding-left: var(--cg12Gutter);
 
-	border-left: 3px double var(--cgBlack);
+	// border-left: 3px double var(--cgBlack);
+	border-left: 1px solid var(--cgBlack);
+	position: relative;
+	margin-left: 3px;
+	
+	&::before{
+		content: " ";
+		position: absolute;
+		border-left: 1px solid var(--cgBlack);
+		top: 0;
+		bottom: 0;
+		left: -4px;
+	}
 }
 
 .chu_gooding__featured-et-meta .chu_gooding__featured-et-meta-label{
