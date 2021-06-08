@@ -45,14 +45,14 @@ export default function save({ attributes } ) {
 					value={attributes.area}
 				/>
 				</dd>
-				<dt>Status</dt>
+				{/* <dt>Status</dt>
 				<dd>
 				<RichText.Content
 					tagName="span"
 					className={"project__header-meta-status"}
 					value={attributes.status}
 				/>
-				</dd>
+				</dd> */}
 			</dl>
       </div>
 	);
