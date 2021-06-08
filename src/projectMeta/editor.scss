@@ -27,7 +27,19 @@
 		min-height: 140px;
 		padding-left: var(--cg12Gutter);
 		padding-top: 0;
-		border-left: 3px double var(--cgBlack);
+		// border-left: 3px double var(--cgBlack);
+		border-left: 1px solid var(--cgBlack);
+		position: relative;
+		margin-left: 3px;
+		
+		&::before{
+			content: " ";
+			position: absolute;
+			border-left: 1px solid var(--cgBlack);
+			top: 0;
+			bottom: 0;
+			left: -4px;
+		}
 	}
 	
 	.wp-block.editor-post-title.editor-post-title__block,

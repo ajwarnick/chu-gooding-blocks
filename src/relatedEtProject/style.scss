@@ -34,7 +34,19 @@
 .chugooding__related .related__projects {
 	grid-column-start: 2;
 	grid-column-end: 6;
-	border-left: 3px double var(--cgBlack);
+	// border-left: 3px double var(--cgBlack);
+	border-left: 1px solid var(--cgBlack);
+	position: relative;
+	margin-left: 3px;
+	
+	&::before{
+		content: " ";
+		position: absolute;
+		border-left: 1px solid var(--cgBlack);
+		top: 0;
+		bottom: 0;
+		left: -4px;
+	}
 }
 
 .chugooding__related .related__ets {
