@@ -15,6 +15,7 @@ import * as etAuthor from './etAuthor';
 import * as etTitle from './etTitle';
 import * as etMeta from './etMeta';
 import * as etQuote from './etQuote';
+import * as emailParagraph from './emailParagraph';
 
 
 const blocks = [
@@ -29,11 +30,12 @@ const blocks = [
     featuredEt,
     etEventDateAndTime,
     youtube,
+    emailParagraph,
 ];
 
-function registerBlock( block ) {
+function registerBlock(block) {
     const { name, settings } = block;
-    registerBlockType( name, settings );
+    registerBlockType(name, settings);
 }
 
-blocks.forEach( registerBlock );
+blocks.forEach(registerBlock);
