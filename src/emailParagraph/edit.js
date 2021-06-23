@@ -6,6 +6,7 @@
 import { __ } from '@wordpress/i18n';
 
 import { useBlockProps, RichText } from '@wordpress/block-editor';
+
 import './editor.scss';
 
 /**
@@ -17,15 +18,49 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, isSelected, setAttributes, }) {
+
+    let headerStyles = {
+        textAlign: 'center',
+        color: '#1f1f1f',
+        fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
+        fontWeight: 'bold',
+        fontSize: '36px',
+        lineHeight: '41px',
+        margin: '0',
+        maxWidth: '600px',
+    }
     return (
-        <p {...useBlockProps()}>
-            <RichText
-                tagName="span"
-                value={attributes.paragraph}
-                className={"et__header-event-date"}
-                onChange={(p) => setAttributes({ paragraph: p })}
-                placeholder={"DATE Formated like this"}
-            />
-        </p>
+
+        <div {...useBlockProps({ className: "chu-gooding-email-header" })} >
+            <table
+                role="presentation"
+                border="0"
+                cellpadding="0"
+                cellspacing="0"
+            >
+                <tr>
+                    <td>
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <th align="center">
+                                    <center >
+                                        <RichText
+                                            tagName="h1"
+                                            style={headerStyles}
+                                            value={attributes.paragraph}
+                                            className={"et__header-event-date"}
+                                            onChange={(p) => setAttributes({ paragraph: p })}
+                                            placeholder={"Header Text"}
+                                        />
+                                    </center>
+                                </th>
+                                <th className="expander"></th>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
     );
 }
