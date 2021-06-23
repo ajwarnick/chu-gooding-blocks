@@ -16,7 +16,7 @@ import * as etTitle from './etTitle';
 import * as etMeta from './etMeta';
 import * as etQuote from './etQuote';
 import * as emailParagraph from './emailParagraph';
-
+import * as emailHeader from './emailHeader';
 
 const blocks = [
     // otherList,
@@ -31,6 +31,7 @@ const blocks = [
     etEventDateAndTime,
     youtube,
     emailParagraph,
+    emailHeader,
 ];
 
 function registerBlock(block) {

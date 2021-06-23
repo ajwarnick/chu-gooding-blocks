@@ -273,6 +273,12 @@
   --cgBaseFont: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
   	Helvetica, sans-serif;
 }
+
+.single-etsingle-et .editor-styles-wrapper {
+  background-color: #ada9a7;
+  background-color: #ada9a7;
+  background-color: var(--cgGray);
+}
 @charset "UTF-8";
 @keyframes plyr-progress {
   to {
@@ -1703,8 +1709,21 @@ a.plyr__control::after, a.plyr__control::before {
   display: none !important;
 }
 
-.chu-gooding-email-header table {
+.chu-gooding-email-paragraph table {
   margin: auto;
+}
+
+.single-newslettersingle-newsletter .editor-styles-wrapper {
+  background-color: #ada9a7;
+  background-color: var(--cgGray);
+}
+.chu-gooding-email-paragraph table {
+  margin: auto;
+}
+
+.single-newslettersingle-newsletter .editor-styles-wrapper {
+  background-color: #ada9a7;
+  background-color: var(--cgGray);
 }
 
 /*# sourceMappingURL=index.css.map*/

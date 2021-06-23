@@ -1,5 +1,16 @@
 (window["webpackJsonp_todo_list"] = window["webpackJsonp_todo_list"] || []).push([["style-index"],{
 
+/***/ "./src/emailHeader/style.scss":
+/*!************************************!*\
+  !*** ./src/emailHeader/style.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "./src/emailParagraph/style.scss":
 /*!***************************************!*\
   !*** ./src/emailParagraph/style.scss ***!
@@ -643,6 +654,197 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/emailHeader/edit.js":
+/*!*********************************!*\
+  !*** ./src/emailHeader/edit.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/emailHeader/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function Edit(_ref) {
+  var attributes = _ref.attributes,
+      isSelected = _ref.isSelected,
+      setAttributes = _ref.setAttributes;
+  var headerStyles = {
+    textAlign: 'center',
+    color: '#1f1f1f',
+    fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
+    fontWeight: 'bold',
+    fontSize: '36px',
+    lineHeight: '43px',
+    margin: '0',
+    maxWidth: '500px'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])({
+    className: "chu-gooding-email-header"
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+    tagName: "p" // allowedFormats={['core/bold', 'core/link']}
+    ,
+    style: headerStyles,
+    value: attributes.header,
+    className: "newsletter-header",
+    onChange: function onChange(h) {
+      return setAttributes({
+        header: h
+      });
+    },
+    placeholder: "Email Header"
+  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
+    className: "expander"
+  })))))));
+}
+
+/***/ }),
+
+/***/ "./src/emailHeader/editor.scss":
+/*!*************************************!*\
+  !*** ./src/emailHeader/editor.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/emailHeader/index.js":
+/*!**********************************!*\
+  !*** ./src/emailHeader/index.js ***!
+  \**********************************/
+/*! exports provided: name, settings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ "./src/emailHeader/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/emailHeader/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save */ "./src/emailHeader/save.js");
+
+/**
+ * Internal dependencies
+ */
+
+
+
+var name = 'chu-gooding/email-header';
+var settings = {
+  title: 'C , G: Newsletter - Header',
+  description: 'Basic Header for Chu , Gooding Newsletter',
+  category: 'chu-gooding-blocks',
+  icon: 'email-alt',
+  example: {
+    attributes: {
+      paragraph: 'AIALA Presentation of Rustic Canyon House & Conversation with Annie Chu'
+    }
+  },
+  attributes: {
+    header: {
+      type: 'string',
+      source: "html",
+      selector: ".newsletter-header",
+      default: ''
+    }
+  },
+  supports: {
+    html: true
+  },
+  edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_2__["default"]
+};
+
+/***/ }),
+
+/***/ "./src/emailHeader/save.js":
+/*!*********************************!*\
+  !*** ./src/emailHeader/save.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return save; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+ */
+
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function save() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Todo List – hello from the saved content!', 'todo-list'));
+}
+
+/***/ }),
+
 /***/ "./src/emailParagraph/edit.js":
 /*!************************************!*\
   !*** ./src/emailParagraph/edit.js ***!
@@ -684,18 +886,18 @@ function Edit(_ref) {
   var attributes = _ref.attributes,
       isSelected = _ref.isSelected,
       setAttributes = _ref.setAttributes;
-  var headerStyles = {
-    textAlign: 'center',
+  var paragraphStyles = {
+    textAlign: 'left',
     color: '#1f1f1f',
     fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
     fontWeight: 'bold',
-    fontSize: '36px',
-    lineHeight: '41px',
+    fontSize: '16px',
+    lineHeight: '18px',
     margin: '0',
-    maxWidth: '600px'
+    maxWidth: '500px'
   };
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])({
-    className: "chu-gooding-email-header"
+    className: "chu-gooding-email-paragraph"
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
     role: "presentation",
     border: "0",
@@ -707,16 +909,16 @@ function Edit(_ref) {
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
     align: "center"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
-    tagName: "h1",
-    style: headerStyles,
+    tagName: "p",
+    style: paragraphStyles,
     value: attributes.paragraph,
-    className: "et__header-event-date",
+    className: "newsletter-paragraph",
     onChange: function onChange(p) {
       return setAttributes({
         paragraph: p
       });
     },
-    placeholder: "Header Text"
+    placeholder: "Copy Paragraph"
   }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
     className: "expander"
   })))))));
@@ -765,7 +967,7 @@ var settings = {
   icon: 'email-alt',
   example: {
     attributes: {
-      paragraph: '01.27.1983'
+      paragraph: 'Enjoy a presentation with Annie Chu of this 5,600-square-foot house for a three-generation family. This home designed as a dual courtyard plan to retain the old growth scenario of California Sycamores and Live Oaks within a tranquil canyon.'
     }
   },
   attributes: {
@@ -827,8 +1029,38 @@ __webpack_require__.r(__webpack_exports__);
  * @return {WPElement} Element to render.
  */
 
-function save() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Todo List – hello from the saved content!', 'todo-list'));
+function save(_ref) {
+  var attributes = _ref.attributes;
+  var paragraphStyles = {
+    textAlign: 'left',
+    color: '#1f1f1f',
+    fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
+    fontWeight: 'bold',
+    fontSize: '16px',
+    lineHeight: '18px',
+    margin: '0',
+    maxWidth: '500px'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save({
+    className: "chu-gooding-email-header"
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
+    style: paragraphStyles,
+    className: "newsletter-paragraph",
+    tagName: "p",
+    value: attributes.paragraph
+  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
+    className: "expander"
+  })))))));
 }
 
 /***/ }),
@@ -2001,6 +2233,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _etMeta__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./etMeta */ "./src/etMeta/index.js");
 /* harmony import */ var _etQuote__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./etQuote */ "./src/etQuote/index.js");
 /* harmony import */ var _emailParagraph__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./emailParagraph */ "./src/emailParagraph/index.js");
+/* harmony import */ var _emailHeader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./emailHeader */ "./src/emailHeader/index.js");
+
 
 
 
@@ -2019,7 +2253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var blocks = [// otherList,
-_projectMeta__WEBPACK_IMPORTED_MODULE_9__, _projectCredits__WEBPACK_IMPORTED_MODULE_4__, _projectImagePair__WEBPACK_IMPORTED_MODULE_2__, _projectParagraph__WEBPACK_IMPORTED_MODULE_3__, _relatedEtProject__WEBPACK_IMPORTED_MODULE_5__, _scrollToTop__WEBPACK_IMPORTED_MODULE_6__, _featuredProject__WEBPACK_IMPORTED_MODULE_7__, _featuredEt__WEBPACK_IMPORTED_MODULE_8__, _etEventDataAndTime__WEBPACK_IMPORTED_MODULE_10__, _youtube__WEBPACK_IMPORTED_MODULE_11__, _emailParagraph__WEBPACK_IMPORTED_MODULE_16__];
+_projectMeta__WEBPACK_IMPORTED_MODULE_9__, _projectCredits__WEBPACK_IMPORTED_MODULE_4__, _projectImagePair__WEBPACK_IMPORTED_MODULE_2__, _projectParagraph__WEBPACK_IMPORTED_MODULE_3__, _relatedEtProject__WEBPACK_IMPORTED_MODULE_5__, _scrollToTop__WEBPACK_IMPORTED_MODULE_6__, _featuredProject__WEBPACK_IMPORTED_MODULE_7__, _featuredEt__WEBPACK_IMPORTED_MODULE_8__, _etEventDataAndTime__WEBPACK_IMPORTED_MODULE_10__, _youtube__WEBPACK_IMPORTED_MODULE_11__, _emailParagraph__WEBPACK_IMPORTED_MODULE_16__, _emailHeader__WEBPACK_IMPORTED_MODULE_17__];
 
 function registerBlock(block) {
   var name = block.name,

@@ -19,19 +19,19 @@ import './editor.scss';
  */
 export default function Edit({ attributes, isSelected, setAttributes, }) {
 
-    let headerStyles = {
-        textAlign: 'center',
+    let paragraphStyles = {
+        textAlign: 'left',
         color: '#1f1f1f',
         fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
         fontWeight: 'bold',
-        fontSize: '36px',
-        lineHeight: '41px',
+        fontSize: '16px',
+        lineHeight: '18px',
         margin: '0',
-        maxWidth: '600px',
+        maxWidth: '500px',
     }
     return (
 
-        <div {...useBlockProps({ className: "chu-gooding-email-header" })} >
+        <div {...useBlockProps({ className: "chu-gooding-email-paragraph" })} >
             <table
                 role="presentation"
                 border="0"
@@ -45,12 +45,12 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
                                 <th align="center">
                                     <center >
                                         <RichText
-                                            tagName="h1"
-                                            style={headerStyles}
+                                            tagName="p"
+                                            style={paragraphStyles}
                                             value={attributes.paragraph}
-                                            className={"et__header-event-date"}
+                                            className={"newsletter-paragraph"}
                                             onChange={(p) => setAttributes({ paragraph: p })}
-                                            placeholder={"Header Text"}
+                                            placeholder={"Copy Paragraph"}
                                         />
                                     </center>
                                 </th>

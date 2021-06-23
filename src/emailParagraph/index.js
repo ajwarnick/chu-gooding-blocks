@@ -14,7 +14,7 @@ export const settings = {
     icon: 'email-alt',
     example: {
         attributes: {
-            paragraph: '01.27.1983',
+            paragraph: 'Enjoy a presentation with Annie Chu of this 5,600-square-foot house for a three-generation family. This home designed as a dual courtyard plan to retain the old growth scenario of California Sycamores and Live Oaks within a tranquil canyon.',
         },
     },
     attributes: {

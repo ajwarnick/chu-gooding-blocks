@@ -5,36 +5,33 @@
  */
 import { __ } from '@wordpress/i18n';
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
+import './editor.scss';
+
 /**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
  *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  *
  * @return {WPElement} Element to render.
  */
-export default function save({ attributes }) {
-    let paragraphStyles = {
-        textAlign: 'left',
+export default function Edit({ attributes, isSelected, setAttributes, }) {
+
+    let headerStyles = {
+        textAlign: 'center',
         color: '#1f1f1f',
         fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
         fontWeight: 'bold',
-        fontSize: '16px',
-        lineHeight: '18px',
+        fontSize: '36px',
+        lineHeight: '43px',
         margin: '0',
         maxWidth: '500px',
     }
     return (
-        <div {...useBlockProps.save({ className: "chu-gooding-email-header" })} >
+
+        <div {...useBlockProps({ className: "chu-gooding-email-header" })} >
             <table
                 role="presentation"
                 border="0"
@@ -47,7 +44,15 @@ export default function save({ attributes }) {
                             <tr>
                                 <th align="center">
                                     <center >
-                                        <RichText.Content style={paragraphStyles} className={"newsletter-paragraph"} tagName="p" value={attributes.paragraph} />
+                                        <RichText
+                                            tagName="p"
+                                            // allowedFormats={['core/bold', 'core/link']}
+                                            style={headerStyles}
+                                            value={attributes.header}
+                                            className={"newsletter-header"}
+                                            onChange={(h) => setAttributes({ header: h })}
+                                            placeholder={"Email Header"}
+                                        />
                                     </center>
                                 </th>
                                 <th className="expander"></th>
@@ -57,5 +62,6 @@ export default function save({ attributes }) {
                 </tr>
             </table>
         </div>
+
     );
 }
