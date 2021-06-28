@@ -1,6 +1,6 @@
 {
 	"name": "todo-list",
-	"version": "0.9.3",
+	"version": "0.9.5",
 	"description": "Example block written with ESNext standard and JSX support – build step required.",
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
