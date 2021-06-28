@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -22,10 +22,73 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
+export default function save({ attributes }) {
+    let tableStyles = {
+        margin: '0 auto',
+        padding: '0',
+    }
+    let headingStyles = {
+        textAlign: 'center',
+        color: '#1f1f1f',
+        fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
+        fontWeight: 'bold',
+        fontSize: '36px',
+        lineHeight: '41px',
+        margin: '0',
+        maxWidth: '600px',
+    }
     return (
-        <p {...useBlockProps.save()}>
-            {__('Todo List – hello from the saved content!', 'todo-list')}
-        </p>
+        <div {...useBlockProps.save()} >
+
+            <table
+                role="presentation"
+                border="0"
+                cellpadding="0"
+                cellspacing="0"
+                style={tableStyles}
+            >
+                <tr style={tableStyles}>
+                    <td className={"container"} >
+                        <div className={"heading"}>
+                            <table
+                                role="presentation"
+                                class="main"
+                                cellpadding="0"
+                                cellspacing="0"
+                            >
+                                <tr>
+                                    <td align="center">
+                                        <center>
+                                            <RichText.Content style={headingStyles} className={"newsletter-heading"} tagName="p" value={attributes.heading} />
+                                        </center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table className={"spacer"}>
+                                            <tbody>
+                                                <tr>
+                                                    <td
+                                                        height="35px"
+                                                        style={
+                                                            {
+                                                                fontSize: '35px',
+                                                                lineHeight: '35px',
+                                                            }
+                                                        }
+                                                    >
+                                                        &#xA0;
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     );
 }

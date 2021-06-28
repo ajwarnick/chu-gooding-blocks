@@ -1,8 +1,63 @@
 (window["webpackJsonp_todo_list"] = window["webpackJsonp_todo_list"] || []).push([["style-index"],{
 
+/***/ "./src/emailCaption/style.scss":
+/*!*************************************!*\
+  !*** ./src/emailCaption/style.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/emailDate/style.scss":
+/*!**********************************!*\
+  !*** ./src/emailDate/style.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/emailDivider/style.scss":
+/*!*************************************!*\
+  !*** ./src/emailDivider/style.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "./src/emailHeader/style.scss":
 /*!************************************!*\
   !*** ./src/emailHeader/style.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/emailImage/style.scss":
+/*!***********************************!*\
+  !*** ./src/emailImage/style.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/emailNumber/style.scss":
+/*!************************************!*\
+  !*** ./src/emailNumber/style.scss ***!
   \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -654,6 +709,774 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/emailCaption/edit.js":
+/*!**********************************!*\
+  !*** ./src/emailCaption/edit.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/emailCaption/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function Edit(_ref) {
+  var attributes = _ref.attributes,
+      isSelected = _ref.isSelected,
+      setAttributes = _ref.setAttributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+  var captionStyles = {
+    textAlign: 'left',
+    color: '#1f1f1f',
+    fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontSize: '12px',
+    lineHeight: '15px',
+    margin: '0',
+    maxWidth: '500px'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "caption"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+    tagName: "p",
+    style: captionStyles,
+    value: attributes.caption,
+    className: "newsletter-caption",
+    onChange: function onChange(p) {
+      return setAttributes({
+        caption: p
+      });
+    },
+    placeholder: "Copy Caption"
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
+}
+
+/***/ }),
+
+/***/ "./src/emailCaption/editor.scss":
+/*!**************************************!*\
+  !*** ./src/emailCaption/editor.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/emailCaption/index.js":
+/*!***********************************!*\
+  !*** ./src/emailCaption/index.js ***!
+  \***********************************/
+/*! exports provided: name, settings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/emailCaption/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/emailCaption/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/emailCaption/save.js");
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+var name = 'chu-gooding/email-caption';
+
+var Icon = function Icon() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("svg", {
+    id: "Layer_1",
+    "data-name": "Layer 1",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 29.07 27.13"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+    d: "M32.63,16.43V26.7L42.7,23.23l1.83,5.09L34.48,31.59l6.23,8.7-4.57,3.27-6-9-6.12,9-4.71-3.28,6.33-8.7L15.47,28.32l1.84-5.12,10,3.6V16.43Z",
+    transform: "translate(-15.47 -16.43)"
+  }));
+};
+
+var settings = {
+  title: 'C , G: Newsletter - Caption',
+  description: 'Basic Caption for Chu , Gooding Newsletter',
+  category: 'chu-gooding-blocks',
+  icon: Icon,
+  example: {
+    attributes: {
+      caption: 'Images (top to bottom): Rustic Canyon House, Photo: Nils Timm | Eyeglass holder, Photo: Annie Chu'
+    }
+  },
+  attributes: {
+    caption: {
+      type: 'string',
+      source: "html",
+      selector: ".newsletter-caption",
+      default: ''
+    }
+  },
+  supports: {
+    html: true
+  },
+  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+};
+
+/***/ }),
+
+/***/ "./src/emailCaption/save.js":
+/*!**********************************!*\
+  !*** ./src/emailCaption/save.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return save; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+ */
+
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function save(_ref) {
+  var attributes = _ref.attributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+  var captionStyles = {
+    textAlign: 'left',
+    color: '#1f1f1f',
+    fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontSize: '12px',
+    lineHeight: '15px',
+    margin: '0',
+    maxWidth: '500px'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "caption"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
+    style: captionStyles,
+    className: "newsletter-caption",
+    tagName: "p",
+    value: attributes.caption
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
+}
+
+/***/ }),
+
+/***/ "./src/emailDate/edit.js":
+/*!*******************************!*\
+  !*** ./src/emailDate/edit.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/emailDate/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function Edit(_ref) {
+  var attributes = _ref.attributes,
+      isSelected = _ref.isSelected,
+      setAttributes = _ref.setAttributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+  var paragraphStyles = {
+    textAlign: 'center',
+    color: '#1f1f1f',
+    fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
+    fontWeight: 'bold',
+    fontSize: '16px',
+    lineHeight: '18px',
+    margin: '0',
+    maxWidth: '500px'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "date"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+    tagName: "span",
+    style: paragraphStyles,
+    value: attributes.day,
+    className: "newsletter-date-day",
+    onChange: function onChange(d) {
+      return setAttributes({
+        day: d
+      });
+    },
+    placeholder: "Event Day",
+    multiline: false
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("br", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+    tagName: "span",
+    style: paragraphStyles,
+    value: attributes.time,
+    className: "newsletter-date-time",
+    onChange: function onChange(t) {
+      return setAttributes({
+        time: t
+      });
+    },
+    placeholder: "Event Time",
+    multiline: false
+  }))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
+}
+
+/***/ }),
+
+/***/ "./src/emailDate/editor.scss":
+/*!***********************************!*\
+  !*** ./src/emailDate/editor.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/emailDate/index.js":
+/*!********************************!*\
+  !*** ./src/emailDate/index.js ***!
+  \********************************/
+/*! exports provided: name, settings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ "./src/emailDate/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/emailDate/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save */ "./src/emailDate/save.js");
+
+/**
+ * Internal dependencies
+ */
+
+
+
+var name = 'chu-gooding/email-date';
+var settings = {
+  title: 'C , G: Newsletter - Date',
+  description: 'Basic Date for Chu , Gooding Newsletter',
+  category: 'chu-gooding-blocks',
+  icon: 'calendar',
+  example: {
+    attributes: {
+      day: '11.05.20',
+      time: '4–5 pm PST'
+    }
+  },
+  attributes: {
+    day: {
+      type: 'string',
+      source: "html",
+      selector: ".newsletter-date-day",
+      default: ''
+    },
+    time: {
+      type: 'string',
+      source: "html",
+      selector: ".newsletter-date-time",
+      default: ''
+    }
+  },
+  supports: {
+    html: true
+  },
+  edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_2__["default"]
+};
+
+/***/ }),
+
+/***/ "./src/emailDate/save.js":
+/*!*******************************!*\
+  !*** ./src/emailDate/save.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return save; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+ */
+
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function save(_ref) {
+  var attributes = _ref.attributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+  var paragraphStyles = {
+    textAlign: 'left',
+    color: '#1f1f1f',
+    fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
+    fontWeight: 'bold',
+    fontSize: '16px',
+    lineHeight: '18px',
+    margin: '0',
+    maxWidth: '500px'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "date"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
+    style: paragraphStyles,
+    className: "newsletter-date-day",
+    tagName: "span",
+    value: attributes.day
+  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("br", null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
+    style: paragraphStyles,
+    className: "newsletter-date-time",
+    tagName: "span",
+    value: attributes.time
+  }))))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
+}
+
+/***/ }),
+
+/***/ "./src/emailDivider/edit.js":
+/*!**********************************!*\
+  !*** ./src/emailDivider/edit.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/emailDivider/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function Edit(_ref) {
+  var attributes = _ref.attributes,
+      isSelected = _ref.isSelected,
+      setAttributes = _ref.setAttributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "divider"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("hr", {
+    style: {
+      border: '0',
+      borderBottom: '1px solid #1f1f1f',
+      width: '200px'
+    }
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
+}
+
+/***/ }),
+
+/***/ "./src/emailDivider/editor.scss":
+/*!**************************************!*\
+  !*** ./src/emailDivider/editor.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/emailDivider/index.js":
+/*!***********************************!*\
+  !*** ./src/emailDivider/index.js ***!
+  \***********************************/
+/*! exports provided: name, settings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ "./src/emailDivider/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/emailDivider/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save */ "./src/emailDivider/save.js");
+
+/**
+ * Internal dependencies
+ */
+
+
+
+var name = 'chu-gooding/email-divider';
+var settings = {
+  title: 'C , G: Newsletter - Divider',
+  description: 'Basic Divider for Chu , Gooding Newsletter',
+  category: 'chu-gooding-blocks',
+  icon: 'minus',
+  supports: {
+    html: true
+  },
+  edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_2__["default"]
+};
+
+/***/ }),
+
+/***/ "./src/emailDivider/save.js":
+/*!**********************************!*\
+  !*** ./src/emailDivider/save.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return save; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+ */
+
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function save(_ref) {
+  var attributes = _ref.attributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "divider"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("hr", {
+    style: {
+      border: '0',
+      borderBottom: '1px solid #1f1f1f',
+      width: '200px'
+    }
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
+}
+
+/***/ }),
+
 /***/ "./src/emailHeader/edit.js":
 /*!*********************************!*\
   !*** ./src/emailHeader/edit.js ***!
@@ -695,43 +1518,59 @@ function Edit(_ref) {
   var attributes = _ref.attributes,
       isSelected = _ref.isSelected,
       setAttributes = _ref.setAttributes;
-  var headerStyles = {
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+  var headingStyles = {
     textAlign: 'center',
     color: '#1f1f1f',
     fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
     fontWeight: 'bold',
     fontSize: '36px',
-    lineHeight: '43px',
+    lineHeight: '41px',
     margin: '0',
-    maxWidth: '500px'
+    maxWidth: '600px'
   };
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])({
-    className: "chu-gooding-email-header"
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
     role: "presentation",
     border: "0",
     cellpadding: "0",
-    cellspacing: "0"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "heading"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
     cellpadding: "0",
     cellspacing: "0"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
     align: "center"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
-    tagName: "p" // allowedFormats={['core/bold', 'core/link']}
-    ,
-    style: headerStyles,
-    value: attributes.header,
-    className: "newsletter-header",
+    tagName: "h1",
+    style: headingStyles,
+    value: attributes.heading,
+    className: "newsletter-heading",
     onChange: function onChange(h) {
       return setAttributes({
-        header: h
+        heading: h
       });
     },
-    placeholder: "Email Header"
-  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
-    className: "expander"
-  })))))));
+    placeholder: "Copy Heading"
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
 }
 
 /***/ }),
@@ -774,17 +1613,17 @@ var settings = {
   title: 'C , G: Newsletter - Header',
   description: 'Basic Header for Chu , Gooding Newsletter',
   category: 'chu-gooding-blocks',
-  icon: 'email-alt',
+  icon: 'heading',
   example: {
     attributes: {
-      paragraph: 'AIALA Presentation of Rustic Canyon House & Conversation with Annie Chu'
+      heading: 'AIALA Presentation of Rustic Canyon House & Conversation with Annie Chu'
     }
   },
   attributes: {
-    header: {
+    heading: {
       type: 'string',
       source: "html",
-      selector: ".newsletter-header",
+      selector: ".newsletter-heading",
       default: ''
     }
   },
@@ -839,8 +1678,553 @@ __webpack_require__.r(__webpack_exports__);
  * @return {WPElement} Element to render.
  */
 
-function save() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Todo List – hello from the saved content!', 'todo-list'));
+function save(_ref) {
+  var attributes = _ref.attributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+  var headingStyles = {
+    textAlign: 'center',
+    color: '#1f1f1f',
+    fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
+    fontWeight: 'bold',
+    fontSize: '36px',
+    lineHeight: '41px',
+    margin: '0',
+    maxWidth: '600px'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "heading"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
+    style: headingStyles,
+    className: "newsletter-heading",
+    tagName: "p",
+    value: attributes.heading
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
+}
+
+/***/ }),
+
+/***/ "./src/emailImage/edit.js":
+/*!********************************!*\
+  !*** ./src/emailImage/edit.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/emailImage/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+function Edit(_ref) {
+  var attributes = _ref.attributes,
+      isSelected = _ref.isSelected,
+      setAttributes = _ref.setAttributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+
+  function selectImage(value) {
+    setAttributes({
+      image: value.sizes.full.url
+    });
+  }
+
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "divider"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["MediaUpload"], {
+    onSelect: selectImage,
+    render: function render(_ref2) {
+      var open = _ref2.open;
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+        src: attributes.image,
+        onClick: open
+      });
+    }
+  }, "Hello")))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
+}
+
+/***/ }),
+
+/***/ "./src/emailImage/editor.scss":
+/*!************************************!*\
+  !*** ./src/emailImage/editor.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/emailImage/index.js":
+/*!*********************************!*\
+  !*** ./src/emailImage/index.js ***!
+  \*********************************/
+/*! exports provided: name, settings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ "./src/emailImage/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/emailImage/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save */ "./src/emailImage/save.js");
+
+/**
+ * Internal dependencies
+ */
+
+
+
+var name = 'chu-gooding/email-image';
+var settings = {
+  title: 'C , G: Newsletter - Image',
+  description: 'Basic Image for Chu , Gooding Newsletter',
+  category: 'chu-gooding-blocks',
+  icon: 'format-image',
+  example: {
+    attributes: {
+      image: 'https://picsum.photos/200/300'
+    }
+  },
+  attributes: {
+    image: {
+      type: 'string',
+      default: 'data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAcQAAAHECAYAAACnX1ofAAAACXBIWXMAAAsSAAALEgHS3X78AAAdPUlEQVR4nO3di3HcOMIuUPDWJqAbgiYETQhyCJoQ5BDkEOwQrBDsEKQQrBCkEOwQ+BcNcLa33eCj+WzhnCrWTu2M2HziIx4EqxBCHQCgcP+v9AMAAI3/tP9Q13W17aYAwPqqqvrdUqqGCEDxgkAEgEggAlC8IBABIBKIABQvCEQAiAQiAMULAhEAIoEIQPGCQASASCACULwgEAEgEogAFC8IRACIBCIAxQsCEQAigQhA8YJABIBIIAJQvCAQASASiAAULwhEAIgEIgDFCwIRACKBCEDxgkAEgEggAlC8IBABIBKIABQvCEQAiAQiAMULAhEAIoEIQPGCQASASCACULwgEAEgEogAFC8IRACIBCIAxQsCEQAigQhA8YJABIBIIAJQvCAQASASiAAULwhEAIgEIgDFCwIRACKBCEDxgkAEgEggAlC8IBABIBKIABQvCEQAiAQiAMULAhEAIoEIQPGCQASASCACULwgEAEgEogAFC8IRACIBCIAxQsCEQAigQhA8YJABIBIIAJQvCAQASASiAAULwhEAIgEIgDFCwIRACKBCEDxgkAEgEggAlC8IBABIBKIABQvCEQAiAQiAMULAhEAIoEIQPGCQASASCACULwgEAEgEogAFC8IRACIBCIAxQsCEQAigQhA8YJABIBIIAJQvCAQASASiAAULwhEAIgEIgDFCwIRACKBCEDxgkAEgEggAlC8IBABIBKIABQvCEQAiAQiAMULAhEAIoEIQPGCQASASCACULwgEAEgEogAFC8IRACIBCIAxQsCEQAigQhA8YJABIBIIAJQvCAQASASiAAULwhEAIgEIgDFCwIRACKBCEDxgkAEgEggAlC8IBABIBKIABQvCEQAiAQiAMULAhEAIoEIQPGCQASASCACULwgEAEgEogAFC8IRACIBCIAxQsCEQAigQhA8YJABIBIIAJQvCAQASASiAAULwhEAIgEIgDFCwIRACKBCEDxgkAEgEggAlC8IBD/VFVVnVlu97atS3IcKJnrv0z/uYS9rqrqKoTQXIjXIYSbEMLVwf8eekvLrxDCS7PUdf287dYDcAl2G4hVVTXhd5eWm4F/dp2WkP6uWU8Tjt+bZa1wTAH+OYV488/N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'
+    }
+  },
+  supports: {
+    html: true
+  },
+  edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_2__["default"]
+};
+
+/***/ }),
+
+/***/ "./src/emailImage/save.js":
+/*!********************************!*\
+  !*** ./src/emailImage/save.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return save; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+ */
+
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function save(_ref) {
+  var attributes = _ref.attributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "divider"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("img", {
+    src: attributes.image,
+    width: "100%",
+    style: {
+      height: ' auto',
+      maxWidth: '100%',
+      width: 'auto',
+      maxHeight: '400px'
+    },
+    border: "0"
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
+}
+
+/***/ }),
+
+/***/ "./src/emailNumber/edit.js":
+/*!*********************************!*\
+  !*** ./src/emailNumber/edit.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/emailNumber/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function Edit(_ref) {
+  var attributes = _ref.attributes,
+      isSelected = _ref.isSelected,
+      setAttributes = _ref.setAttributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+  var paragraphStyles = {
+    textAlign: 'center',
+    color: '#1f1f1f',
+    fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
+    fontWeight: 'bold',
+    fontSize: '16px',
+    lineHeight: '18px',
+    margin: '0',
+    maxWidth: '500px'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "paragraph"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+    tagName: "p",
+    style: paragraphStyles,
+    value: attributes.paragraph,
+    className: "newsletter-subhead",
+    onChange: function onChange(p) {
+      return setAttributes({
+        paragraph: p
+      });
+    },
+    placeholder: "Copy Paragraph"
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
+}
+
+/***/ }),
+
+/***/ "./src/emailNumber/editor.scss":
+/*!*************************************!*\
+  !*** ./src/emailNumber/editor.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/emailNumber/index.js":
+/*!**********************************!*\
+  !*** ./src/emailNumber/index.js ***!
+  \**********************************/
+/*! exports provided: name, settings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/emailNumber/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/emailNumber/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/emailNumber/save.js");
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+var Icon = function Icon() {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("svg", {
+    id: "Layer_1",
+    "data-name": "Layer 1",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 18.32 23.67"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("path", {
+    d: "M21.71,33h3.74l1.49-5.54H23.23l.51-1.87h3.71l1.94-7.22h2.4l-1.94,7.22h3.59l2-7.22h2.36l-2,7.22h3.74L39,27.43H35.29L33.79,33h3.75L37,34.84H33.28L31.34,42H29l1.94-7.17H27.35L25.41,42H23L25,34.84H21.22Zm9.73,0,1.5-5.54h-3.6L27.85,33Z",
+    transform: "translate(-21.22 -18.34)"
+  }));
+};
+
+var name = 'chu-gooding/email-subhead';
+var settings = {
+  title: 'C , G: Newsletter - Subhead',
+  description: 'Basic Subhead for Chu , Gooding Newsletter - To be used for section titles or Et numbers',
+  category: 'chu-gooding-blocks',
+  icon: Icon,
+  example: {
+    attributes: {
+      paragraph: '003'
+    }
+  },
+  attributes: {
+    paragraph: {
+      type: 'string',
+      source: "html",
+      selector: ".newsletter-subhead",
+      default: ''
+    }
+  },
+  supports: {
+    html: true
+  },
+  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+};
+
+/***/ }),
+
+/***/ "./src/emailNumber/save.js":
+/*!*********************************!*\
+  !*** ./src/emailNumber/save.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return save; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+ */
+
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+
+function save(_ref) {
+  var attributes = _ref.attributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
+  var paragraphStyles = {
+    textAlign: 'center',
+    color: '#1f1f1f',
+    fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
+    fontWeight: 'bold',
+    fontSize: '16px',
+    lineHeight: '18px',
+    margin: '0',
+    maxWidth: '500px'
+  };
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    border: "0",
+    cellpadding: "0",
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "paragraph"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
+    cellpadding: "0",
+    cellspacing: "0"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    align: "center"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
+    style: paragraphStyles,
+    className: "newsletter-subhead",
+    tagName: "p",
+    value: attributes.paragraph
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
 }
 
 /***/ }),
@@ -886,6 +2270,10 @@ function Edit(_ref) {
   var attributes = _ref.attributes,
       isSelected = _ref.isSelected,
       setAttributes = _ref.setAttributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
   var paragraphStyles = {
     textAlign: 'left',
     color: '#1f1f1f',
@@ -896,17 +2284,24 @@ function Edit(_ref) {
     margin: '0',
     maxWidth: '500px'
   };
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])({
-    className: "chu-gooding-email-paragraph"
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
     role: "presentation",
     border: "0",
     cellpadding: "0",
-    cellspacing: "0"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "paragraph"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
     cellpadding: "0",
     cellspacing: "0"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
     align: "center"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
     tagName: "p",
@@ -919,9 +2314,15 @@ function Edit(_ref) {
       });
     },
     placeholder: "Copy Paragraph"
-  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
-    className: "expander"
-  })))))));
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
 }
 
 /***/ }),
@@ -964,7 +2365,7 @@ var settings = {
   title: 'C , G: Newsletter - Paragraph',
   description: 'Basic Paragraph for Chu , Gooding Newsletter',
   category: 'chu-gooding-blocks',
-  icon: 'email-alt',
+  icon: 'editor-paragraph',
   example: {
     attributes: {
       paragraph: 'Enjoy a presentation with Annie Chu of this 5,600-square-foot house for a three-generation family. This home designed as a dual courtyard plan to retain the old growth scenario of California Sycamores and Live Oaks within a tranquil canyon.'
@@ -1031,6 +2432,10 @@ __webpack_require__.r(__webpack_exports__);
 
 function save(_ref) {
   var attributes = _ref.attributes;
+  var tableStyles = {
+    margin: '0 auto',
+    padding: '0'
+  };
   var paragraphStyles = {
     textAlign: 'left',
     color: '#1f1f1f',
@@ -1041,26 +2446,39 @@ function save(_ref) {
     margin: '0',
     maxWidth: '500px'
   };
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save({
-    className: "chu-gooding-email-header"
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
     role: "presentation",
     border: "0",
     cellpadding: "0",
-    cellspacing: "0"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    cellspacing: "0",
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", {
+    style: tableStyles
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    className: "container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    className: "paragraph"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    role: "presentation",
+    class: "main",
     cellpadding: "0",
     cellspacing: "0"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
     align: "center"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("center", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
     style: paragraphStyles,
     className: "newsletter-paragraph",
     tagName: "p",
     value: attributes.paragraph
-  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("th", {
-    className: "expander"
-  })))))));
+  })))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("table", {
+    className: "spacer"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tbody", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("tr", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("td", {
+    height: "35px",
+    style: {
+      fontSize: '35px',
+      lineHeight: '35px'
+    }
+  }, "\xA0"))))))))))));
 }
 
 /***/ }),
@@ -2234,6 +3652,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _etQuote__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./etQuote */ "./src/etQuote/index.js");
 /* harmony import */ var _emailParagraph__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./emailParagraph */ "./src/emailParagraph/index.js");
 /* harmony import */ var _emailHeader__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./emailHeader */ "./src/emailHeader/index.js");
+/* harmony import */ var _emailCaption__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./emailCaption */ "./src/emailCaption/index.js");
+/* harmony import */ var _emailDate__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./emailDate */ "./src/emailDate/index.js");
+/* harmony import */ var _emailNumber__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./emailNumber */ "./src/emailNumber/index.js");
+/* harmony import */ var _emailDivider__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./emailDivider */ "./src/emailDivider/index.js");
+/* harmony import */ var _emailImage__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./emailImage */ "./src/emailImage/index.js");
+
+
+
+
+
 
 
 
@@ -2253,7 +3681,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var blocks = [// otherList,
-_projectMeta__WEBPACK_IMPORTED_MODULE_9__, _projectCredits__WEBPACK_IMPORTED_MODULE_4__, _projectImagePair__WEBPACK_IMPORTED_MODULE_2__, _projectParagraph__WEBPACK_IMPORTED_MODULE_3__, _relatedEtProject__WEBPACK_IMPORTED_MODULE_5__, _scrollToTop__WEBPACK_IMPORTED_MODULE_6__, _featuredProject__WEBPACK_IMPORTED_MODULE_7__, _featuredEt__WEBPACK_IMPORTED_MODULE_8__, _etEventDataAndTime__WEBPACK_IMPORTED_MODULE_10__, _youtube__WEBPACK_IMPORTED_MODULE_11__, _emailParagraph__WEBPACK_IMPORTED_MODULE_16__, _emailHeader__WEBPACK_IMPORTED_MODULE_17__];
+_projectMeta__WEBPACK_IMPORTED_MODULE_9__, _projectCredits__WEBPACK_IMPORTED_MODULE_4__, _projectImagePair__WEBPACK_IMPORTED_MODULE_2__, _projectParagraph__WEBPACK_IMPORTED_MODULE_3__, _relatedEtProject__WEBPACK_IMPORTED_MODULE_5__, _scrollToTop__WEBPACK_IMPORTED_MODULE_6__, _featuredProject__WEBPACK_IMPORTED_MODULE_7__, _featuredEt__WEBPACK_IMPORTED_MODULE_8__, _etEventDataAndTime__WEBPACK_IMPORTED_MODULE_10__, _youtube__WEBPACK_IMPORTED_MODULE_11__, _emailParagraph__WEBPACK_IMPORTED_MODULE_16__, _emailHeader__WEBPACK_IMPORTED_MODULE_17__, _emailCaption__WEBPACK_IMPORTED_MODULE_18__, _emailDate__WEBPACK_IMPORTED_MODULE_19__, _emailNumber__WEBPACK_IMPORTED_MODULE_20__, _emailDivider__WEBPACK_IMPORTED_MODULE_21__, _emailImage__WEBPACK_IMPORTED_MODULE_22__];
 
 function registerBlock(block) {
   var name = block.name,

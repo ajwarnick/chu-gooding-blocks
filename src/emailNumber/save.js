@@ -5,37 +5,41 @@
  */
 import { __ } from '@wordpress/i18n';
 
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+ */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
-import './editor.scss';
-
 /**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
  *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
+ * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit({ attributes, isSelected, setAttributes, }) {
+export default function save({ attributes }) {
     let tableStyles = {
         margin: '0 auto',
         padding: '0',
     }
-    let headingStyles = {
+    let paragraphStyles = {
         textAlign: 'center',
         color: '#1f1f1f',
         fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
         fontWeight: 'bold',
-        fontSize: '36px',
-        lineHeight: '41px',
+        fontSize: '16px',
+        lineHeight: '18px',
         margin: '0',
-        maxWidth: '600px',
+        maxWidth: '500px',
     }
-
     return (
+        <div {...useBlockProps.save()} >
 
-        <div {...useBlockProps()} >
             <table
                 role="presentation"
                 border="0"
@@ -45,7 +49,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
             >
                 <tr style={tableStyles}>
                     <td className={"container"} >
-                        <div className={"heading"}>
+                        <div className={"paragraph"}>
                             <table
                                 role="presentation"
                                 class="main"
@@ -55,14 +59,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
                                 <tr>
                                     <td align="center">
                                         <center>
-                                            <RichText
-                                                tagName="h1"
-                                                style={headingStyles}
-                                                value={attributes.heading}
-                                                className={"newsletter-heading"}
-                                                onChange={(h) => setAttributes({ heading: h })}
-                                                placeholder={"Copy Heading"}
-                                            />
+                                            <RichText.Content style={paragraphStyles} className={"newsletter-subhead"} tagName="p" value={attributes.paragraph} />
                                         </center>
                                     </td>
                                 </tr>
@@ -92,6 +89,6 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
                     </td>
                 </tr>
             </table>
-        </div >
+        </div>
     );
 }

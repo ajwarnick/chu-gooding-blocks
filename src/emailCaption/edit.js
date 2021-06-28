@@ -22,17 +22,18 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
         margin: '0 auto',
         padding: '0',
     }
-    let headingStyles = {
-        textAlign: 'center',
+
+    let captionStyles = {
+        textAlign: 'left',
         color: '#1f1f1f',
         fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
-        fontWeight: 'bold',
-        fontSize: '36px',
-        lineHeight: '41px',
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        fontSize: '12px',
+        lineHeight: '15px',
         margin: '0',
-        maxWidth: '600px',
+        maxWidth: '500px',
     }
-
     return (
 
         <div {...useBlockProps()} >
@@ -45,7 +46,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
             >
                 <tr style={tableStyles}>
                     <td className={"container"} >
-                        <div className={"heading"}>
+                        <div className={"caption"}>
                             <table
                                 role="presentation"
                                 class="main"
@@ -56,12 +57,12 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
                                     <td align="center">
                                         <center>
                                             <RichText
-                                                tagName="h1"
-                                                style={headingStyles}
-                                                value={attributes.heading}
-                                                className={"newsletter-heading"}
-                                                onChange={(h) => setAttributes({ heading: h })}
-                                                placeholder={"Copy Heading"}
+                                                tagName="p"
+                                                style={captionStyles}
+                                                value={attributes.caption}
+                                                className={"newsletter-caption"}
+                                                onChange={(p) => setAttributes({ caption: p })}
+                                                placeholder={"Copy Caption"}
                                             />
                                         </center>
                                     </td>

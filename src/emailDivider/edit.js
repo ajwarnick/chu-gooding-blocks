@@ -5,7 +5,7 @@
  */
 import { __ } from '@wordpress/i18n';
 
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { useBlockProps } from '@wordpress/block-editor';
 
 import './editor.scss';
 
@@ -22,16 +22,6 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
         margin: '0 auto',
         padding: '0',
     }
-    let headingStyles = {
-        textAlign: 'center',
-        color: '#1f1f1f',
-        fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
-        fontWeight: 'bold',
-        fontSize: '36px',
-        lineHeight: '41px',
-        margin: '0',
-        maxWidth: '600px',
-    }
 
     return (
 
@@ -45,7 +35,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
             >
                 <tr style={tableStyles}>
                     <td className={"container"} >
-                        <div className={"heading"}>
+                        <div className={"divider"}>
                             <table
                                 role="presentation"
                                 class="main"
@@ -55,13 +45,12 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
                                 <tr>
                                     <td align="center">
                                         <center>
-                                            <RichText
-                                                tagName="h1"
-                                                style={headingStyles}
-                                                value={attributes.heading}
-                                                className={"newsletter-heading"}
-                                                onChange={(h) => setAttributes({ heading: h })}
-                                                placeholder={"Copy Heading"}
+                                            <hr
+                                                style={{
+                                                    border: '0',
+                                                    borderBottom: '1px solid #1f1f1f',
+                                                    width: '200px',
+                                                }}
                                             />
                                         </center>
                                     </td>

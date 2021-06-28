@@ -11,17 +11,17 @@ export const settings = {
     title: 'C , G: Newsletter - Header',
     description: 'Basic Header for Chu , Gooding Newsletter',
     category: 'chu-gooding-blocks',
-    icon: 'email-alt',
+    icon: 'heading',
     example: {
         attributes: {
-            paragraph: 'AIALA Presentation of Rustic Canyon House & Conversation with Annie Chu',
+            heading: 'AIALA Presentation of Rustic Canyon House & Conversation with Annie Chu',
         },
     },
     attributes: {
-        header: {
+        heading: {
             type: 'string',
             source: "html",
-            selector: ".newsletter-header",
+            selector: ".newsletter-heading",
             default: ''
         },
     },

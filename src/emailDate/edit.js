@@ -22,17 +22,16 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
         margin: '0 auto',
         padding: '0',
     }
-    let headingStyles = {
+    let paragraphStyles = {
         textAlign: 'center',
         color: '#1f1f1f',
         fontFamily: 'Arial, Helvetica Neue,Helvetica, sans-serif',
         fontWeight: 'bold',
-        fontSize: '36px',
-        lineHeight: '41px',
+        fontSize: '16px',
+        lineHeight: '18px',
         margin: '0',
-        maxWidth: '600px',
+        maxWidth: '500px',
     }
-
     return (
 
         <div {...useBlockProps()} >
@@ -45,7 +44,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
             >
                 <tr style={tableStyles}>
                     <td className={"container"} >
-                        <div className={"heading"}>
+                        <div className={"date"}>
                             <table
                                 role="presentation"
                                 class="main"
@@ -55,14 +54,27 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
                                 <tr>
                                     <td align="center">
                                         <center>
-                                            <RichText
-                                                tagName="h1"
-                                                style={headingStyles}
-                                                value={attributes.heading}
-                                                className={"newsletter-heading"}
-                                                onChange={(h) => setAttributes({ heading: h })}
-                                                placeholder={"Copy Heading"}
-                                            />
+                                            <p>
+                                                <RichText
+                                                    tagName="span"
+                                                    style={paragraphStyles}
+                                                    value={attributes.day}
+                                                    className={"newsletter-date-day"}
+                                                    onChange={(d) => setAttributes({ day: d })}
+                                                    placeholder={"Event Day"}
+                                                    multiline={false}
+                                                />
+                                                <br />
+                                                <RichText
+                                                    tagName="span"
+                                                    style={paragraphStyles}
+                                                    value={attributes.time}
+                                                    className={"newsletter-date-time"}
+                                                    onChange={(t) => setAttributes({ time: t })}
+                                                    placeholder={"Event Time"}
+                                                    multiline={false}
+                                                />
+                                            </p>
                                         </center>
                                     </td>
                                 </tr>

@@ -23,6 +23,10 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function save({ attributes }) {
+    let tableStyles = {
+        margin: '0 auto',
+        padding: '0',
+    }
     let paragraphStyles = {
         textAlign: 'left',
         color: '#1f1f1f',
@@ -34,25 +38,54 @@ export default function save({ attributes }) {
         maxWidth: '500px',
     }
     return (
-        <div {...useBlockProps.save({ className: "chu-gooding-email-header" })} >
+        <div {...useBlockProps.save()} >
+
             <table
                 role="presentation"
                 border="0"
                 cellpadding="0"
                 cellspacing="0"
+                style={tableStyles}
             >
-                <tr>
-                    <td>
-                        <table cellpadding="0" cellspacing="0">
-                            <tr>
-                                <th align="center">
-                                    <center >
-                                        <RichText.Content style={paragraphStyles} className={"newsletter-paragraph"} tagName="p" value={attributes.paragraph} />
-                                    </center>
-                                </th>
-                                <th className="expander"></th>
-                            </tr>
-                        </table>
+                <tr style={tableStyles}>
+                    <td className={"container"} >
+                        <div className={"paragraph"}>
+                            <table
+                                role="presentation"
+                                class="main"
+                                cellpadding="0"
+                                cellspacing="0"
+                            >
+                                <tr>
+                                    <td align="center">
+                                        <center>
+                                            <RichText.Content style={paragraphStyles} className={"newsletter-paragraph"} tagName="p" value={attributes.paragraph} />
+                                        </center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table className={"spacer"}>
+                                            <tbody>
+                                                <tr>
+                                                    <td
+                                                        height="35px"
+                                                        style={
+                                                            {
+                                                                fontSize: '35px',
+                                                                lineHeight: '35px',
+                                                            }
+                                                        }
+                                                    >
+                                                        &#xA0;
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </td>
                 </tr>
             </table>

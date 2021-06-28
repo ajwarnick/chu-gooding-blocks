@@ -17,6 +17,11 @@ import * as etMeta from './etMeta';
 import * as etQuote from './etQuote';
 import * as emailParagraph from './emailParagraph';
 import * as emailHeader from './emailHeader';
+import * as emailCaption from './emailCaption';
+import * as emailDate from './emailDate';
+import * as emailNumber from './emailNumber';
+import * as emailDivider from './emailDivider';
+import * as emailImage from './emailImage';
 
 const blocks = [
     // otherList,
@@ -32,6 +37,11 @@ const blocks = [
     youtube,
     emailParagraph,
     emailHeader,
+    emailCaption,
+    emailDate,
+    emailNumber,
+    emailDivider,
+    emailImage,
 ];
 
 function registerBlock(block) {

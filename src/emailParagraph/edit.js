@@ -18,7 +18,10 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, isSelected, setAttributes, }) {
-
+    let tableStyles = {
+        margin: '0 auto',
+        padding: '0',
+    }
     let paragraphStyles = {
         textAlign: 'left',
         color: '#1f1f1f',
@@ -31,36 +34,63 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
     }
     return (
 
-        <div {...useBlockProps({ className: "chu-gooding-email-paragraph" })} >
+        <div {...useBlockProps()} >
             <table
                 role="presentation"
                 border="0"
                 cellpadding="0"
                 cellspacing="0"
+                style={tableStyles}
             >
-                <tr>
-                    <td>
-                        <table cellpadding="0" cellspacing="0">
-                            <tr>
-                                <th align="center">
-                                    <center >
-                                        <RichText
-                                            tagName="p"
-                                            style={paragraphStyles}
-                                            value={attributes.paragraph}
-                                            className={"newsletter-paragraph"}
-                                            onChange={(p) => setAttributes({ paragraph: p })}
-                                            placeholder={"Copy Paragraph"}
-                                        />
-                                    </center>
-                                </th>
-                                <th className="expander"></th>
-                            </tr>
-                        </table>
+                <tr style={tableStyles}>
+                    <td className={"container"} >
+                        <div className={"paragraph"}>
+                            <table
+                                role="presentation"
+                                class="main"
+                                cellpadding="0"
+                                cellspacing="0"
+                            >
+                                <tr>
+                                    <td align="center">
+                                        <center>
+                                            <RichText
+                                                tagName="p"
+                                                style={paragraphStyles}
+                                                value={attributes.paragraph}
+                                                className={"newsletter-paragraph"}
+                                                onChange={(p) => setAttributes({ paragraph: p })}
+                                                placeholder={"Copy Paragraph"}
+                                            />
+                                        </center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table className={"spacer"}>
+                                            <tbody>
+                                                <tr>
+                                                    <td
+                                                        height="35px"
+                                                        style={
+                                                            {
+                                                                fontSize: '35px',
+                                                                lineHeight: '35px',
+                                                            }
+                                                        }
+                                                    >
+                                                        &#xA0;
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </td>
                 </tr>
             </table>
-        </div>
-
+        </div >
     );
 }

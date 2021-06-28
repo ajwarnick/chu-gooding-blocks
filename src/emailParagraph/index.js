@@ -11,7 +11,7 @@ export const settings = {
     title: 'C , G: Newsletter - Paragraph',
     description: 'Basic Paragraph for Chu , Gooding Newsletter',
     category: 'chu-gooding-blocks',
-    icon: 'email-alt',
+    icon: 'editor-paragraph',
     example: {
         attributes: {
             paragraph: 'Enjoy a presentation with Annie Chu of this 5,600-square-foot house for a three-generation family. This home designed as a dual courtyard plan to retain the old growth scenario of California Sycamores and Live Oaks within a tranquil canyon.',
