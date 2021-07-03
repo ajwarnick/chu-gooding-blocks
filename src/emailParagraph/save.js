@@ -35,6 +35,8 @@ export default function save({ attributes }) {
         fontSize: '16px',
         lineHeight: '18px',
         margin: '0',
+        paddingLeft: '50px',
+        paddingRight: '50px',
         maxWidth: '500px',
     }
     return (
