@@ -3,7 +3,7 @@
  * Plugin Name: 	Chu , Gooding Blocks
  * Plugin URI:		https://github.com/ajwarnick/chu-gooding-blocks
  * Description: 	add custom Gutenberg blocks for Chu , Gooding Theme
- * Version: 		0.9.5
+ * Version: 		0.9.8
  *
  * Author:			Anthony Warnick
  * Author URI:		https://anthonywarnick.com/
@@ -162,6 +162,7 @@ function chu_gooding_blocks_init() {
 	);
 
 	function render_featured_project ($attributes){
+
 		$featured_img_url = get_the_post_thumbnail_url($attributes['id'],'full');
 		$title = get_the_title($attributes['id']);
 		$color_name = $attributes['colorName'];

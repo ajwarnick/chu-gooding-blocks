@@ -18,6 +18,7 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, isSelected, setAttributes, }) {
+
     let tableStyles = {
         margin: '0 auto',
         padding: '0',

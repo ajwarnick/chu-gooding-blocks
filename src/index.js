@@ -1,6 +1,5 @@
 import { registerBlockType } from '@wordpress/blocks';
 
-import * as otherList from './otherList';
 import * as projectImagePair from './projectImagePair';
 import * as projectParagraph from './projectParagraph';
 import * as projectCredits from './projectCredits';
@@ -24,7 +23,6 @@ import * as emailDivider from './emailDivider';
 import * as emailImage from './emailImage';
 
 const blocks = [
-    // otherList,
     projectMeta,
     projectCredits,
     projectImagePair,
