@@ -33,6 +33,8 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
         lineHeight: '15px',
         margin: '0',
         maxWidth: '500px',
+        paddingLeft: '50px',
+        paddingRight: '50px',
     }
     return (
 

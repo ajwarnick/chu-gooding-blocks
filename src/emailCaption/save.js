@@ -37,6 +37,8 @@ export default function save({ attributes }) {
         lineHeight: '15px',
         margin: '0',
         maxWidth: '500px',
+        paddingLeft: '50px',
+        paddingRight: '50px',
     }
     return (
         <div {...useBlockProps.save()} >
