@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { ColorPalette, TextControl, PanelBody, PanelRow, Placeholder, SelectControl } from '@wordpress/components';
-import { useState, useEffect, useRef } from '@wordpress/element';
+import { useBlockProps } from '@wordpress/block-editor';
+import { TextControl, Placeholder } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
 
 import Plyr from 'plyr';
 import '../../node_modules/plyr/src/sass/plyr.scss';

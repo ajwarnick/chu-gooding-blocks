@@ -3072,7 +3072,7 @@ function Edit(_ref) {
 
   if (!attributes.ets) {
     _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4___default()({
-      path: '/wp/v2/ets'
+      path: '/wp/v2/ets?per_page=100'
     }).then(function (posts) {
       setAttributes({
         ets: posts
@@ -3392,7 +3392,7 @@ function Edit(_ref) {
 
   if (!attributes.projects) {
     _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_5___default()({
-      path: '/wp/v2/projects'
+      path: '/wp/v2/projects?per_page=100'
     }).then(function (posts) {
       setAttributes({
         projects: posts
@@ -4815,7 +4815,7 @@ function Edit(_ref) {
 
   if (!attributes.projects) {
     _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_5___default()({
-      path: '/wp/v2/projects'
+      path: '/wp/v2/projects?per_page=100'
     }).then(function (posts) {
       console.log(posts);
       setAttributes({
@@ -4826,7 +4826,7 @@ function Edit(_ref) {
 
   if (!attributes.ets) {
     _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_5___default()({
-      path: '/wp/v2/ets'
+      path: '/wp/v2/ets?per_page=100'
     }).then(function (posts) {
       setAttributes({
         ets: posts

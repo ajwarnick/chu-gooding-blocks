@@ -37,7 +37,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 	let result;
 
 	if (!attributes.projects) {
-		apiFetch({ path: '/wp/v2/projects' }).then(posts => {
+		apiFetch({ path: '/wp/v2/projects?per_page=100' }).then(posts => {
 			setAttributes({ projects: posts });
 
 			if (!attributes.id) {

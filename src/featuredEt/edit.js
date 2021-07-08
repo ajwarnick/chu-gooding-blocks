@@ -27,7 +27,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 	let eventTime;
 
 	if( !attributes.ets ){
-		apiFetch( { path: '/wp/v2/ets' } ).then( posts => {
+		apiFetch( { path: '/wp/v2/ets?per_page=100' } ).then( posts => {
 			setAttributes({ets: posts});
 			
 			if( !attributes.id ){

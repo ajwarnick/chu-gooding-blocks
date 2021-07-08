@@ -23,14 +23,14 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 
 
 	if(!attributes.projects){
-		apiFetch( { path: '/wp/v2/projects' } ).then( posts => {
+		apiFetch( { path: '/wp/v2/projects?per_page=100' } ).then( posts => {
 			console.log(posts);
 			setAttributes({projects: posts})
 		} );
 	}
 
 	if(!attributes.ets){
-		apiFetch( { path: '/wp/v2/ets' } ).then( posts => {
+		apiFetch( { path: '/wp/v2/ets?per_page=100' } ).then( posts => {
 			setAttributes({ets: posts})
 		} );
 	}
