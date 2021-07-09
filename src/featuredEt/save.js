@@ -1,25 +1,45 @@
-import { __ } from '@wordpress/i18n';
-import { useBlockProps } from '@wordpress/block-editor';
 
-export default function save({attributes}) {
-	return (
-		<div { ...useBlockProps.save({className:'chu_gooding__featured-et'}) } >
-			<div className="chu_gooding__featured-et-meta">
-				<div className="chu_gooding__featured-et-meta-label">Et</div>
-				<div className="chu_gooding__featured-et-meta-number">{ attributes.et_number }</div>
-				<div className="hidden">
-					<div className="chu_gooding__featured-et-meta-id">{ attributes.id }</div>
-					<div className="chu_gooding__featured-et-meta-title">{ attributes.title }</div>
-					<div className="chu_gooding__featured-et-meta-featured_media">{ attributes.featured_media }</div>
-				</div>
-			</div>
-			<a className="chu_gooding__featured-link" href={ attributes.link }>
-				{ attributes.featured_media === 0 ? 
-					<h1 className="chu_gooding__featured-title">{ attributes.title }</h1> 
-				: 
-					<img src={attributes.source_url} width={attributes.width} height={attributes.height} alt={ attributes.title } /> 
-				}
-			</a>		
-		</div>
-	);
-}
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+ import { __ } from '@wordpress/i18n';
+
+ /**
+  * React hook that is used to mark the block wrapper element.
+  * It provides all the necessary props like the class name.
+  *
+  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
+  */
+ import { useBlockProps } from '@wordpress/block-editor';
+ 
+ /**
+  * The save function defines the way in which the different attributes should
+  * be combined into the final markup, which is then serialized by the block
+  * editor into `post_content`.
+  *
+  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
+  *
+  * @return {WPElement} Element to render.
+  */
+ {/* <div 
+		 { ...useBlockProps.save({className: 'chu_gooding__featured-project ' + attributes.colorName}) } 
+		 data-colorName={attributes.colorName}
+		 data-color={attributes.color}
+		 data-title={attributes.title}
+		 data-project-id={attributes.id}
+	 >
+		 <figure>
+			 <a className="chu_gooding__featured-link" href={ attributes.link } rel="noopener noreferrer">
+				 { attributes.featured_media === 0 ? <h1 className={"chu_gooding__featured-title"}>{ attributes.title }</h1> : <img data-featured-media={attributes.featured_media} src={ attributes.source_url } alt={ attributes.title } /> }
+			 </a>
+		 </figure>
+		 
+				 
+	 </div> */}
+ 
+ export default function save() {
+	 return null;
+ }
+ 

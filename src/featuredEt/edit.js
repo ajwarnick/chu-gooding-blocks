@@ -1,6 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, PanelRow, Placeholder, SelectControl } from '@wordpress/components';
+import { Fragment, useState }  from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
 
 const htmlEncode = (str) => {
@@ -21,20 +22,27 @@ import './editor.scss';
 
 export default function Edit({ attributes, isSelected, setAttributes, }) {
 	const classes = 'chu_gooding__featured-project ';
-	const event = wp.data.select('core').getEntityRecords('taxonomy', 'collection').filter(x => x.slug === 'event')[0];
+	// const event = wp.data.select('core').getEntityRecords('taxonomy', 'collection').filter(x => x.slug === 'event')[0];
 	let result;
 	let eventDate;
 	let eventTime;
 
-	if( !attributes.ets ){
-		apiFetch( { path: '/wp/v2/ets?per_page=100' } ).then( posts => {
-			setAttributes({ets: posts});
-			
-			if( !attributes.id ){
-				result = attributes.ets.find(obj => obj.id == attributes.id);
+	const [ isTitle, setTitle ] = useState( false );
+	const [ ets, setEts ] = useState();
 
+	if( !ets ){
+		apiFetch( { path: '/wp/v2/ets?per_page=100' } ).then( posts => {
+			// setAttributes({ets: posts});
+			setEts(posts);
+
+			if( attributes.id ){
+				result = posts.find(obj => obj.id == attributes.id);
+				setTitle(result.meta.chugooding_meta_block_field_etTitleVisibility);
 				setAttributes({title: result.title.rendered})
-				getFeaturerMedia(result.featured_media);
+				if(isTitle){
+					getFeaturerMedia(result.featured_media);
+				}
+				
 			}
 		} );
 	}
@@ -46,44 +54,50 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 			})
 		}
 
-		if( id == 0 ){
+		if( id == 0 || isTitle){
 			setAttributes({url: ''})
 		}
 	}
 
 	const changeFeaturedEt = (id) => {
-		result = attributes.ets.find(obj => {
+		
+		result = ets.find(obj => {
 			return obj.id == id
 		});
 
-		if( result.collection.indexOf(event.id) >= 0) {
+		if(result){
 			
-			setAttributes( {
-				event: true, 
-				eventDate: result.meta.chugooding_meta_block_field_etEventData,
-				eventTime: result.meta.chugooding_meta_block_field_etEventTime 
-			} );
+			if(result.meta.chugooding_meta_block_field_etEventData){
+				console.log(result.meta.chugooding_meta_block_field_etEventData);
+				setAttributes( {
+					event: true, 
+					eventDate: result.meta.chugooding_meta_block_field_etEventData,
+					eventTime: result.meta.chugooding_meta_block_field_etEventTime 
+				} );
+			}else{
+				setAttributes( {event: false} );
+			}
 
-		}else{
-			setAttributes( {event: false} );
-		}
-
-		getFeaturerMedia( result.featured_media );
-
-		setAttributes( { id: id, title: htmlEncode(result.title.rendered), num: result.meta.chugooding_meta_block_field_etNumber } );
+			// set if title is active
+			console.log(result.meta.chugooding_meta_block_field_etTitleVisibility);
+			setTitle(result.meta.chugooding_meta_block_field_etTitleVisibility);
+	
+			getFeaturerMedia( result.featured_media );
+			setAttributes( { id: id, title: htmlEncode(result.title.rendered), num: result.meta.chugooding_meta_block_field_etNumber } );
+		}	
 	}
 
 
 	return (
-		<div { ...useBlockProps({className: 'chu_gooding__featured-et ' + attributes.colorName}) }>
+		<div { ...useBlockProps({className: 'chu_gooding__featured-et '}) }>
 			<InspectorControls>
 				<PanelBody title={ 'Featured Ets' } >
 					<PanelRow>
-					{ attributes.ets ?
+					{ ets ?
 						<SelectControl
 							label="Ets"
 							value={ attributes.id }
-							options={ attributes.ets.map( obj => (
+							options={ ets.map( obj => (
 								{
 									value: obj.id, 
 									label: htmlEncode(obj.title.rendered)
@@ -98,7 +112,7 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 				</PanelBody>
 			</InspectorControls>
 
-			{ !attributes.title ?
+			{ !attributes.title && ets ?
 				<Placeholder instructions="Use block settings to select post to feature and background color"  label="Featured Et" />
 			:
 				<div>
@@ -107,23 +121,22 @@ export default function Edit({ attributes, isSelected, setAttributes, }) {
 						<div className={"chu_gooding__featured-et-meta-number"}>{ attributes.num }</div>
 					</div>
 					
+				
+					<a className={"chu_gooding__featured-link"} >
 						{ !attributes.event ?
-							<a className={"chu_gooding__featured-link"} >
-								{ !attributes.url ?
-									<h1 className={"chu_gooding__featured-title"}>{ attributes.title }</h1>
-								:						
-									<img  src={ attributes.url } alt={ attributes.title } /> 
-								}	
-							</a>
-						:
-							<a className={"chu_gooding__featured-link"} >
+								<Fragment></Fragment>
+							:	
 								<div>
 									<p className={"et__header-event"}>{ attributes.eventDate }</p> 
 									<p className={"et__header-event"}>{ attributes.eventTime }</p>
-									<h3 className={"et__header-event__title"}>{ attributes.title }</h3>
 								</div>
-							</a>
 						}
+						{ !attributes.url || isTitle ?
+							<h1 className={"chu_gooding__featured-title"}>{ attributes.title }</h1>
+						:						
+							<img  src={ attributes.url } alt={ attributes.title } /> 
+						}	
+					</a>
 				</div>
 			}
 		</div>

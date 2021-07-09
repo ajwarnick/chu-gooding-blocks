@@ -22,9 +22,6 @@ export const settings = {
         title:{
             type:'string',
         },
-        ets:{
-            type: 'object'
-        },
         url:{    
             type:'string',
         },

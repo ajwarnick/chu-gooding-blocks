@@ -19,7 +19,7 @@
 
 .chu_gooding__featured-et {
 	padding: 0 var(--cg12Margin);
-	background-color: var(--cgGreen);
+	background-color: var(--cgGray);
 
 	min-height: 545px;
 	display: grid;
@@ -27,10 +27,12 @@
 }
 .chu_gooding__featured-et > div {
 	display: block;
-	margin: 212px auto 212px auto;
-
-	max-height: 556px;
-	max-width: 78vw;
+	// margin: 212px auto 212px auto;
+	// max-height: 556px;
+	// max-width: 78vw;
+	margin-bottom: calc(var(--cg12Margin) + var(--cg12Gutter));
+	margin-top: calc(var(--cg12Margin) + var(--cg12Gutter));;
+	position: relative;
 }
 
 
@@ -39,14 +41,27 @@
 	text-decoration: none;
 
 	display: grid;
-	margin: auto;
+	margin: 97px auto;
 	max-height: 556px;
 	max-width: 78vw;
+	min-height: 206px;
 }
 
 .chu_gooding__featured-et a.chu_gooding__featured-link:hover{
 	color: var(--cgWhite);
 	text-decoration: none;
+}
+
+.chu_gooding__featured-et a.chu_gooding__featured-link h1{
+	margin: auto;
+	font-size: 36px;
+	line-height: 40px;
+	padding-top: 1em;
+	text-align: center;
+}
+
+.chu_gooding__featured-et a.chu_gooding__featured-link p{
+	max-width: unset;
 }
 
 .chu_gooding__featured-et + .chu_gooding__featured-project {
@@ -74,7 +89,8 @@
 .chu_gooding__featured-et .chu_gooding__featured-et-meta{
 	position: absolute;
 	margin: 0;
-	top: calc(var(--cg12Margin) + var(--cg12Gutter));
+	// top: calc(var(--cg12Margin) + var(--cg12Gutter));
+	top:0;
 	right: var(--cg12Margin);
 	
 	width: 153px;
@@ -82,7 +98,6 @@
 
 	// border-left: 3px double var(--cgBlack);
 	border-left: 1px solid var(--cgBlack);
-	position: relative;
 	margin-left: 3px;
 	
 	&::before{
